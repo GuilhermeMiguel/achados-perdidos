@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous" />
+
+<link rel="stylesheet" href="resources/css/dashboard.css" />
+
+<link rel="stylesheet" href="resources/css/grafico.css" />
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<title>Dashboard</title>
+</head>
+
+<body>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+
+	<div id="wrapper" class="toggled">
+		<div class="overlay"></div>
+
+		<!-- Sidebar -->
+		<nav class="navbar navbar-inverse navbar-fixed-top"
+			id="sidebar-wrapper" role="navigation">
+		<ul class="nav sidebar-nav">
+			<li class="sidebar-brand"><a href="#"> Sistema </a></li>
+			<li><a href="#"><img src="images/icone-dashboard.png" />
+					Dashboard</a></li>
+			<li><a href="#"><img src="images/icone-cadastro.png" />
+					Cadastro de Objetos</a></li>
+			<li><a href="#"><img src="images/icone-devolucao.png" />
+					Devolução</a></li>
+			<li><a href="#"><img src="images/icone-categoria.png" />
+					Categorias</a></li>
+			<li class="dropdown"><a href="#" class="dropdown-toggle"
+				data-toggle="dropdown">Submanu title <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li class="dropdown-header">Dropdown heading</li>
+					<li><a href="#">Submanu 1</a></li>
+					<li><a href="#">Submanu 2</a></li>
+					<li><a href="#">Submanu 3</a></li>
+					<li><a href="#">Submanu 4</a></li>
+					<li><a href="#">Submanu 5</a></li>
+				</ul></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Contact</a></li>
+
+		</ul>
+		</nav>
+		<!-- /#sidebar-wrapper -->
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<!--<button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+    			<span class="hamb-middle"></span>
+				<span class="hamb-bottom"></span>
+            </button> -->
+
+			<button type="button" id="fecha-menu" class="btn btn-lg custom-btn"
+				data-toggle="offcanvas">
+				<i class="fa fa-bars"></i>
+			</button>
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+	<div id="area-dashboard">
+		<div class="row">
+			<div class="col-md-4">
+				<div id="area-objetos-perdidos-devolvidos">
+					<img src="images/icone-random.png" /><br /> Objetos devolvidos<br />
+					Quant: 10;
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div id="area-objetos-perdidos-devolvidos">
+					<img src="images/icone-objetos.png" /> <br /> Objetos 4perdidos<br />
+					Quant: 10;
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div id="area-objetos-perdidos-devolvidos">
+					<img src="images/icone-lost.png" /> <br /> Local<br /> Local;
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-8" id="container-segunda-linha">
+				<div class="row">
+					<div class="col-md-6">
+						<div id="area-objetos-perdidos-devolvidos">
+							<img src="images/icone-doacao.png" /><br /> Objetos devolvidos<br />
+							Quant: 10;
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div id="area-objetos-perdidos-devolvidos">
+							<img src="images/icone-reciclagem.png" /><br /> Objetos
+							devolvidos<br /> Quant: 10;
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4" id="area-porcentagem">
+				<ul class="widget widget-usage unstyled span4">
+					<li>
+						<p>
+							<strong>Objeto 1</strong> <span class="pull-right small muted">78%</span>
+						</p>
+						<div class="progress tight">
+							<div class="progress-bar progress-bar-success" role="progressbar"
+								aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"
+								style="width: 78%"></div>
+						</div>
+					</li>
+					<li>
+						<p>
+							<strong>Objeto 2</strong> <span class="pull-right small muted">56%</span>
+						</p>
+						<div class="progress tight">
+							<div class="progress-bar progress-bar-success" role="progressbar"
+								aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"
+								style="width: 56%"></div>
+						</div>
+					</li>
+					<li>
+						<p>
+							<strong>Objeto 3</strong> <span class="pull-right small muted">44%</span>
+						</p>
+						<div class="progress tight">
+							<div class="progress-bar progress-bar-success" role="progressbar"
+								aria-valuenow="44" aria-valuemin="0" aria-valuemax="100"
+								style="width: 44%"></div>
+						</div>
+					</li>
+					<li>
+						<p>
+							<strong>Objeto 4</strong> <span class="pull-right small muted">33%</span>
+						</p>
+						<div class="progress tight">
+							<div class="progress-bar progress-bar-success" role="progressbar"
+								aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"
+								style="width: 33%"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="grafico">
+			<canvas class="line-chart"></canvas>
+		</div>
+
+		<script>
+			var ctx = document.getElementsByClassName("line-chart");
+
+			var chartGraph = new Chart(ctx, {
+				type : 'line',
+				data : {
+					labels : [ "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul",
+							"Ago", "Set", "Out", "Nov", "Dez" ],
+					datasets : [
+							{
+								label : "TAXA DE CLIQUES - 2019",
+								data : [ 5, 10, 5, 14, 20, 15, 6, 14, 8, 12,
+										15, 5, 10 ],
+								borderWidth : 6,
+								borderColor : 'rgba(77, 166, 253, 0.85)',
+								backgroundColor : 'transparent',
+							},
+
+							{
+								label : "TAXA DE CLIQUES - 2020",
+								data : [ 10, 15, 20, 30, 44, 55, 11, 2, 8, 12,
+										20, 6, 13 ],
+								borderWidth : 6,
+								borderColor : 'rgba(6, 204, 6, 0.85)',
+								backgroundColor : 'transparent',
+							}, ]
+				},
+				options : {
+					title : {
+						display : true,
+						fontSize : 20,
+						text : "RELAÓRIO DE CTR ANUAL"
+					},
+					labels : {
+						fontStyle : 'bold'
+					}
+				}
+			});
+		</script>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+
+	<script src="resources/js/script-menu.js"></script>
+
+
+</body>
+
+</html>

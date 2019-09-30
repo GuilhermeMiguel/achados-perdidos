@@ -1,0 +1,376 @@
+/* input[type="password"] {
+  color: transparent;
+} */
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+
+body, html {
+	height: 100%;
+  font-family: Poppins-Regular, sans-serif;
+}
+
+.cadastro {
+  background-color: #ebeeef;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+
+#linha-cadastro {
+    margin-top: 5%;
+}
+
+#section-cadastro {
+  height: 100%;
+  width: 100%;
+  background-color: #ebeeef;
+  
+  }
+  
+#texto-label {
+  font-family: Poppins-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 2.2;
+  font-weight: normal;
+}
+
+#texto-label2 {
+  font-family: Poppins-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 2.2;
+  font-weight: normal;
+  margin-left: -2%;
+}
+
+#botao1:hover, #botao2:hover{
+background-color: #694077;
+
+}
+
+.item { /*Corresponde aos botoes*/
+  padding-left: 10px;
+}
+
+#titulo {
+  position: absolute;
+  top: 10%;
+  left: 16%;
+}
+
+
+.botoes {
+  height: 40px !important;
+    border: 0px solid #000;
+    background: transparent;
+    color: #EEE;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    border-right: 1px solid #4B4B4B;
+    border-color: #4B4B4B;
+    margin: 0px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: color,background;
+}
+
+#area-botao {
+  color: white;
+    background-color: black;
+    width: 1055px;
+    margin-left: -60px;
+    height: 40px;
+    margin-top: 0px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+#area-cadastro {
+    width: 90%;
+    margin-left: -56px;
+    height: 182px;
+    margin-left: -50%;
+    background: #fff;
+    margin-left: 10%;
+    padding: 5%;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+ 
+}
+
+.modal-container{
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, .5);
+    z-index: 2000;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-flex {
+  padding-left: 5%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+}
+
+.modal-categoria{
+  background-color: #FFF;
+    width: 600px;
+    height: 200px;
+    box-shadow: 4px 4px 25px rgba(0,0,0,0.5);
+}
+
+#banner {
+  width: 100%;
+    height: 30px;
+    background-color: rgba(54,84,99, 1);
+    z-index: 1;
+  }
+
+  #banner img {
+    margin-left: 90%;
+    margin-top: 40px;
+  }
+
+.modal-container.mostrar {
+    display: flex;
+}
+
+.mostrar .modal-categoria {
+    animation: modal-categoria .3s;
+}
+
+
+@keyframes modal-categoria {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fechar {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid white;
+    cursor: pointer;
+}
+
+
+
+.fechar-modal{
+  position: relative;
+  margin-left: 550px;
+  top: -40px;
+  width: 50px;
+  line-height: 5px;
+  font-size: 13px;
+  background: #BD5A5A;
+  color: transparent;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+  height: 30px;
+}
+
+
+.fechar-modal:hover {
+  background-color: #d45454;
+}
+.titulo{
+  z-index: 1;
+  position: relative;
+  line-height: 30px;
+  color: #FFF;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+  padding-right: 50px;
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+.area-cadastro-categoria {
+  margin-top: 5%;
+  margin-left: 4%;
+}
+
+
+#area-botao-modal {
+  margin-top: 22%;
+}
+/*------------------------------------------------------------------
+[ Button ]*/
+
+.login100-form-btn {
+  min-width: 120px;
+  height: 27px;
+  background-color: rgba(54,84,99, 1);
+  border-radius: 10px;
+  font-family: Poppins-Regular;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  margin-left: 10%;
+}
+
+.login100-form-btn:hover {
+  background-color: #694077;
+}
+/*---------------------------------------------
+SEGUNDO MODAL
+---------------------------------------------*/
+.form-horizontal2 {
+  margin-top: -10%;
+}
+
+
+
+/*---------------------------------------------*/
+input {
+	outline: none;
+	border: none;
+}
+
+
+.wrap-input100 {
+  width: 90%;
+  position: relative;
+  border-bottom: 1px solid #b2b2b2;
+}
+
+
+.input100 {
+  font-family: Poppins-Regular;
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.2;
+
+  display: block;
+  width: 100%;
+  background: transparent;
+  padding: 0 5px;
+}
+
+.focus-input100 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.focus-input100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+
+  -webkit-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  transition: all 0.6s;
+
+  background: rgba(54,84,99, 1);
+}
+
+/*---------------------------------------------*/
+input.input100 {
+  height: 45px;
+}
+
+
+.input100:focus + .focus-input100::before {
+  width: 100%;
+}
+
+.has-val.input100 + .focus-input100::before {
+  width: 100%;
+}
+
+/*------------------------------------------------------------------
+[ Responsive ]*/
+
+@media (max-width: 576px) {
+  .login100-form {
+    padding: 43px 15px 57px 117px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login100-form {
+    padding: 43px 15px 57px 15px;
+  }
+
+  .label-input100 {
+    text-align: left;
+    position: unset;
+    top: unset;
+    left: unset;
+    width: 100%;
+    padding: 0 5px;
+  }
+}
+@media (max-width: 992px) {
+  .alert-validate::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+

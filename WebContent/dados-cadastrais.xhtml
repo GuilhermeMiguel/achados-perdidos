@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<head>
+
+<title>Dados Cadastrais</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css"
+	href="resources/css/dados-cadastrais.css" />
+<!--===============================================================================================-->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<section id="section-cadastro">
+
+	<form class="form-horizontal">
+		<div class="container">
+
+			<div class="row" id="linha-cadastro">
+
+				<div class="panel-body" id="area-cadastro">
+					<div id="banner">
+						<div class="container-flex">
+							<div class="item">
+								<img src="images/icone-dados-cadastrais.png" /> Dados
+								Cadastrais
+							</div>
+							<div class="item" id="alterar-senha">
+								<img src="images/icone-cadeado.png" /> <a id="modalID"
+									class="alterar">Alterar Senha</a>
+							</div>
+						</div>
+					</div>
+
+					<div id="area-cadastro-formulario">
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="Nome" id="texto-label">Nome</label>
+							<div class="col-md-8">
+								<div class="wrap-input100 validate-input m-b-26">
+									<h:inputText styleClass="input100" type="text" name="nome"
+										pt:placeholder="" />
+									<span class="focus-input100"></span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Text input-->
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="Matricula"
+								id="texto-label">Matricula</label>
+							<div class="col-md-8">
+								<div class="wrap-input100 validate-input m-b-26">
+									<h:inputText styleClass="input100" type="text" name="matricula"
+										pt:placeholder="" />
+									<span class="focus-input100"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="Nascimento"
+								id="texto-label">Nascimento</label>
+							<div class="col-md-5">
+								<div class="wrap-input100 validate-input m-b-26">
+									<h:inputText styleClass="input100" type="text"
+										name="nascimento" pt:placeholder="" />
+									<span class="focus-input100"></span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Multiple Radios (inline) -->
+
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="radios"
+								id="texto-label-sexo">Sexo</label>
+							<div class="col-md-8">
+								<label class="radio-inline" for="radios-0" id="label-sexo">
+									<input name="sexo" id="sexo" value="feminino" type="radio" />
+									Feminino
+								</label> <label class="radio-inline" for="radios-1" id="label-sexo">
+									<input name="sexo" id="sexo" value="masculino" type="radio" />
+									Masculino
+								</label>
+							</div>
+						</div>
+
+						<!-- Prepended text-->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="prependedtext"
+								id="texto-label">Telefone</label>
+							<div class="col-md-5">
+								<div class="input-group">
+									<div class="wrap-input100 validate-input m-b-26">
+										<h:inputText styleClass="input100" type="text" name="telefone"
+											pt:placeholder="" />
+										<span class="focus-input100"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Prepended text-->
+						<div class="form-group">
+
+							<label class="col-md-3 control-label" for="prependedtext"
+								id="texto-label">Email</label>
+							<div class="col-md-5">
+								<div class="input-group">
+									<div class="wrap-input100 validate-input m-b-26">
+										<h:inputText styleClass="input100" type="text" name="email"
+											pt:placeholder="" />
+										<span class="focus-input100"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+
+						<!-- Select Basic -->
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="Cargo"
+								id="texto-label-cargo">Cargo</label>
+							<div class="col-md-5">
+								<select required="" id="Cargo" name="Cargo" class="form-control">
+									<option value="Seelecione">Selecione</option>
+									<option value="Solteiro(a)">Solteiro(a)</option>
+									<option value="Casado(a)">Casado(a)</option>
+									<option value="Divorciado(a)">Divorciado(a)</option>
+									<option value="Viuvo(a)">Viuvo(a)</option>
+								</select>
+							</div>
+						</div>
+
+
+						<div class="form-group" id="area-botao">
+
+							<div class="col-md-4">
+
+								<button class="login100-form-btn">Salvar</button>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	</section>
+
+
+	<div id="modal-principal" class="modal-container">
+		<div class="modal-troca-senha">
+
+			<div id="banner2">
+				<p class="titulo">Alteração da Senha</p>
+				<div class="fechar-modal"
+					style="background-image: url(images/icone-fechar-modal.png);">
+				</div>
+			</div>
+
+			<div class="form-row area-alteracao-senha">
+				<div class="form-group col-md-6">
+					<label for="inputSenhaAntiga">Senha Antiga</label>
+					<h:inputText type="text" styleClass="form-control"
+						id="inputSenhaAntiga" />
+				</div>
+				<div class="form-group col-md-6">
+					<label for="inputSenhaNova">Nova Senha </label>
+					<h:inputText type="password" styleClass="form-control"
+						id="inputSenhaNova" />
+				</div>
+			</div>
+
+			<div class="form-group" id="area-botao-modal">
+
+				<div class="col-md-3">
+
+					<input type="button" value="Salvar" class="login100-form-btn" />
+
+				</div>
+
+				<div class="col-md-4">
+
+					<input type="button" value="Cancelar" class="login100-form-btn" />
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script>
+       
+       function iniciaModal(modalID) {
+           const modal = document.getElementById(modalID);
+           modal.classList.add('mostrar');
+           modal.addEventListener('click', (e) => {
+               if(e.target.id == modalID || e.target.className == 'fechar') {
+                   modal.classList.remove('mostrar');
+               }
+           });
+       }
+   
+       const cadastrar = document.querySelector('.item .alterar');
+       cadastrar.addEventListener('click', () => iniciaModal('modal-principal'));
+   
+       </script>
+
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>

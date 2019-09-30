@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<head>
+
+<title>Cadastro</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css"
+	href="resources/css/cadastro-objetos.css" />
+<link rel="stylesheet" type="text/css"
+	href="resources/css/menu-abas.css" />
+
+<!--===============================================================================================-->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<section class="cadastro"> 
+	<h:form class="form-horizontal">
+		<div class="container">
+
+			<div class="row" id="linha-cadastro">
+
+				<div class="panel-body" id="area-cadastro">
+					<div id="titulo">
+						<img src="images/icone-tela-objeto.png" /> Objetos
+					</div>
+
+					<!-- Text input-->
+					<div id="area-pesquisa">
+						<div id="elementos">
+							<div class="form-group">
+								<label class="col-md-1 control-label" for="Selecione"
+									id="texto-label">Selecione<h11>*</h11></label> <label
+									class="col-md-1"></label> <label class="col-md-3 control-label"
+									for="Contenha" id="texto-label2">Que Contenha<h11>*</h11></label>
+
+								<br />
+							</div>
+
+							<div class="form-group">
+								<div class="col-md-3">
+									<select id="Objetos" name="Objetos" class="form-control">
+										<option value=""></option>
+										<option value="Categoria">Categoria</option>
+										<option value="Cor">Cor</option>
+									</select>
+								</div>
+
+
+								<div class="col-md-5">
+									<h:inputText styleClass="form-control" type="text"
+										name="pesquisa"
+										pt:placeholder="Deixe vazio para pesquisar todos" />
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+					<div id="area-botao">
+
+						<div class="item" id="botao1">
+							<img src="images/icone-search.png" />
+							<h:commandButton styleClass="pesquisar botoes" value="Pesquisar" />
+
+						</div>
+
+						<div class="item" id="botao2">
+							<img src="images/icone-adicionar2.png" /> <input type="button"
+								class="adicionar botoes" value="Cadastrar" />
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</h:form> 
+</section>
+
+
+	<div id="modal-principal" class="modal-container">
+		<div class="objetos-modal">
+			<div id="banner">
+				<p class="titulo">Cadastro de Objetos</p>
+				<div class="fechar-modal"
+					style="background-image: url(images/icone-fechar-modal.png);">
+				</div>
+			</div>
+			<form>
+				<div class="form-row area-cadastro-modal-objetos">
+					<div class="form-row">
+						<div class="form-group col-md-4">
+							<label for="inputCategoria">Categoria</label> <select
+								id="inputCategoria" class="form-control">
+								<option>Escolher...</option>
+								<option>...</option>
+							</select>
+						</div>
+						
+						<div class="form-group col-md-4">
+							<label for="inputCor">Cor</label>
+							<h:inputText type="password" styleClass="form-control"
+								id="inputCor" pt:placeholder="Ex: Preto" />
+						</div>
+
+						<div class="form-group col-md-4">
+							<label for="inputTamanho">Tamanho</label>
+							<h:inputText type="text" styleClass="form-control"
+								id="inputTamanho" pt:placeholder="Ex: 10 cm" />
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group col-md-4">
+							<label for="inputLocal">Local</label>
+							<h:inputText type="text" styleClass="form-control"
+								id="inputLocal" placeholder="Ex: Aquário" />
+						</div>
+
+						<div class="form-group col-md-4">
+							<label for="inputTurno">Turno</label>
+							<h:inputText type="text" styleClass="form-control"
+								id="inputTurno" placeholder="Ex: Noite" />
+						</div>
+						<div class=" form-group col-md-4">
+							<div class="form-group">
+								<label for="datetimepicker9">Data</label>
+								<div class='input-group date' id='datetimepicker9'>
+									<input type='text' class="form-control" /> <span
+										class="input-group-addon"> <span
+										class="glyphicon glyphicon-calendar"> </span>
+									</span>
+								</div>
+							</div>
+							<script type="text/javascript">
+                          $(function () {
+                              $('#datetimepicker9').datetimepicker({
+                                  viewMode: 'years'
+                              });
+                          });
+                      </script>
+						</div>
+
+						<div class="form-row">
+							<div class="form-group col-md-12">
+								<label for="inputInfoComplementar">Informações
+									Complementares</label>
+								<h:inputText type="text" styleClass="form-control"
+									id="inputInfoComplementar" pt:placeholder="Ex: Objeto com..." />
+							</div>
+						</div>
+					</div>
+
+					<div class="titulo-entregador">
+						<p>Entregador</p>
+					</div>
+
+					<div class="form-row identificacao">
+						<div class="form-group col-md-2">
+							<label for="inputId">Identificação</label>
+							<h:inputText type="text" styleClass="form-control" id="inputId"
+								placeholder="Ex: 123" />
+						</div>
+						<div class="form-group col-md-2">
+							<input type="button" value="Pesquisar" class="" />
+						</div>
+
+						<div class="form-group col-md-2">
+							<p class="cadastrar-entregador">Cadastrar ...</p>
+						</div>
+
+						<div class="form-group col-md-6"></div>
+					</div>
+
+					<div class="cadastro-entregador" style="display: none;">
+						<div class="form-row">
+							<div class="form-group col-md-4">
+								<label for="inputNome">Nome</label>
+								<h:inputText type="text" styleClass="form-control"
+									id="inputNome" pt:placeholder="Ex: João..." />
+							</div>
+							<div class="form-group col-md-8">
+								<label for="inputSobrenome">Sobrenome</label>
+								<h:inputText type="text" class="form-control"
+									id="inputSobrenome" pt:placeholder="Ex: Maciel da silva" />
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-4">
+								<label for="inputTelefone01">Telefone 01</label>
+								<h:inputText type="text" styleClass="form-control"
+									id="inputTelefone01" placeholder="Ex:" />
+							</div>
+
+							<div class="form-group col-md-4">
+								<label for="inputTelefone02">Telefone 02</label>
+								<h:inputText type="text" styleClass="form-control"
+									id="inputTelefone02" pt:placeholder="Ex:" />
+							</div>
+
+							<div class="form-group col-md-4">
+								<label for="inputTurma">Turma</label>
+								<h:inputText type="text" styleClass="form-control"
+									id="inputTurma" pt:placeholder="Ex: 6° ADS" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-row area-botao-salvar">
+					<div class="form-group col-md-2">
+						<input type="button" value="Salvar" class="login100-form-btn" />
+					</div>
+					<div class="form-group col-md-2">
+						<input type="button" value="Cancelar" class="login100-form-btn" />
+					</div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+
+
+	<script>
+
+    function iniciaModal(modalID) {
+      const modal = document.getElementById(modalID);
+      modal.classList.add('mostrar');
+      modal.addEventListener('click', (e) => {
+        if (e.target.id == modalID || e.target.className == 'fechar') {
+          modal.classList.remove('mostrar');
+        }
+      });
+    }
+
+    const cadastrar = document.querySelector('.cadastro .adicionar');
+    cadastrar.addEventListener('click', () => iniciaModal('modal-principal'));
+
+
+    $(document).on('click','.cadastrar-entregador',function(){
+	$('.identificacao').fadeOut('slow', function(){
+		$('.cadastro-entregador').fadeIn();
+	});
+});
+
+  </script>
+
+
+</body>
+
+</html>
