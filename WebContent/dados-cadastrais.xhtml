@@ -8,11 +8,12 @@
 <head>
 
 <title>Dados Cadastrais</title>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 <link rel="stylesheet" type="text/css"
 	href="resources/css/dados-cadastrais.css" />
+	<link rel="stylesheet" href="resources/css/menu.css" />
 <!--===============================================================================================-->
 
 <!-- Latest compiled and minified CSS -->
@@ -31,7 +32,11 @@
 <body>
 	<section id="section-cadastro">
 
-	<form class="form-horizontal">
+	<div class="menu-incluso">
+		<ui:include src="menu.xhtml"/>
+		</div>
+	
+	<h:form class="form-horizontal">
 		<div class="container">
 
 			<div class="row" id="linha-cadastro">
@@ -40,11 +45,11 @@
 					<div id="banner">
 						<div class="container-flex">
 							<div class="item">
-								<img src="images/icone-dados-cadastrais.png" /> Dados
-								Cadastrais
+								<h4>Dados Cadastrais</h4>
 							</div>
 							<div class="item" id="alterar-senha">
-								<img src="images/icone-cadeado.png" /> <a id="modalID"
+								<img src="images/icone-cadeado.png"  style="margin-left: 42px;"/> 
+								<a id="modalID"
 									class="alterar">Alterar Senha</a>
 							</div>
 						</div>
@@ -137,8 +142,6 @@
 						</div>
 
 
-
-
 						<!-- Select Basic -->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="Cargo"
@@ -146,10 +149,10 @@
 							<div class="col-md-5">
 								<select required="" id="Cargo" name="Cargo" class="form-control">
 									<option value="Seelecione">Selecione</option>
-									<option value="Solteiro(a)">Solteiro(a)</option>
-									<option value="Casado(a)">Casado(a)</option>
-									<option value="Divorciado(a)">Divorciado(a)</option>
-									<option value="Viuvo(a)">Viuvo(a)</option>
+									<option value="Administrativo">Administrativo</option>
+									<option value="Professor">Professor</option>
+									<option value="Coordenador">Coordenador</option>
+									<option value="Diretor">Diretor</option>
 								</select>
 							</div>
 						</div>
@@ -162,12 +165,18 @@
 								<button class="login100-form-btn">Salvar</button>
 
 							</div>
+							
+							<div class="col-md-4">
+
+								<button class="login100-form-btn">Cancelar</button>
+
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</form>
+	</h:form>
 
 	</section>
 

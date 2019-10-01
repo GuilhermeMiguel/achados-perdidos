@@ -8,13 +8,14 @@
 <head>
 
 <title>Cadastro</title>
-<meta charset="UTF-8" />
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <link rel="stylesheet" type="text/css"
 	href="resources/css/cadastro-objetos.css" />
 <link rel="stylesheet" type="text/css"
 	href="resources/css/menu-abas.css" />
+<link rel="stylesheet" href="resources/css/menu.css" />
 
 <!--===============================================================================================-->
 
@@ -32,7 +33,12 @@
 </head>
 
 <body>
-	<section class="cadastro"> 
+	<section class="cadastro">
+
+	<div class="menu-incluso">
+		<ui:include src="menu.xhtml" />
+	</div>
+
 	<h:form class="form-horizontal">
 		<div class="container">
 
@@ -93,8 +99,7 @@
 				</div>
 			</div>
 		</div>
-	</h:form> 
-</section>
+	</h:form> </section>
 
 
 	<div id="modal-principal" class="modal-container">
@@ -115,7 +120,7 @@
 								<option>...</option>
 							</select>
 						</div>
-						
+
 						<div class="form-group col-md-4">
 							<label for="inputCor">Cor</label>
 							<h:inputText type="password" styleClass="form-control"
@@ -235,6 +240,8 @@
 					</div>
 				</div>
 
+				<div class="ja-cadastrado" style="display: none;">Já
+					cadastrado?</div>
 			</form>
 		</div>
 	</div>
@@ -258,10 +265,17 @@
 
 
     $(document).on('click','.cadastrar-entregador',function(){
-	$('.identificacao').fadeOut('slow', function(){
-		$('.cadastro-entregador').fadeIn();
+		$('.identificacao').fadeOut('slow', function(){
+			$('.cadastro-entregador').fadeIn();
+		});
 	});
-});
+    
+    $(document).on('click','.ja-cadastrado',function(){
+    	$('.cadastro-entregador').fadeOut('slow', function(){
+    		$('.identificacao').fadeIn();
+    	});
+    });
+
 
   </script>
 

@@ -50,6 +50,10 @@ body, html {
     flex-direction: row;
 }
 
+.form-horizontal {
+	    margin-left: 120px;
+}
+
 .cadastro {
   height: 100%;
   width: 100%;
@@ -160,7 +164,7 @@ background-color: #694077;
 #titulo {
   position: absolute;
   top: 10%;
-  left: 16%;
+  left: 21%;
 }
 
 

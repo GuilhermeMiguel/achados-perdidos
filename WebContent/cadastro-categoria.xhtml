@@ -7,32 +7,35 @@
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <head>
 <title>Cadastro Categoria</title>
-<meta charset="UTF-8" />
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
 <link rel="stylesheet" type="text/css"
 	href="resources/css/cadastro-categoria.css" />
+<link rel="stylesheet" href="resources/css/menu.css" />
 <!--===============================================================================================-->
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
 
 <!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<section class="cadastro"> <h:form class="form-horizontal">
+	<section class="cadastro">
+
+	<div class="menu-incluso">
+		<ui:include src="menu.xhtml" />
+	</div>
+
+	<h:form class="form-horizontal">
 		<div class="container">
-
 			<div class="row" id="linha-cadastro">
-
+				
 				<div class="panel-body" id="area-cadastro">
 					<div id="titulo">
 						<img src="images/icone-tela-categoria.png" /> Categoria
@@ -43,8 +46,11 @@
 						<div id="elementos">
 							<div class="form-group">
 								<label class="col-md-1 control-label" for="Selecione"
-									id="texto-label">Selecione<h11>*</h11></label> <label
-									class="col-md-1"></label> <label class="col-md-3 control-label"
+									id="texto-label">Selecione<h11>*</h11></label> 
+									<label class="col-md-1">
+									
+									</label> 
+									<label class="col-md-3 control-label"
 									for="Contenha" id="texto-label2">Que Contenha<h11>*</h11>
 								</label> <br />
 							</div>
@@ -58,7 +64,6 @@
 									</select>
 								</div>
 
-
 								<div class="col-md-5">
 									<h:inputText class="form-control" type="text" name="pesquisa"
 										pt:placeholder="Deixe vazio para pesquisar todos" />
@@ -68,30 +73,26 @@
 					</div>
 
 					<div id="area-botao">
-
 						<div class="item" id="botao1">
-							<img src="images/icone-search.png" /> <input type="button"
-								value="Pesquisar" class="pesquisar botoes" />
+							<img src="images/icone-search.png" /> 
+								<input type="button" value="Pesquisar" class="pesquisar botoes" />
 						</div>
-
 						<div class="item" id="botao2">
-							<img src="images/icone-adicionar2.png" /> <input type="button"
-								value="Cadastrar" class="adicionar botoes" />
+							<img src="images/icone-adicionar2.png" /> 
+								<input type="button" value="Cadastrar" class="adicionar botoes" />
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</h:form> </section>
+	</h:form> 
+</section>
 
 	<div id="modal-principal" class="modal-container">
 		<div class="modal-categoria">
-
-
 			<div id="banner">
 				<p class="titulo">Cadastro de categoria</p>
-				<div class="fechar-modal"
-					style="background-image: url(images/icone-fechar-modal.png);">
+				<div class="fechar-modal" style="background-image: url(images/icone-fechar-modal.png);">
 				</div>
 			</div>
 
@@ -101,29 +102,23 @@
 					<h:inputText type="text" styleClass="form-control" id="inputId"
 						pt:placeholder="Id..." />
 				</div>
+				
 				<div class="form-group col-md-6">
 					<label for="inputCategoria">Categoria</label>
 					<h:inputText type="text" styleClass="form-control"
 						id="inputCategoria" pt:placeholder="Ex: Relógio" />
 				</div>
-
 			</div>
 
 			<div class="form-group" id="area-botao-modal">
-
 				<div class="col-md-3">
-
 					<input type="button" value="Salvar" class="login100-form-btn" />
-
 				</div>
 
 				<div class="col-md-4">
-
 					<input type="button" value="Cancelar" class="login100-form-btn" />
-
 				</div>
 			</div>
-
 		</div>
 	</div>
 

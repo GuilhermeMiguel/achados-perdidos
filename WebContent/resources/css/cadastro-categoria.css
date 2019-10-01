@@ -41,7 +41,9 @@ body, html {
   width: 100vw;
 }
 
-
+.form-horizontal {
+	margin-left: 120px;
+}
 
 #linha-cadastro {
     margin-top: 5%;
@@ -72,8 +74,7 @@ body, html {
 }
 
 #botao1:hover, #botao2:hover{
-background-color: #694077;
-
+ background-color: #694077;
 }
 
 .item { /*Corresponde aos botoes*/
@@ -81,11 +82,10 @@ background-color: #694077;
 }
 
 #titulo {
-  position: absolute;
+ position: absolute;
   top: 10%;
-  left: 16%;
+  left: 21%;
 }
-
 
 .botoes {
   height: 40px !important;
@@ -114,6 +114,7 @@ background-color: #694077;
     display: flex;
     flex-direction: row;
 }
+
 #area-cadastro {
     width: 90%;
     margin-left: -56px;
@@ -123,7 +124,6 @@ background-color: #694077;
     margin-left: 10%;
     padding: 5%;
     box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
- 
 }
 
 .modal-container{
@@ -148,42 +148,42 @@ background-color: #694077;
 
 .modal-categoria{
   background-color: #FFF;
-    width: 600px;
-    height: 200px;
-    box-shadow: 4px 4px 25px rgba(0,0,0,0.5);
+  width: 600px;
+  height: 200px;
+  box-shadow: 4px 4px 25px rgba(0,0,0,0.5);
 }
 
 #banner {
   width: 100%;
-    height: 30px;
-    background-color: rgba(54,84,99, 1);
-    z-index: 1;
-  }
+  height: 30px;
+  background-color: rgba(54,84,99, 1);
+  z-index: 1;
+}
 
-  #banner img {
-    margin-left: 90%;
-    margin-top: 40px;
-  }
+ #banner img {
+   margin-left: 90%;
+   margin-top: 40px;
+}
 
 .modal-container.mostrar {
-    display: flex;
+   display: flex;
 }
 
 .mostrar .modal-categoria {
-    animation: modal-categoria .3s;
+   animation: modal-categoria .3s;
 }
 
 
 @keyframes modal-categoria {
-    from {
+   from {
         opacity: 0;
         transform: translate3d(0, -60px, 0);
-    }
+   }
 
-    to {
+   to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
-    }
+   }
 }
 
 .fechar {
@@ -196,8 +196,6 @@ background-color: #694077;
     border: 4px solid white;
     cursor: pointer;
 }
-
-
 
 .fechar-modal{
   position: relative;
@@ -218,10 +216,10 @@ background-color: #694077;
   height: 30px;
 }
 
-
 .fechar-modal:hover {
   background-color: #d45454;
 }
+
 .titulo{
   z-index: 1;
   position: relative;
@@ -241,10 +239,10 @@ background-color: #694077;
   margin-left: 4%;
 }
 
-
 #area-botao-modal {
   margin-top: 22%;
 }
+
 /*------------------------------------------------------------------
 [ Button ]*/
 
@@ -267,6 +265,7 @@ background-color: #694077;
 .login100-form-btn:hover {
   background-color: #694077;
 }
+
 /*---------------------------------------------
 SEGUNDO MODAL
 ---------------------------------------------*/
@@ -274,21 +273,17 @@ SEGUNDO MODAL
   margin-top: -10%;
 }
 
-
-
 /*---------------------------------------------*/
 input {
 	outline: none;
 	border: none;
 }
 
-
 .wrap-input100 {
   width: 90%;
   position: relative;
   border-bottom: 1px solid #b2b2b2;
 }
-
 
 .input100 {
   font-family: Poppins-Regular;
@@ -334,7 +329,6 @@ input.input100 {
   height: 45px;
 }
 
-
 .input100:focus + .focus-input100::before {
   width: 100%;
 }
@@ -349,15 +343,15 @@ input.input100 {
 @media (max-width: 576px) {
   .login100-form {
     padding: 43px 15px 57px 117px;
-  }
+ }
 }
 
 @media (max-width: 480px) {
-  .login100-form {
+ .login100-form {
     padding: 43px 15px 57px 15px;
-  }
+ }
 
-  .label-input100 {
+ .label-input100 {
     text-align: left;
     position: unset;
     top: unset;
@@ -366,6 +360,7 @@ input.input100 {
     padding: 0 5px;
   }
 }
+
 @media (max-width: 992px) {
   .alert-validate::before {
     visibility: visible;

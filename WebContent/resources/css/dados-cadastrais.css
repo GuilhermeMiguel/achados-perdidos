@@ -42,9 +42,12 @@ body, html {
 #section-cadastro {
   height: 100%;
   width: 100%;
-  background-color: #ebeeef;
-  
+  background-color: #ebeeef;  
   }
+  
+.form-horizontal {
+	margin-left: 222px;
+}
   
 #texto-label {
   font-family: Poppins-Regular;
@@ -230,9 +233,11 @@ margin-top: 22%;
 
 .item {
   margin-top: 2%;
+  width: 300px;
 }
 #alterar-senha {
-  margin-left: 70%;
+  margin-left: 60%;
+  margin-top: 4% !important;
  
   }
 
