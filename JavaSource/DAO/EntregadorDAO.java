@@ -77,7 +77,6 @@ public class EntregadorDAO {
 				Ent.setTelefone02(rs.getString("telefone02"));
 				Ent.setTurma(rs.getString("turma"));
 				Ent.setTurno(rs.getString("turno"));
-				
 			}
 
 		} catch (SQLException ex) {
@@ -95,18 +94,19 @@ public class EntregadorDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
-		String sql = "UPDATE entregador SET documento = ?, nome = ?, cor = ?, sobrenome = ?,"
+		String sql = "UPDATE entregador SET documento = ?, nome = ?, sobrenome = ?,"
 				+ "telefone01 = ?, telefone02 = ?, turma = ?, turno = ? WHERE id = ?";
 		
 		try {
 			stmt = con.prepareStatement(sql);
-			stmt.setString(1, e.getNome());
-			stmt.setString(2, e.getSobrenome());
-			stmt.setString(3, e.getTelefone01());
-			stmt.setString(4, e.getTelefone02());
-			stmt.setString(5, e.getTurma());
-			stmt.setString(6, e.getTurno());
-			stmt.setInt(7, e.getId());
+			stmt.setString(1, e.getDocumento());
+			stmt.setString(2, e.getNome());
+			stmt.setString(3, e.getSobrenome());
+			stmt.setString(4, e.getTelefone01());
+			stmt.setString(5, e.getTelefone02());
+			stmt.setString(6, e.getTurma());
+			stmt.setString(7, e.getTurno());
+			stmt.setInt(8, e.getId());
 			stmt.executeUpdate();
 			System.out.println("Atualizado com sucesso");
 

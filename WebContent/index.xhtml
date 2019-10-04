@@ -37,7 +37,7 @@
 
 					<div class="caixa-input validate-input m-b-18" id="caixa-senha" data-validate="Password is required">
 						<span class="label-input100">Senha</span>
-						<h:inputText  styleClass="input100" type="password" name="pass" pt:placeholder="Digite sua senha" />
+						<h:inputSecret  styleClass="input100" name="pass" pt:placeholder="Digite sua senha" />
 						<span class="focus-input100"></span>
 					</div>
 
@@ -56,7 +56,7 @@
                         </div>
                         
                         <div class="botoes-esqueci-senha">
-						<button class="enviar-email" style="display: none;">Enviar email</button>
+						<h:commandButton value="Enviar e-mail" styleClass="enviar-email" style="display: none;"/>
 						</div>
 						
 						<a class="voltar" style="display: none;"> Voltar</a>
@@ -69,34 +69,15 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Login
-						</button>
+						<h:commandButton styleclass="login100-form-btn" value="Login" />
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
 
-	<script src="js/main.js"></script>
-    <script>
-    $(document).on('click','.texto-esqueceu',function(){
-	$('.login100-form-btn').css("display","none");
-	$('.input-checkbox100, .label-checkbox100, .texto-esqueceu, #caixa-senha').fadeOut('slow', function(){
-		$('.mensagem, .enviar-email, .voltar').fadeIn();
-		$(".formulario-titulo-1").text("Recuperar Senha");
-	});
-});
+	<script src="resources/js/main.js"></script>
 
-$(document).on('click','.voltar',function(){
-	$('.mensagem, .enviar-email, .voltar').fadeOut('slow', function(){
-		$('.label-checkbox100, .texto-esqueceu, #caixa-senha, .login100-form-btn').fadeIn();
-		$(".formulario-titulo-1").text("Login");
-	});
-});
-
-
-</script>
 </body>
 
 </html>

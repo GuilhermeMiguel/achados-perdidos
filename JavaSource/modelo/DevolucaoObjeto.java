@@ -11,6 +11,7 @@ public class DevolucaoObjeto {
 	private String telefoneDono02;
 	private String turmaDono;
 	private String dataDevolucao;
+	private String status;
 	
 	
 	public int getId() {
@@ -67,7 +68,11 @@ public class DevolucaoObjeto {
 	public void setDataDevolucao(String dataDevolucao) {
 		this.dataDevolucao = dataDevolucao;
 	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-	
-	
 }

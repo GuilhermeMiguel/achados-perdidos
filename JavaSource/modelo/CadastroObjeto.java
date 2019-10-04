@@ -10,6 +10,7 @@ public class CadastroObjeto {
 	private String local;
 	private String turno;
 	private String infoComplementares;
+
 	
 	
 	
@@ -62,7 +63,5 @@ public class CadastroObjeto {
 	public void setInfoComplementares(String infoComplementares) {
 		this.infoComplementares = infoComplementares;
 	}
-
-	
 	
 }

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import connection.ConnectionFactory;
+import enuns.StatusObjeto;
 import modelo.CadastroObjeto;
 
 public class CadastroObjetoDAO {
@@ -71,7 +72,6 @@ public class CadastroObjetoDAO {
 			while (rs.next()) {
 
 				CadastroObjeto CadObj = new CadastroObjeto();
-
 				CadObj.setId(rs.getInt("id"));
 				CadObj.setIdEntregador(rs.getInt("identregador"));
 				CadObj.setCategoria(rs.getString("categoria"));
@@ -80,6 +80,7 @@ public class CadastroObjetoDAO {
 				CadObj.setLocal(rs.getString("local"));
 				CadObj.setTurno(rs.getString("turno"));
 				CadObj.setInfoComplementares(rs.getString("infoComplementares"));
+				CadObj.setStatus(StatusObjeto.Aguardando.toString());
 				CadastroObjetos.add(CadObj);
 			}
 
@@ -116,6 +117,7 @@ public class CadastroObjetoDAO {
 				CadObj.setLocal(rs.getString("local"));
 				CadObj.setTurno(rs.getString("turno"));
 				CadObj.setInfoComplementares(rs.getString("infoComplementares"));
+				CadObj.setStatus(rs.getString("status"));
 			}
 
 		} catch (SQLException ex) {
@@ -152,6 +154,7 @@ public class CadastroObjetoDAO {
 				CadObj.setLocal(rs.getString("local"));
 				CadObj.setTurno(rs.getString("turno"));
 				CadObj.setInfoComplementares(rs.getString("infoComplementares"));
+				CadObj.setStatus(rs.getString("status"));
 			}
 
 		} catch (SQLException ex) {
@@ -188,6 +191,7 @@ public class CadastroObjetoDAO {
 				CadObj.setLocal(rs.getString("local"));
 				CadObj.setTurno(rs.getString("turno"));
 				CadObj.setInfoComplementares(rs.getString("infoComplementares"));
+				CadObj.setStatus(rs.getString("status"));
 			}
 
 		} catch (SQLException ex) {
@@ -206,7 +210,7 @@ public class CadastroObjetoDAO {
 		PreparedStatement stmt = null;
 		
 		String sql = "UPDATE cadastroObjeto SET identregador = ?, categoria = ?, cor = ?, tamanho = ?,"
-				+ "local = ?, turno = ?, infoComplementares = ? WHERE id = ?";
+				+ "local = ?, turno = ?, infoComplementares = ?, status = ? WHERE id = ?";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -217,7 +221,30 @@ public class CadastroObjetoDAO {
 			stmt.setString(5, c.getLocal());
 			stmt.setString(6, c.getTurno());
 			stmt.setString(7, c.getInfoComplementares());
-			stmt.setInt(8, c.getId());
+			stmt.setString(8, c.getStatus());
+			stmt.setInt(9, c.getId());
+			stmt.executeUpdate();
+			System.out.println("Atualizado com sucesso");
+
+		} catch (SQLException ex) {
+			System.out.println("Erro ao atualizar: " + ex);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt);
+		}
+	}
+	
+	
+	public void alteraStatus(CadastroObjeto c) {
+
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		
+		String sql = "UPDATE cadastroObjeto SET status = ? WHERE id = ?";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, c.getStatus());
+			stmt.setInt(2, c.getId());
 			stmt.executeUpdate();
 			System.out.println("Atualizado com sucesso");
 

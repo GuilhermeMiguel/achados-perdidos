@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<div id="modal-principal" class="modal-container">
+	<div class="objetos-modal">
+		<div id="banner">
+			<p class="titulo">Cadastro de Objetos</p>
+			<div class="fechar-modal"
+				style="background-image: url(images/icone-fechar-modal.png);">
+			</div>
+		</div>
+
+		<div class="form-row area-cadastro-modal-objetos">
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="inputCategoria">Categoria</label> <select
+						id="inputCategoria" class="form-control">
+						<option>Escolher...</option>
+						<option>...</option>
+					</select>
+				</div>
+				<div class="form-group col-md-4">
+					<label for="inputCor">Cor</label>
+					<h:inputText type="password" styleClass="form-control"
+						id="inputCor" pt:placeholder="Ex: Preto" />
+				</div>
+
+
+
+				<div class="form-group col-md-4">
+					<label for="inputTamanho">Tamanho</label>
+					<h:inputText type="text" styleClass="form-control"
+						id="inputTamanho" pt:placeholder="Ex: 10 cm" />
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="inputLocal">Local</label>
+					<h:inputText type="text" styleClass="form-control" id="inputLocal"
+						pt:placeholder="Ex: Aquário" />
+				</div>
+
+				<div class="form-group col-md-4">
+					<label for="inputTurno">Turno</label>
+					<h:inputText type="text" styleClass="form-control" id="inputTurno"
+						pt:placeholder="Ex: Noite" />
+				</div>
+				<div class=" form-group col-md-4">
+					<div class="form-group">
+						<label for="datetimepicker9">Data</label>
+						<div class='input-group date' id='datetimepicker9'>
+							<input type='text' class="form-control" /> <span
+								class="input-group-addon"> <span
+								class="glyphicon glyphicon-calendar"> </span>
+							</span>
+						</div>
+					</div>
+					<script type="text/javascript">
+						$(function() {
+							$('#datetimepicker9').datetimepicker({
+								viewMode : 'years'
+							});
+						});
+					</script>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-12">
+						<label for="inputInfoComplementar">Informações Complementares</label> 
+							<h:inputText type="text" styleClass="form-control"
+							id="inputInfoComplementar" pt:placeholder="Ex: Objeto com..." />
+					</div>
+				</div>
+			</div>
+
+			<div class="titulo-entregador">
+				<h4>Entregador</h4>
+			</div>
+
+			<div class="form-row identificacao">
+				<div class="form-group col-md-4">
+					<label for="inputCampo">Campo</label>
+					 <select id="inputCampo"
+						class="form-control">
+						<option>Escolher...</option>
+						<option>Id</option>
+						<option>Sobrenome</option>
+					</select>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="inputValor">Valor</label>
+					 <h:inputText type="text" styleClass="form-control" id="inputValor" pt:placeholder="..." />
+				</div>
+				<div class="form-group col-md-2">
+					<h:commandButton value="Pesquisar" styleClass="pesquisar-entregador" />
+				</div>
+			</div>
+
+			<div class="cadastro-entregador" style="display: none;">
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputNome">Nome</label> 
+						<h:inputText type="text" styleClass="form-control" id="inputNome" pt:placeholder="Ex: João..." />
+					</div>
+					<div class="form-group col-md-8">
+						<label for="inputSobrenome">Sobrenome</label> 
+						<h:inputText type="text" styleClass="form-control" id="inputSobrenome" pt:placeholder="Ex: Maciel da silva" />
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputTelefone01">Telefone 01</label> 
+						<h:inputText type="text" styleClass="form-control" id="inputTelefone01"
+							pt:placeholder="Ex:" />
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="inputTelefone02">Telefone 02</label> 
+						<h:inputText type="text" styleClass="form-control" id="inputTelefone02"
+							pt:placeholder="Ex:" />
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="inputTurma">Turma</label> 
+						<h:inputText type="text" styleClass="form-control" id="inputTurma" pt:placeholder="Ex: 6° ADS" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row area-botao-salvar">
+			<div class="form-group col-md-4">
+				<h:commandButton value="Salvar" styleClass="login100-form-btn" />
+			</div>
+			<div class="form-group col-md-4">
+				<h:commandButton value="Cancelar" styleClass="login100-form-btn"
+					style="margin-left: -40%;" />
+			</div>
+		</div>
+	</div>
+
+
+	<div class="form-row area-botao-salvar-entregador"
+		style="display: none;">
+		<div class="form-group col-md-4">
+			<h:commandButton value="Salvar" styleClass="btn-salvar-entragador" />
+		</div>
+		<div class="form-group col-md-4">
+			<h:commandButton value="Cancelar" styleClass="btn-cancelar-entregador"
+				style="margin-left: 86%;" />
+		</div>
+	</div>
+
+
+	<div class="acoes-entregador">
+		<div class="cadastrar-entregador">
+			<p class="texto-cadastrar-entregador">Cadastrar...</p>
+		</div>
+
+		<div class="editar-entregador">
+			<p class="texto-editar-entregador">...Editar</p>
+		</div>
+	</div>
+	<div class="entregador-cadastrado" style="display: none;">
+		<p class="texto-entregador-cadastrado">Já cadastrado?</p>
+	</div>
+</div>
+
+</html>

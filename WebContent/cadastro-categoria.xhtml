@@ -75,11 +75,11 @@
 					<div id="area-botao">
 						<div class="item" id="botao1">
 							<img src="images/icone-search.png" /> 
-								<input type="button" value="Pesquisar" class="pesquisar botoes" />
+								<h:commandButton value="Pesquisar" styleClass="pesquisar botoes" />
 						</div>
 						<div class="item" id="botao2">
 							<img src="images/icone-adicionar2.png" /> 
-								<input type="button" value="Cadastrar" class="adicionar botoes" />
+								<h:commandButton value="Cadastrar" styleClass="adicionar botoes" />
 						</div>
 					</div>
 				</div>
@@ -87,7 +87,7 @@
 		</div>
 	</h:form> 
 </section>
-
+<h:form>
 	<div id="modal-principal" class="modal-container">
 		<div class="modal-categoria">
 			<div id="banner">
@@ -121,22 +121,7 @@
 			</div>
 		</div>
 	</div>
-
-	<script>
-    
-    function iniciaModal(modalID) {
-        const modal = document.getElementById(modalID);
-        modal.classList.add('mostrar');
-        modal.addEventListener('click', (e) => {
-            if(e.target.id == modalID || e.target.className == 'fechar') {
-                modal.classList.remove('mostrar');
-            }
-        });
-    }
-
-    const cadastrar = document.querySelector('.cadastro .adicionar');
-    cadastrar.addEventListener('click', () => iniciaModal('modal-principal'));
-
-    </script>
+</h:form>
+  <script src="resources/js/cadastro-categoria.js"></script>
 </body>
 </html>

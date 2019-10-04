@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import connection.ConnectionFactory;
-
+import enuns.StatusCategoria;
 import modelo.Categoria;
 
 
@@ -33,14 +33,13 @@ public class CategoriaDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
-		String sql = "INSERT INTO categoria (descricao) VALUES(?)";
+		String sql = "INSERT INTO categoria (descricao, status) VALUES(?, ?)";
 
 		try {
 
 			stmt = con.prepareStatement(sql);
-					
-			stmt.setInt(1, c.getId());
-			stmt.setString(2, c.getDescricao());
+			stmt.setString(1, c.getDescricao());
+			stmt.setString(2, StatusCategoria.Habilitada.toString());
 			stmt.executeUpdate();
 
 			System.out.println("Salvo com sucesso");
@@ -193,6 +192,26 @@ public class CategoriaDAO {
 			ConnectionFactory.closeConnection(con, stmt);
 		}
 
+	}
+	
+	public void desabilitaCategoria(Categoria c) {
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		
+		String sql = "UPDATE categoria SET status = ? WHERE id = ?";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, c.getStatus());
+			stmt.setInt(2, c.getId());
+			stmt.executeUpdate();
+			System.out.println("Atualizado com sucesso");
+
+		} catch (SQLException ex) {
+			System.out.println("Erro ao atualizar: " + ex);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt);
+		}
 	}
 }
 

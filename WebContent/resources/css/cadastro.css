@@ -3,6 +3,7 @@
 } */
 
 
+
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
@@ -79,7 +80,7 @@ body, html {
   height: 550px;
   background: #fff;
   border-radius: 0px 10px 10px 0px;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+ box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -89,8 +90,8 @@ body, html {
    background-size: cover;
    background-position: center;
    border-radius: 10px 0px 0px 10px;
-   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-   z-index: 1;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1;
 }
 
 
@@ -140,6 +141,7 @@ input {
   font-size: 15px;
   color: #555555;
   line-height: 1.2;
+
   display: block;
   width: 100%;
   background: transparent;
@@ -252,7 +254,6 @@ input.input100 {
     padding: 0 5px;
   }
 }
-
 @media (max-width: 992px) {
   .alert-validate::before {
     visibility: visible;

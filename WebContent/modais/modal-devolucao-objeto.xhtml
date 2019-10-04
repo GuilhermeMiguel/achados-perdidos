@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<div id="modal-secundario" class="modal-container">
+	<div class="objetos-devolucao-modal">
+		<div id="banner">
+			<p class="titulo">Devolucao de Objetos</p>
+			<div class="fechar-modal"
+				style="background-image: url(images/icone-fechar-modal.png);">
+			</div>
+		</div>
+		<form>
+			<div class="form-row area-devolucao-modal-objetos">
+				<div class="form-row">
+
+					<div class="form-group col-md-4">
+						<label for="inputIdDevolucao">Id Devolução</label> 
+						<h:inputText styleClass="form-control" id="inputIdDevolucao" pt:placeholder=""/>
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="inputIdObjeto">Id Objeto</label>
+						 <h:inputText styleClass="form-control" id="inputIdObjeto" pt:placeholder=""/>
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="inputDocumento">Documento</label> 
+						<h:inputText styleClass="form-control" id="inputDocumento"
+							pt:placeholder="Ex:Nº RA"/>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputNome">Nome</label>
+						 <h:inputText styleClass="form-control" id="inputNome" pt:placeholder="Ex: João"/>
+					</div>
+					<div class=" form-group col-md-6">
+						<label for="inputSobrenome">Sobrenome</label> 
+						<h:inputText type="text" styleClass="form-control" id="inputSobrenome"
+							pt:placeholder="Ex: de Almeida Santos"/>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputTelefone01">Telefone 01</label> 
+						<h:inputText styleClass="form-control" id="inputTelefone01" 
+							pt:placeholder="Ex: (11) 2564-8790"/>
+					</div>
+					<div class=" form-group col-md-6">
+						<label for="inputTelefone02">Telefone02</label> 
+						<h:inputText styleClass="form-control" id="inputTelefone02"
+							pt:placeholder="Ex: (11) 98965-2365"/>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputTurma">Turma</label> 
+						<h:inputText styleClass="form-control" id="inputTurma"
+							pt:placeholder="Ex: 5º Polimeros"/>
+					</div>
+					<div class=" form-group col-md-4">
+						<label for="inputTurno">Turno</label> 
+						<h:inputText styleClass="form-control" id="inputTurno"
+							pt:placeholder="Ex: (11) 98965-2365"/>
+					</div>
+
+
+					<div class=" form-group col-md-4">
+						<div class="form-group">
+							<label for="datetimepicker9">Data</label>
+							<div class='input-group date' id='datetimepicker9'>
+								<input type='text' class="form-control" /> <span
+									class="input-group-addon"> <span
+									class="glyphicon glyphicon-calendar"> </span>
+								</span>
+							</div>
+						</div>
+						<script type="text/javascript">
+							$(function() {
+								$('#datetimepicker9').datetimepicker({
+									viewMode : 'years'
+								});
+							});
+						</script>
+					</div>
+
+
+					<div class="form-row area-botao-salvar-devolucao">
+						<div class="form-group col-md-3" style="margin-top: 4%;">
+							<h:commandButton value="Salvar" styleClass="login100-form-btn"/>
+						</div>
+						<div class="form-group col-md-3" style="margin-top: 4%;">
+							<h:commandButton value="Cancelar" styleClass="login100-form-btn"/>
+						</div>
+					</div>
+				</div>
+				</div>
+		</form>
+	</div>
+</div>
+</html>

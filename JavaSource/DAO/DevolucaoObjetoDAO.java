@@ -25,7 +25,7 @@ public class DevolucaoObjetoDAO {
 		return instance;
 	}
 	
-	public void create(DevolucaoObjeto d) {
+	public void Devolucao(DevolucaoObjeto d) {
 
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;

@@ -49,8 +49,7 @@
 							</div>
 							<div class="item" id="alterar-senha">
 								<img src="images/icone-cadeado.png"  style="margin-left: 42px;"/> 
-								<a id="modalID"
-									class="alterar">Alterar Senha</a>
+								<a id="modalID"	class="alterar">Alterar Senha</a>
 							</div>
 						</div>
 					</div>
@@ -180,7 +179,7 @@
 
 	</section>
 
-
+<h:form>
 	<div id="modal-principal" class="modal-container">
 		<div class="modal-troca-senha">
 
@@ -208,38 +207,22 @@
 
 				<div class="col-md-3">
 
-					<input type="button" value="Salvar" class="login100-form-btn" />
+					<h:commandButton value="Salvar" styleClass="login100-form-btn" />
 
 				</div>
 
 				<div class="col-md-4">
 
-					<input type="button" value="Cancelar" class="login100-form-btn" />
+					<h:commandButton value="Cancelar" styleClass="login100-form-btn" />
 
 				</div>
 
 			</div>
 		</div>
 	</div>
-
-	<script>
+</h:form>
        
-       function iniciaModal(modalID) {
-           const modal = document.getElementById(modalID);
-           modal.classList.add('mostrar');
-           modal.addEventListener('click', (e) => {
-               if(e.target.id == modalID || e.target.className == 'fechar') {
-                   modal.classList.remove('mostrar');
-               }
-           });
-       }
-   
-       const cadastrar = document.querySelector('.item .alterar');
-       cadastrar.addEventListener('click', () => iniciaModal('modal-principal'));
-   
-       </script>
-
-	<script src="js/main.js"></script>
+ 	<script src="resources/js/dados-cadastrais.js"></script>
 
 </body>
 

@@ -50,16 +50,17 @@ body, html {
     flex-direction: row;
 }
 
-.form-horizontal {
-	    margin-left: 120px;
-}
-
 .cadastro {
   height: 100%;
   width: 100%;
   background-color: #ebeeef;
-  }
+
+}
   
+.form-horizontal {
+	margin-left: 130px;
+}
+
 #texto-label {
   font-family: Poppins-Regular;
   font-size: 15px;
@@ -88,73 +89,9 @@ body, html {
   font-weight: normal;
 }
 
-#area-cadastro-modal {
-    width: 110%;
-    height: 500px;
-    background: #fff;
-    border-radius: 10px 10px 0px 0px;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-    position: relative;
-}
 
-.objetos-modal{
-  box-shadow: 4px 4px 25px rgba(0,0,0,0.5);
-}
-
-#banner {
-  width: 100%;
-  height: 30px;
-  background-color: rgba(54,84,99, 1);
-  z-index: 1;
-  }
-
-#texto-label2 {
-  font-family: Poppins-Regular;
-  font-size: 15px;
-  color: #808080;
-  line-height: 2.2;
-  font-weight: normal;
-  margin-left: -2%;
- 
-}
-
-#texto-label-cor {
-  font-family: Poppins-Regular;
-  font-size: 15px;
-  color: #808080;
-  line-height: 2.2;
-  font-weight: normal;
-  margin-left: 12%;
-}
-
-.fechar-modal{
-  position: relative;
-  top: -40px;
-  margin-left: 746px;
-  width: 55px;
-  line-height: 30px;
-  font-size: 13px;
-  background: #BD5A5A;
-  color: transparent;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 2;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 12px;
-  height: 30px;
-}
-
-
-#botao1:hover, #botao2:hover, #botao3:hover{
+#botao1:hover, #botao2:hover{
 background-color: #694077;
-}
-
-#botao3 {
-  right: 0px;
-  position: absolute;
-  border: black;
 }
 
 .item { /*Corresponde aos botoes*/
@@ -164,9 +101,8 @@ background-color: #694077;
 #titulo {
   position: absolute;
   top: 10%;
-  left: 21%;
+  left: 22%;
 }
-
 
 .botoes {
   height: 40px !important;
@@ -195,6 +131,11 @@ background-color: #694077;
     display: flex;
     flex-direction: row;
 }
+
+#botao1, #botao2 {
+  cursor: pointer;
+}
+
 #area-cadastro {
     width: 90%;
     margin-left: -56px;
@@ -204,19 +145,21 @@ background-color: #694077;
     margin-left: 10%;
     padding: 5%;
     box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
- 
 }
 
 
+/*//////////////////////////////////////////////////////////////////
+[CONTROLE PAGINA TABELA]*/
+
 .alteracao-pagina-tabela{
-  background-color: #1b1919;
-  display: flex;
-  flex-direction: row;
-  box-shadow: 0px 0px 8px rgba(0,0,0,0.5);
-  position: relative;
-  margin-left: 16%;
-  margin-top: 4%;
-  width: 250px;
+    background-color: #1b1919;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.5);
+    position: relative;
+    margin-left: 16%;
+    margin-top: 4%;
+    width: 200px;
 }
 
 .botoes-controle-tabela{
@@ -229,7 +172,7 @@ background-color: #694077;
     cursor: pointer;
     display: flex;
     justify-content: center;
-    padding: 3px;
+    padding: 1px;
 }
 
 .botoes-controle-tabela p {
@@ -241,6 +184,71 @@ background-color: #694077;
 .botoes-controle-tabela:hover {
   background-color: #694077;
 }
+
+/*//////////////////////////////////////////////////////////////////
+[PRIMEIRO MODAL]*/
+
+#area-cadastro-modal {
+  width: 110%;
+  height: 500px;
+  background: #fff;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+}
+
+.objetos-modal{
+    box-shadow: 4px 4px 25px rgba(0,0,0,0.5);
+    background-color: white;
+    width: 800px;
+    height: 492px;
+}
+
+#banner {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(54,84,99, 1);
+    z-index: 1;
+}
+
+#texto-label2 {
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    color: #808080;
+    line-height: 2.2;
+    font-weight: normal;
+    margin-left: -2%;
+
+}
+
+#texto-label-cor {
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    color: #808080;
+    line-height: 2.2;
+    font-weight: normal;
+    margin-left: 12%;
+}
+
+.fechar-modal{
+    position: relative;
+    top: -40px;
+    margin-left: 746px;
+    width: 55px;
+    line-height: 30px;
+    font-size: 13px;
+    background: #BD5A5A;
+    color: transparent;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px;
+    height: 30px;
+}
+
 .modal-container{
     width: 100vw;
     height: 100vh;
@@ -253,7 +261,6 @@ background-color: #694077;
     justify-content: center;
     align-items: center;
 }
-
 
 .modal-container.mostrar {
     display: flex;
@@ -293,7 +300,6 @@ background-color: #694077;
   }
 }
 
-
 .fechar {
     position: absolute;
     top: 0px;
@@ -311,15 +317,10 @@ background-color: #694077;
   width: 82%;
 }
 
-.objetos-modal{
-  background-color: white;
-    width: 800px;
-    height: 540px;
-}
-
 .fechar-modal:hover {
   background-color: #d45454;
 }
+
 .titulo{
   z-index: 1;
   position: relative;
@@ -334,11 +335,76 @@ background-color: #694077;
   font-size: 15px;
 }
 
+.area-botao-salvar-entregador{
+  position: absolute;
+  margin-left: -17%;
+  margin-top: 18%;
+}
 
+.pesquisar-entregador, .btn-salvar-entragador, .btn-cancelar-entregador {
+  min-width: 100px;
+    height: 27px;
+    background-color: #555555;
+    border-radius: 10px;
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    margin-left: 10%;
+    margin-top: 35%;
+}
+
+.cadastrar-entregador {
+  position: absolute;
+  right: 32%;
+  bottom: 13%;
+}
+
+.editar-entregador {
+    position: absolute;
+    bottom: 13%;
+    right: 25%;
+}
+
+.texto-cadastrar-entregador, .texto-editar-entregador, .texto-entregador-cadastrado {
+  font-family: Poppins-Regular;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #999999;
+  text-decoration: none;
+  margin-top: 16%;
+  margin-left: 20px;
+}
+
+.pesquisar-entregador, .editar-entregador, .cadastrar-entregador, .texto-entregador-cadastrado:hover {
+  cursor: pointer;
+}
+
+.entregador-cadastrado {
+  position: absolute;
+  right: 22%;
+  bottom: 8%;
+}
 
 /*---------------------------------------------
 SEGUNDO MODAL
 ---------------------------------------------*/
+.area-devolucao-modal-objetos {
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 82%;
+}
+
+.objetos-devolucao-modal{
+  background-color: white;
+    width: 800px;
+    height: 465px;
+}
+
 .form-horizontal2 {
   margin-top: -10%;
 }
@@ -351,13 +417,11 @@ input {
 	border: none;
 }
 
-
 .wrap-input100 {
   width: 90%;
   position: relative;
   border-bottom: 1px solid #b2b2b2;
 }
-
 
 .input100 {
   font-family: Poppins-Regular;
@@ -402,7 +466,6 @@ input {
 input.input100 {
   height: 45px;
 }
-
 
 .input100:focus + .focus-input100::before {
   width: 100%;
