@@ -1,8 +1,13 @@
 package controle;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
 import DAO.CategoriaDAO;
 import modelo.Categoria;
 
+@ManagedBean
+@SessionScoped
 public class CategoriaController {
 
 	private Categoria categoria;

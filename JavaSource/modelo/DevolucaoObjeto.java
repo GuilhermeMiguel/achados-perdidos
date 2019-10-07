@@ -6,9 +6,8 @@ public class DevolucaoObjeto {
 	private int idObjeto;
 	private String documentoDono;
 	private String nomeDono;
-	private String sobrenomeDono;
-	private String telefoneDono01;
-	private String telefoneDono02;
+	private String telefoneDono;
+	private String celularDono;
 	private String turmaDono;
 	private String turnoDono;
 	private String dataDevolucao;
@@ -39,23 +38,18 @@ public class DevolucaoObjeto {
 	public void setNomeDono(String nomeDono) {
 		this.nomeDono = nomeDono;
 	}
-	public String getSobrenomeDono() {
-		return sobrenomeDono;
+	
+	public String getTelefoneDono() {
+		return telefoneDono;
 	}
-	public void setSobrenomeDono(String sobrenomeDono) {
-		this.sobrenomeDono = sobrenomeDono;
+	public void setTelefoneDono(String telefoneDono) {
+		this.telefoneDono = telefoneDono;
 	}
-	public String getTelefoneDono01() {
-		return telefoneDono01;
+	public String getCelularDono() {
+		return celularDono;
 	}
-	public void setTelefoneDono01(String telefoneDono01) {
-		this.telefoneDono01 = telefoneDono01;
-	}
-	public String getTelefoneDono02() {
-		return telefoneDono02;
-	}
-	public void setTelefoneDono02(String telefoneDono02) {
-		this.telefoneDono02 = telefoneDono02;
+	public void setCelularDono(String celularDono) {
+		this.celularDono = celularDono;
 	}
 	public String getTurmaDono() {
 		return turmaDono;

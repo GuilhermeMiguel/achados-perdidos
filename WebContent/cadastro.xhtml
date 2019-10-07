@@ -42,18 +42,17 @@
 						<div class="form-group">
 							<div class="col-md-11 control-label" id="texto-campo-obrigatorio">
 								<p class="help-block">
-									<h11>*</h11>
-									Campo Obrigatório
+									*Campo Obrigatório
 								</p>
 							</div>
 						</div>
 
 						<!-- Text input-->
 						<div class="form-group">
-							<label class="col-md-3 control-label texto-label" for="nome">Nome<h11>*</h11></label>
+							<label class="col-md-3 control-label texto-label" for="nome">Nome*</label>
 							<div class="col-md-8">
 								<div class="wrap-input100 validate-input m-b-26">
-									<h:inputText value="#{funcionarioController.funcionario.nome}" 
+									<h:inputText value="#{funcionariocontroller.funcionario.nome}" 
 											styleClass="input100" name="nome" pt:placeholder="Digite seu nome" />
 									<span class="focus-input100"></span>
 								</div>
@@ -62,10 +61,10 @@
 
 						<div class="form-group">
 							<label class="col-md-3 control-label texto-label"
-								for="nascimento">Nascimento<h11>*</h11></label>
+								for="nascimento">Nascimento*</label>
 							<div class="col-md-6">
 								<div class="wrap-input100 validate-input m-b-26">
-									<h:inputText value="#{funcionarioController.funcionario.nascimento}" 
+									<h:inputText value="#{funcionariocontroller.funcionario.nascimento}" 
 										styleClass="input100" name="nascimento" pt:placeholder="DD/MM/AAAA" />
 									<span class="focus-input100"></span>
 								</div>
@@ -76,25 +75,31 @@
 
 						<div class="form-group">
 							<label class="col-md-3 control-label texto-label-sexo"
-								for="radios">Sexo<h11>*</h11></label>
+								for="radios">Sexo*</label>
 							<div class="col-md-8">
-								<label class="radio-inline label-sexo sexo" for="radios-0">
-									<input type="radio" name="sexo" value="feminino"
-									required="true" /> Feminino
-								</label> <label class="radio-inline label-sexo sexo" for="radios-1">
-									<input type="radio" name="sexo" value="masculino" /> Masculino
-								</label>
+<!-- 								<label class="radio-inline label-sexo sexo" for="radios-0"> -->
+<!-- 									<input type="radio" name="sexo" value="feminino" -->
+<!-- 									required="true" /> Feminino -->
+<!-- 								</label> <label class="radio-inline label-sexo sexo" for="radios-1"> -->
+<!-- 									<input type="radio" name="sexo" value="masculino" /> Masculino -->
+<!-- 								</label> -->
+								<h:selectOneRadio value="#{funcionariocontroler.funcionario.sexo}" >
+								   			<f:selectItem itemValue="Feminino" itemLabel="Feminino" layout=" font-family: Poppins-Regular !important;
+   															font-size: 15px !important; color: #555555 !important;"/>
+								   			<f:selectItem itemValue="Masculino" itemLabel="Masculino" class="label-sexo"/>
+								   		</h:selectOneRadio>
+
 							</div>
 						</div>
 
 
 						<!-- Prepended text-->
 						<div class="form-group">
-							<label class="col-md-3 control-label texto-label" for="email">Email<h11>*</h11></label>
+							<label class="col-md-3 control-label texto-label" for="email">Email*</label>
 							<div class="col-md-6">
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
-										<h:inputText value="#{funcionarioController.funcionario.email}" 
+										<h:inputText value="#{funcionariocontroller.funcionario.email}" 
 											styleClass="input100" name="email" pt:placeholder="email@email.com" />
 										<span class="focus-input100"></span>
 									</div>
@@ -102,13 +107,25 @@
 							</div>
 						</div>
 						
+							<!-- Text input-->
+						<div class="form-group">
+							<label class="col-md-3 control-label texto-label" for="usuario">Usuário*</label>
+							<div class="col-md-6">
+								<div class="wrap-input100 validate-input m-b-26">
+									<h:inputText value="#{funcionariocontroller.funcionario.usuario}"  
+										styleClass="input100" name="usuario" pt:placeholder="Digite um nome de usuário" />
+									<span class="focus-input100"></span>
+								</div>
+							</div>
+						</div>
+						
 							<!-- Prepended text-->
 						<div class="form-group">
-							<label class="col-md-3 control-label texto-label" for="senha">Senha<h11>*</h11></label>
+							<label class="col-md-3 control-label texto-label" for="senha">Senha*</label>
 							<div class="col-md-6">
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
-										<h:inputSecret value="#{funcionarioController.funcionario.senha}" 
+										<h:inputSecret value="#{funcionariocontroller.funcionario.senha}" 
 											styleClass="input100" name="senha" pt:placeholder="" />
 										<span class="focus-input100"></span>
 									</div>
@@ -116,24 +133,13 @@
 							</div>
 						</div>
 						
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label texto-label" for="usuario">Usuário<h11>*</h11></label>
-							<div class="col-md-6">
-								<div class="wrap-input100 validate-input m-b-26">
-									<h:inputText value="#{funcionarioController.funcionario.usuario}"  
-										styleClass="input100" name="usuario" pt:placeholder="Digite um nome de usuário" />
-									<span class="focus-input100"></span>
-								</div>
-							</div>
-						</div>
 
 						<!-- Select Basic -->
 						<div class="form-group">
 							<label class="col-md-3 control-label texto-label-sexo"
-								for="cargo">Cargo<h11>*</h11></label>
+								for="cargo">Cargo*</label>
 							<div class="col-md-5">
-								<h:selectOneMenu value="#{funcionarioController.funcionario.cargo}" id="Cargo" 
+								<h:selectOneMenu value="#{funcionariocontroller.funcionario.cargo}" id="Cargo" 
 									name="cargo" class="form-control combobox-tamanho">
 									<f:selectItem itemValue="Selecione...."/>
 									<f:selectItem itemValue="Administrativo"/>

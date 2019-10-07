@@ -60,7 +60,7 @@
 							<label class="col-md-3 control-label" for="Nome" id="texto-label">Nome</label>
 							<div class="col-md-8">
 								<div class="wrap-input100 validate-input m-b-26">
-									<h:inputText value="#{funcionarioController.funcionario.nome}" 
+									<h:inputText value="#{funcionariocontroller.funcionario.nome}" 
 											styleClass="input100" name="nome" pt:placeholder="" />
 									<span class="focus-input100"></span>
 								</div>
@@ -73,7 +73,7 @@
 								id="texto-label">Nascimento</label>
 							<div class="col-md-5">
 								<div class="wrap-input100 validate-input m-b-26">
-									<h:inputText value="#{funcionarioController.funcionario.nascimento}" 
+									<h:inputText value="#{funcionariocontroller.funcionario.nascimento}" 
 										styleClass="input100" 	name="nascimento" pt:placeholder="" />
 									<span class="focus-input100"></span>
 								</div>
@@ -103,7 +103,7 @@
 							<div class="col-md-5">
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
-										<h:inputText value="#{funcionarioController.funcionario.telefone}"
+										<h:inputText value="#{funcionariocontroller.funcionario.telefone}"
 											 styleClass="input100" name="telefone" pt:placeholder="" />
 										<span class="focus-input100"></span>
 									</div>
@@ -119,7 +119,7 @@
 							<div class="col-md-5">
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
-										<h:inputText value="#{funcionarioController.funcionario.email}" 
+										<h:inputText value="#{funcionariocontroller.funcionario.email}" 
 											styleClass="input100" name="email" pt:placeholder="" />
 										<span class="focus-input100"></span>
 									</div>
@@ -134,7 +134,7 @@
 								id="texto-label">Usuário</label>
 							<div class="col-md-5">
 								<div class="wrap-input100 validate-input m-b-26">
-									<h:inputText value="#{funcionarioController.funcionario.usuario}" 
+									<h:inputText value="#{funcionariocontroller.funcionario.usuario}" 
 										styleClass="input100" name="usuario" pt:placeholder="" />
 									<span class="focus-input100"></span>
 								</div>
@@ -160,12 +160,12 @@
 						<div class="form-group" id="area-botao" style="margin-top: 8%;">
 
 							<div class="col-md-4">
-								<h:commandButton actionListener="#{funcionarioController.atualizaFuncionario}" 
+								<h:commandButton actionListener="#{funcionariocontroller.atualizaFuncionario}" 
 									styleClass="login100-form-btn" value="Salvar"/>
 							</div>
 							
 							<div class="col-md-4">
-								<h:commandButton actionListener="#{funcionarioController.limpaCampos}" 
+								<h:commandButton actionListener="#{funcionariocontroller.limpaCampos}" 
 									styleClass="login100-form-btn" style="margin-left: -40%;" value="Cancelar"/>
 							</div>
 						</div>
@@ -195,7 +195,7 @@
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputSenhaNova">Nova Senha </label>
-					<h:inputSecret value="#{funcionarioController.funcionario.senha}"
+					<h:inputSecret value="#{funcionariocontroller.funcionario.senha}"
 						styleClass="form-control" id="inputSenhaNova" />
 				</div>
 			</div>
@@ -203,7 +203,7 @@
 			<div class="form-group" id="area-botao-modal">
 
 				<div class="col-md-3">
-					<h:commandButton actionListener="#{funcionarioController.atualizaFuncionario}" value="Salvar" styleClass="login100-form-btn" />
+					<h:commandButton actionListener="#{funcionariocontroller.atualizaFuncionario}" value="Salvar" styleClass="login100-form-btn" />
 				</div>
 
 				<div class="col-md-4">

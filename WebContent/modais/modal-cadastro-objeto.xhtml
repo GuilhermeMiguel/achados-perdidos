@@ -21,20 +21,21 @@
 			<div class="form-row">
 				<div class="form-group col-md-4">
 					<label for="inputCategoria">Categoria</label> 
-					<h:selectOneMenu	id="inputCategoria" class="form-control combobox-tamanho">
+					<h:selectOneMenu value="#{objetocontroller.objeto.categoria}"
+						 id="inputCategoria" class="form-control combobox-tamanho">
 						<f:selectItem itemValue="Escolher..."/>
 						<f:selectItem itemValue="..."/>
 					</h:selectOneMenu>
 				</div>
 				<div class="form-group col-md-4">
 					<label for="inputCor">Cor</label>
-					<h:inputText value="#{objetoController.objeto.cor}" 
+					<h:inputText value="#{objetocontroller.objeto.cor}" 
 								styleClass="form-control" id="inputCor" pt:placeholder="Ex: Preto" />
 				</div>
 
 				<div class="form-group col-md-4">
 					<label for="inputTamanho">Tamanho</label>
-					<h:inputText value="#{objetoController.objeto.tamanho}" 
+					<h:inputText value="#{objetocontroller.objeto.tamanho}" 
 								styleClass="form-control" id="inputTamanho" pt:placeholder="Ex: 10 cm" />
 				</div>
 			</div>
@@ -42,38 +43,40 @@
 			<div class="form-row">
 				<div class="form-group col-md-4">
 					<label for="inputLocal">Local</label>
-					<h:inputText value="#{objetoController.objeto.local}" 
+					<h:inputText value="#{objetocontroller.objeto.local}" 
 								styleClass="form-control" id="inputLocal" pt:placeholder="Ex: Aquário" />
 				</div>
 
 				<div class="form-group col-md-4">
 					<label for="inputTurno">Turno</label>
-					<h:inputText value="#{objetoController.objeto.turno}" 
+					<h:inputText value="#{objetocontroller.objeto.turno}" 
 								styleClass="form-control" id="inputTurno" pt:placeholder="Ex: Noite" />
 				</div>
 				<div class=" form-group col-md-4">
 					<div class="form-group">
-						<label for="datetimepicker9">Data</label>
-						<div class='input-group date' id='datetimepicker9'>
-							<input type='text' class="form-control" /> <span
-								class="input-group-addon"> <span
-								class="glyphicon glyphicon-calendar"> </span>
-							</span>
-						</div>
+						<div class='input-group date' id='datetimepicker6'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
 					</div>
 					<script type="text/javascript">
-						$(function() {
-							$('#datetimepicker9').datetimepicker({
-								viewMode : 'years'
-							});
-						});
+					 $(function () {
+					        $('#datetimepicker6').datetimepicker();
+					       
+					        $("#datetimepicker6").on("dp.change", function (e) {
+					            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+					        });
+					        
+					    });
 					</script>
 				</div>
 
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="inputInfoComplementar">Informações Complementares</label> 
-							<h:inputText value="#{objetoController.objeto.infoComlementares}" 
+							<h:inputText value="#{objetocontroller.objeto.infoComlementares}" 
 										styleClass="form-control" id="inputInfoComplementar" 
 											pt:placeholder="Ex: Objeto com..." />
 					</div>

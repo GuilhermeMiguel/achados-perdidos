@@ -1,0 +1,17 @@
+package controle;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+import DAO.DashboardDAO;
+import modelo.Dashboard;
+
+@ManagedBean
+@SessionScoped
+public class DashboardController {
+
+	Dashboard dash = new Dashboard();
+	
+	private  DashboardDAO dashDAO = DashboardDAO.getInstance();
+
+}

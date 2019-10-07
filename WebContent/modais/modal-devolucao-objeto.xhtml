@@ -47,7 +47,7 @@
 					
 					<div class="form-group col-md-8">
 						<label for="inputNome">Nome</label>
-						 <h:inputText value="#{devolucaoController.objeto.sobrenomeDono}" 
+						 <h:inputText value="#{devolucaoController.objeto.nomeDono}" 
 						 		styleClass="form-control" id="inputNome" pt:placeholder="Ex: João"/>
 					</div>
 					
@@ -56,7 +56,7 @@
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="inputTelefone01">Telefone</label> 
-						<h:inputText value="#{devolucaoController.objeto.telefoneDono01}" 
+						<h:inputText value="#{devolucaoController.objeto.telefoneDono}" 
 								styleClass="form-control" id="inputTelefone01"
 									pt:placeholder="Ex: (11) 2564-8790"/>
 					</div>
@@ -64,7 +64,7 @@
 					<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="inputTelefone02">Celular</label> 
-						<h:inputText value="#{devolucaoController.objeto.telefoneDono02}" 
+						<h:inputText value="#{devolucaoController.objeto.celularDono}" 
 								styleClass="form-control" id="inputTelefone02"
 									pt:placeholder="Ex: (11) 2564-8790"/>
 					</div>
@@ -110,6 +110,8 @@
 						<f:selectItem itemValue="Aguardando"/>
 						<f:selectItem itemValue="Devolvido"/>
 						<f:selectItem itemValue="Reciclado"/>
+						<f:selectItem itemValue="Doado"/>
+						<f:selectItem itemValue="Desabilitado"/>
 					</h:selectOneMenu>
 					</div>
 					

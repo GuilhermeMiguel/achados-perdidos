@@ -7,9 +7,7 @@ create table entregador(
 	id int auto_increment primary key,
 	documento varchar(14),
 	nome varchar(30),
-	sobrenome varchar(50),
-	telefone01 varchar(14),
-	telefone02 varchar(14),
+	telefone varchar(14),
 	turma varchar(15),
     turno varchar(15)
     );
@@ -19,7 +17,7 @@ create table entregador(
 	descricao varchar(50)
     );
     
-create table Objeto(
+create table objeto(
 	id int auto_increment primary key,
     idEntregador int,
     idCategoria int,
@@ -36,7 +34,8 @@ create table Objeto(
 create table funcionario(
 	id int auto_increment primary key,
 	nome varchar(30),
-	sobrenome varchar(50),
+	sexo varchar(10),
+	nascimento date,
 	usuario varchar(20),
 	senha varchar(10),
     email varchar(50),
@@ -49,9 +48,10 @@ create table devolucaoObjeto(
 	documentoDono varchar(14),
 	nomeDono varchar(30),
 	sobrenomeDono varchar(50),
-	telefoneDono01 varchar(14),
-	telefoneDono02 varchar(14),
+	telefoneDono varchar(14),
+	celularDono varchar(14),
 	turmaDono varchar(15),
+	turnoDono varchar(15),
 	dataDevolucao date,
     constraint idObjeto FOREIGN KEY (idObjeto) REFERENCES objeto (id)
     );

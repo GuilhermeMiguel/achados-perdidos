@@ -156,9 +156,6 @@ public class CategoriaDAO {
 			rs = stmt.executeQuery();
 
 			while (rs.next()) {
-
-				//Aluguel aluguel = new Aluguel();
-
 				categoria.setId(rs.getInt("id"));
 				categoria.setDescricao(rs.getString("descricao"));
 			}
