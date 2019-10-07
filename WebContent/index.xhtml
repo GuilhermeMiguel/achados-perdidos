@@ -30,14 +30,16 @@
 				<form class="formulario-login validate-form">
 					<p class="mensagem" style="display: none;">Nós enviaremos sua senha para o seu email.</p>
 					<div class="caixa-input validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Email</span>
-						<h:inputText styleClass="input100" type="text" name="username" pt:placeholder="Digite seu email" />
+						<span class="label-input100 user">Email/User</span>
+						<h:inputText value="#{funcionarioController.funcionario.email}" 
+							styleClass="input100" name="username" pt:placeholder="Digite seu email ou usuário" />
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="caixa-input validate-input m-b-18" id="caixa-senha" data-validate="Password is required">
 						<span class="label-input100">Senha</span>
-						<h:inputSecret  styleClass="input100" name="pass" pt:placeholder="Digite sua senha" />
+						<h:inputSecret value="#{funcionarioController.funcionario.senha}"   
+							styleClass="input100" name="pass" pt:placeholder="Digite sua senha" />
 						<span class="focus-input100"></span>
 					</div>
 

@@ -169,6 +169,10 @@ background-color: #694077;
     margin-left: 90%;
     margin-top: 40px;
   }
+  
+  #botao1, #botao2 {
+  cursor: pointer;
+  }
 
 .modal-container.mostrar {
     display: flex;
@@ -279,7 +283,9 @@ SEGUNDO MODAL
   margin-top: -10%;
 }
 
-
+.combobox-tamanho {
+	height: 34px !important;	
+}
 
 /*---------------------------------------------*/
 input {

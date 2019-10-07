@@ -12,5 +12,5 @@ function iniciaModal(modalID) {
         });
     }
 
-    const cadastrar = document.querySelector('.cadastro .adicionar');
+    const cadastrar = document.querySelector('.cadastro #botao2');
     cadastrar.addEventListener('click', () => iniciaModal('modal-principal'));

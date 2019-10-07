@@ -1,4 +1,4 @@
-package Controle;
+package controle;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -32,8 +32,16 @@ public class EntregadorController {
 		
 	}
 	
+	//Estou utilizando o mesmo botao para cadastrar ou atualizar o entregador, caso ele já exista eu pego
+//e redireciono para o metodo de atualizar
 	public void cadastraEntregador() {
-		entregadorDAO.create(entregador);
+		if(!entregadorDAO.entregadorExiste(entregador.getDocumento())) {
+			entregadorDAO.create(entregador);
+		}
+		else {
+			atualizaEntregador();
+		}
+	
 	}
 	
 	public void atualizaEntregador() {

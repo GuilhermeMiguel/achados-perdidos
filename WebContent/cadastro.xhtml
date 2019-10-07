@@ -53,20 +53,8 @@
 							<label class="col-md-3 control-label texto-label" for="nome">Nome<h11>*</h11></label>
 							<div class="col-md-8">
 								<div class="wrap-input100 validate-input m-b-26">
-									<h:inputText styleClass="input100" type="text" name="nome"
-										pt:placeholder="Digite seu nome" />
-									<span class="focus-input100"></span>
-								</div>
-							</div>
-						</div>
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label texto-label" for="matricula">Matricula<h11>*</h11></label>
-							<div class="col-md-8">
-								<div class="wrap-input100 validate-input m-b-26">
-									<h:inputText styleClass="input100" type="text" name="matricula"
-										pt:placeholder="Digite sua matricula" />
+									<h:inputText value="#{funcionarioController.funcionario.nome}" 
+											styleClass="input100" name="nome" pt:placeholder="Digite seu nome" />
 									<span class="focus-input100"></span>
 								</div>
 							</div>
@@ -75,10 +63,10 @@
 						<div class="form-group">
 							<label class="col-md-3 control-label texto-label"
 								for="nascimento">Nascimento<h11>*</h11></label>
-							<div class="col-md-5">
+							<div class="col-md-6">
 								<div class="wrap-input100 validate-input m-b-26">
-									<h:inputText styleClass="input100" type="text"
-										name="nascimento" pt:placeholder="DD/MM/AAAA" />
+									<h:inputText value="#{funcionarioController.funcionario.nascimento}" 
+										styleClass="input100" name="nascimento" pt:placeholder="DD/MM/AAAA" />
 									<span class="focus-input100"></span>
 								</div>
 							</div>
@@ -99,30 +87,43 @@
 							</div>
 						</div>
 
+
 						<!-- Prepended text-->
 						<div class="form-group">
-							<label class="col-md-3 control-label texto-label" for="telefone">Telefone<h11>*</h11></label>
-							<div class="col-md-5">
+							<label class="col-md-3 control-label texto-label" for="email">Email<h11>*</h11></label>
+							<div class="col-md-6">
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
-										<h:inputText styleClass="input100" type="text" name="telefone"
-											pt:placeholder="XX XXXXX-XXXX" />
+										<h:inputText value="#{funcionarioController.funcionario.email}" 
+											styleClass="input100" name="email" pt:placeholder="email@email.com" />
 										<span class="focus-input100"></span>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<!-- Prepended text-->
+						
+							<!-- Prepended text-->
 						<div class="form-group">
-							<label class="col-md-3 control-label texto-label" for="email">Email<h11>*</h11></label>
-							<div class="col-md-5">
+							<label class="col-md-3 control-label texto-label" for="senha">Senha<h11>*</h11></label>
+							<div class="col-md-6">
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
-										<h:inputText styleClass="input100" type="text" name="email"
-											pt:placeholder="email@email.com" />
+										<h:inputSecret value="#{funcionarioController.funcionario.senha}" 
+											styleClass="input100" name="senha" pt:placeholder="" />
 										<span class="focus-input100"></span>
 									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-md-3 control-label texto-label" for="usuario">Usuário<h11>*</h11></label>
+							<div class="col-md-6">
+								<div class="wrap-input100 validate-input m-b-26">
+									<h:inputText value="#{funcionarioController.funcionario.usuario}"  
+										styleClass="input100" name="usuario" pt:placeholder="Digite um nome de usuário" />
+									<span class="focus-input100"></span>
 								</div>
 							</div>
 						</div>
@@ -132,13 +133,14 @@
 							<label class="col-md-3 control-label texto-label-sexo"
 								for="cargo">Cargo<h11>*</h11></label>
 							<div class="col-md-5">
-								<select id="Cargo" name="cargo" class="form-control">
-									<option value="Seelecione">Selecione</option>
-									<option value="Administrativo">Administrativo</option>
-									<option value="Professor">Professor</option>
-									<option value="Coordenador">Coordenador</option>
-									<option value="Diretor">Diretor</option>
-								</select>
+								<h:selectOneMenu value="#{funcionarioController.funcionario.cargo}" id="Cargo" 
+									name="cargo" class="form-control combobox-tamanho">
+									<f:selectItem itemValue="Selecione...."/>
+									<f:selectItem itemValue="Administrativo"/>
+									<f:selectItem itemValue="Professor"/>
+									<f:selectItem itemValue="Coordenador"/>
+									<f:selectItem itemValue="Diretor"/>
+								</h:selectOneMenu>
 							</div>
 						</div>
 
@@ -153,7 +155,7 @@
 							</div>
 							
 							<div class="col-md-4">
-								<button class="login100-form-btn">Cadastrar</button>
+								<h:commandButton class="login100-form-btn" actionListener="#{funcionarioController.cadastraFuncionario}" value="Cadastrar"/>
 							</div>
 						</div>
 					</div>

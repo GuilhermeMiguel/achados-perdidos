@@ -4,9 +4,11 @@ public class Funcionario {
 
 	private int id;
 	private String nome;
-	private String sobrenome;
+	private String sexo;
+	private String nascimento;
 	private String usuario;
 	private String senha;
+	private String senhaAntiga;
     private String email;
     private String cargo;
     
@@ -23,11 +25,18 @@ public class Funcionario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getSobrenome() {
-		return sobrenome;
+	
+	public String getSexo() {
+		return sexo;
 	}
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+	public String getNascimento() {
+		return nascimento;
+	}
+	public void setNascimento(String nascimento) {
+		this.nascimento = nascimento;
 	}
 	public String getUsuario() {
 		return usuario;
@@ -40,6 +49,13 @@ public class Funcionario {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	public String getSenhaAntiga() {
+		return senhaAntiga;
+	}
+	public void setSenhaAntiga(String senhaAntiga) {
+		this.senhaAntiga = senhaAntiga;
 	}
 	public String getEmail() {
 		return email;

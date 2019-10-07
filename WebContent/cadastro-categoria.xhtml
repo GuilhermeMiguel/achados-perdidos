@@ -57,11 +57,11 @@
 
 							<div class="form-group">
 								<div class="col-md-3">
-									<select id="Categoria" name="Categoria" class="form-control">
-										<option value="Selecione">Selecione</option>
-										<option value="ID">ID</option>
-										<option value="Descricao">Descrição</option>
-									</select>
+									<h:selectOneMenu id="Categoria" name="Categoria" class="form-control">
+										<f:selectItem itemValue="Selecione..."/>
+										<f:selectItem itemValue="ID"/>
+										<f:selectItem itemValue="Descrição"/>
+									</h:selectOneMenu>
 								</div>
 
 								<div class="col-md-5">
@@ -99,14 +99,14 @@
 			<div class="form-row area-cadastro-categoria">
 				<div class="form-group col-md-4">
 					<label for="inputId">Id</label>
-					<h:inputText type="text" styleClass="form-control" id="inputId"
-						pt:placeholder="Id..." />
+					<h:inputText value="#{categoriaController.categoria.id}"
+					styleClass="form-control" id="inputId"	pt:placeholder="Id..." />
 				</div>
 				
 				<div class="form-group col-md-6">
 					<label for="inputCategoria">Categoria</label>
-					<h:inputText type="text" styleClass="form-control"
-						id="inputCategoria" pt:placeholder="Ex: Relógio" />
+					<h:inputText value="#{categoriaController.categoria.descricao}"
+						styleClass="form-control" id="inputCategoria" pt:placeholder="Ex: Relógio" />
 				</div>
 			</div>
 

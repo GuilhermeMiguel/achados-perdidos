@@ -1,8 +1,13 @@
-package Controle;
+package controle;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import DAO.FuncionarioDAO;
 import modelo.Funcionario;
 
+@ManagedBean
+@SessionScoped
 public class FuncionarioController {
 
 	private Funcionario funcionario;

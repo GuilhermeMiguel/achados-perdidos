@@ -28,17 +28,15 @@ public class EntregadorDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
-		String sql = "INSERT INTO entregador (documento, nome, sobrenome, telefone01, telefone02, turma, turno) VALUES(?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO entregador (documento, nome, telefone, turma, turno) VALUES(?, ?, ?, ?, ?)";
 
 		try {
 			stmt = con.prepareStatement(sql);
-			stmt.setString(1, "doc");
+			stmt.setString(1, e.getDocumento());
 			stmt.setString(2, e.getNome());
-			stmt.setString(3, e.getSobrenome());
-			stmt.setString(4, e.getTelefone01());
-			stmt.setString(5, e.getTelefone02());
+			stmt.setString(4, e.getTelefone());
 			stmt.setString(6, e.getTurma());
-			stmt.setString(7, "eee");
+			stmt.setString(7, e.getTurno());
 			stmt.executeUpdate();
 
 			System.out.println("Salvo com sucesso");
@@ -71,9 +69,7 @@ public class EntregadorDAO {
 				Ent.setId(rs.getInt("id"));
 				Ent.setDocumento(rs.getString("documento"));
 				Ent.setNome(rs.getString("nome"));
-				Ent.setSobrenome(rs.getString("sobrenome"));
-				Ent.setTelefone01(rs.getString("telefone01"));
-				Ent.setTelefone02(rs.getString("telefone02"));
+				Ent.setTelefone(rs.getString("telefone01"));
 				Ent.setTurma(rs.getString("turma"));
 				Ent.setTurno(rs.getString("turno"));
 			}
@@ -93,16 +89,14 @@ public class EntregadorDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
-		String sql = "UPDATE entregador SET documento = ?, nome = ?, sobrenome = ?,"
-				+ "telefone01 = ?, telefone02 = ?, turma = ?, turno = ? WHERE id = ?";
+		String sql = "UPDATE entregador SET documento = ?, nome = ?"
+				+ "telefone = ?, turma = ?, turno = ? WHERE id = ?";
 		
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, e.getDocumento());
 			stmt.setString(2, e.getNome());
-			stmt.setString(3, e.getSobrenome());
-			stmt.setString(4, e.getTelefone01());
-			stmt.setString(5, e.getTelefone02());
+			stmt.setString(4, e.getTelefone());
 			stmt.setString(6, e.getTurma());
 			stmt.setString(7, e.getTurno());
 			stmt.setInt(8, e.getId());
@@ -115,5 +109,34 @@ public class EntregadorDAO {
 			ConnectionFactory.closeConnection(con, stmt);
 		}
 
+	}
+
+	public boolean entregadorExiste(String documento) {
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		boolean resultado = false;
+		Entregador entregador = new Entregador();
+		
+		String sql = "SELECT documento, nome FROM entregador WHERE documento = ? ";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, documento);
+		    rs = stmt.executeQuery();
+			while (rs.next()) {
+				entregador.setDocumento(rs.getString("documento"));				
+				entregador.setNome(rs.getString("nome"));
+				resultado = true;
+			}
+
+		} catch (SQLException ex) {
+			System.out.println("Erro" + ex);
+			
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+
+		return resultado;
 	}
 }

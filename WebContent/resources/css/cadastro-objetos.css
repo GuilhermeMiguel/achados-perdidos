@@ -396,7 +396,7 @@ SEGUNDO MODAL
 .area-devolucao-modal-objetos {
   margin-top: 5%;
   margin-left: 5%;
-  width: 82%;
+  width: 88%;
 }
 
 .objetos-devolucao-modal{
@@ -409,6 +409,9 @@ SEGUNDO MODAL
   margin-top: -10%;
 }
 
+.combobox-tamanho {
+	height: 34px !important;	
+}
 
 
 /*---------------------------------------------*/

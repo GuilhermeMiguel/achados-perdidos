@@ -20,38 +20,36 @@
 		<div class="form-row area-cadastro-modal-objetos">
 			<div class="form-row">
 				<div class="form-group col-md-4">
-					<label for="inputCategoria">Categoria</label> <select
-						id="inputCategoria" class="form-control">
-						<option>Escolher...</option>
-						<option>...</option>
-					</select>
+					<label for="inputCategoria">Categoria</label> 
+					<h:selectOneMenu	id="inputCategoria" class="form-control combobox-tamanho">
+						<f:selectItem itemValue="Escolher..."/>
+						<f:selectItem itemValue="..."/>
+					</h:selectOneMenu>
 				</div>
 				<div class="form-group col-md-4">
 					<label for="inputCor">Cor</label>
-					<h:inputText type="password" styleClass="form-control"
-						id="inputCor" pt:placeholder="Ex: Preto" />
+					<h:inputText value="#{objetoController.objeto.cor}" 
+								styleClass="form-control" id="inputCor" pt:placeholder="Ex: Preto" />
 				</div>
-
-
 
 				<div class="form-group col-md-4">
 					<label for="inputTamanho">Tamanho</label>
-					<h:inputText type="text" styleClass="form-control"
-						id="inputTamanho" pt:placeholder="Ex: 10 cm" />
+					<h:inputText value="#{objetoController.objeto.tamanho}" 
+								styleClass="form-control" id="inputTamanho" pt:placeholder="Ex: 10 cm" />
 				</div>
 			</div>
 
 			<div class="form-row">
 				<div class="form-group col-md-4">
 					<label for="inputLocal">Local</label>
-					<h:inputText type="text" styleClass="form-control" id="inputLocal"
-						pt:placeholder="Ex: Aquário" />
+					<h:inputText value="#{objetoController.objeto.local}" 
+								styleClass="form-control" id="inputLocal" pt:placeholder="Ex: Aquário" />
 				</div>
 
 				<div class="form-group col-md-4">
 					<label for="inputTurno">Turno</label>
-					<h:inputText type="text" styleClass="form-control" id="inputTurno"
-						pt:placeholder="Ex: Noite" />
+					<h:inputText value="#{objetoController.objeto.turno}" 
+								styleClass="form-control" id="inputTurno" pt:placeholder="Ex: Noite" />
 				</div>
 				<div class=" form-group col-md-4">
 					<div class="form-group">
@@ -75,8 +73,9 @@
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="inputInfoComplementar">Informações Complementares</label> 
-							<h:inputText type="text" styleClass="form-control"
-							id="inputInfoComplementar" pt:placeholder="Ex: Objeto com..." />
+							<h:inputText value="#{objetoController.objeto.infoComlementares}" 
+										styleClass="form-control" id="inputInfoComplementar" 
+											pt:placeholder="Ex: Objeto com..." />
 					</div>
 				</div>
 			</div>
@@ -88,16 +87,15 @@
 			<div class="form-row identificacao">
 				<div class="form-group col-md-4">
 					<label for="inputCampo">Campo</label>
-					 <select id="inputCampo"
-						class="form-control">
-						<option>Escolher...</option>
-						<option>Id</option>
-						<option>Sobrenome</option>
-					</select>
+					 <h:selectOneMenu  id="inputCampo" class="form-control combobox-tamanho">
+						<f:selectItem itemValue="Escolher..."/>
+						<f:selectItem itemValue="Id"/>
+						<f:selectItem itemValue="Sobrenome"/>
+					</h:selectOneMenu >
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputValor">Valor</label>
-					 <h:inputText type="text" styleClass="form-control" id="inputValor" pt:placeholder="..." />
+					 <h:inputText styleClass="form-control" id="inputValor" pt:placeholder="..." />
 				</div>
 				<div class="form-group col-md-2">
 					<h:commandButton value="Pesquisar" styleClass="pesquisar-entregador" />
@@ -106,34 +104,34 @@
 
 			<div class="cadastro-entregador" style="display: none;">
 				<div class="form-row">
-					<div class="form-group col-md-4">
+					<div class="form-group col-md-8">
 						<label for="inputNome">Nome</label> 
-						<h:inputText type="text" value="#{entregadorController.entregador.nome}" styleClass="form-control" 
+						<h:inputText value="#{entregadorController.entregador.nome}" styleClass="form-control" 
 									 id="inputNome" pt:placeholder="Ex: João..." />
 					</div>
-					<div class="form-group col-md-8">
-						<label for="inputSobrenome">Sobrenome</label> 
-						<h:inputText type="text" styleClass="form-control" value="#{entregadorController.entregador.sobrenome}"
-									id="inputSobrenome" pt:placeholder="Ex: Maciel da silva" />
+					<div class="form-group col-md-4">
+						<label for="inputDocumento">RA</label> 
+						<h:inputText styleClass="form-control" value="#{entregadorController.entregador.documento}"
+									id="inputDocumento" pt:placeholder="Ex: " />
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-4">
-						<label for="inputTelefone01">Telefone 01</label> 
-						<h:inputText type="text" styleClass="form-control" value="#{entregadorController.entregador.telefone01}"
-						id="inputTelefone01" pt:placeholder="Ex:" />
-					</div>
-
-					<div class="form-group col-md-4">
-						<label for="inputTelefone02">Telefone 02</label> 
-						<h:inputText type="text" styleClass="form-control" value="#{entregadorController.entregador.telefone02}"
-						id="inputTelefone02" pt:placeholder="Ex:" />
+						<label for="inputTelefone01">Telefone</label> 
+						<h:inputText value="#{entregadorController.entregador.telefone}" 
+							styleClass="form-control" id="inputTelefone01" pt:placeholder="Ex:" />
 					</div>
 
 					<div class="form-group col-md-4">
 						<label for="inputTurma">Turma</label> 
 						<h:inputText type="text" styleClass="form-control" value="#{entregadorController.entregador.turma}"
 									id="inputTurma" pt:placeholder="Ex: 6° ADS" />
+					</div>
+					
+					<div class="form-group col-md-4">
+						<label for="inputTurnoEntregador">Turno</label> 
+						<h:inputText styleClass="form-control" value="#{entregadorController.entregador.turno}"
+							id="inputTurnoEntregador" pt:placeholder="Ex:" />
 					</div>
 				</div>
 			</div>

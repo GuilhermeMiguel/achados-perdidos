@@ -10,6 +10,7 @@ public class DevolucaoObjeto {
 	private String telefoneDono01;
 	private String telefoneDono02;
 	private String turmaDono;
+	private String turnoDono;
 	private String dataDevolucao;
 	private String status;
 	
@@ -61,6 +62,12 @@ public class DevolucaoObjeto {
 	}
 	public void setTurmaDono(String turmaDono) {
 		this.turmaDono = turmaDono;
+	}
+	public String getTurnoDono() {
+		return turnoDono;
+	}
+	public void setTurnoDono(String turnoDono) {
+		this.turnoDono = turnoDono;
 	}
 	public String getDataDevolucao() {
 		return dataDevolucao;
