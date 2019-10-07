@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class ConnectionFactory {
 
-	static String DBNAME = "locadora";
+	static String DBNAME = "achadosperdidos";
 	static String DRIVER = "com.mysql.jdbc.Driver";
 	static String URL = "jdbc:mysql://localhost:3306/" + DBNAME;
 	static String USER = "root";

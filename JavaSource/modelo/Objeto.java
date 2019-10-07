@@ -1,6 +1,6 @@
 package modelo;
 
-public class CadastroObjeto {
+public class Objeto {
 
 	private int Id;
 	private int idEntregador;
@@ -10,9 +10,7 @@ public class CadastroObjeto {
 	private String local;
 	private String turno;
 	private String infoComplementares;
-
-	
-	
+	private String status;
 	
 	public int getId() {
 		return Id;
@@ -62,6 +60,12 @@ public class CadastroObjeto {
 	}
 	public void setInfoComplementares(String infoComplementares) {
 		this.infoComplementares = infoComplementares;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 }

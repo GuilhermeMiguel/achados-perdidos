@@ -28,18 +28,17 @@ public class EntregadorDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
-		String sql = "INSERT INTO entregador (id, documento, nome, sobrenome, telefone01, telefone02, turma, turno) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO entregador (documento, nome, sobrenome, telefone01, telefone02, turma, turno) VALUES(?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			stmt = con.prepareStatement(sql);
-			stmt.setInt(1, e.getId());
-			stmt.setString(2, e.getDocumento());
-			stmt.setString(3, e.getNome());
-			stmt.setString(4, e.getSobrenome());
-			stmt.setString(5, e.getTelefone01());
-			stmt.setString(6, e.getTelefone02());
-			stmt.setString(7, e.getTurma());
-			stmt.setString(8, e.getTurno());
+			stmt.setString(1, "doc");
+			stmt.setString(2, e.getNome());
+			stmt.setString(3, e.getSobrenome());
+			stmt.setString(4, e.getTelefone01());
+			stmt.setString(5, e.getTelefone02());
+			stmt.setString(6, e.getTurma());
+			stmt.setString(7, "eee");
 			stmt.executeUpdate();
 
 			System.out.println("Salvo com sucesso");

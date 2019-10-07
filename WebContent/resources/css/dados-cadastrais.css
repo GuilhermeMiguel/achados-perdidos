@@ -132,6 +132,19 @@ a {
 	margin-top: 40px;
 }
 
+.titulo-dados-cadastrais {
+	font-size: 24px;
+    width: 230px;
+    margin-left: 65px;
+}
+
+.alterar-senha {
+	margin-left: 46%;
+    margin-top: 4% !important;
+    line-height: 0.5;
+    cursor: pointer;
+}
+
 .modal-container.mostrar {
 	display: flex;
 }
@@ -213,22 +226,16 @@ to {
 }
 
 #banner::after {
-	border: 20px solid transparent;
-	border-top-color: rgba(132, 165, 181, 0.7);
-	content: "";
-	position: absolute;
-	top: 124px;
-	left: 160px;
+	border: 28px solid transparent;
+    border-top-color: rgba(132, 165, 181, 0.7);
+    content: "";
+    position: absolute;
+    top: 124px;
+    left: 20%;
 }
 
 .item {
 	margin-top: 2%;
-	width: 300px;
-}
-
-#alterar-senha {
-	margin-left: 60%;
-    margin-top: 4% !important;
 }
 
 #area-cadastro-formulario {

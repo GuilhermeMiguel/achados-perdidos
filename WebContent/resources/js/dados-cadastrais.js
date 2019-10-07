@@ -8,5 +8,5 @@
            });
        }
    
-       const cadastrar = document.querySelector('.item .alterar');
+       const cadastrar = document.querySelector('.alterar-senha');
        cadastrar.addEventListener('click', () => iniciaModal('modal-principal'));

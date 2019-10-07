@@ -1,24 +1,30 @@
-package controle;
+package Controle;
 
-import Service.FuncionarioService;
+import DAO.FuncionarioDAO;
+import modelo.Funcionario;
 
 public class FuncionarioController {
 
-	FuncionarioService funService = new FuncionarioService();
+	private Funcionario funcionario;
+	private FuncionarioDAO funcionarioDAO = FuncionarioDAO.getInstance();
 	
-	public void cadastraUsuario() {
-		funService.cadastraFuncionario();
+	public FuncionarioController() {
+		funcionario = new Funcionario();
 	}
 	
-	public void atualizaUsuario() {
-		funService.atualizaFuncionario();
+	public void cadastraFuncionario() {
+		funcionarioDAO.create(funcionario);
 	}
 	
-	public void desativaUsuario() {
-		
+	public void atualizaFuncionario() {
+		funcionarioDAO.update(funcionario);
 	}
 	
-	public void pesquisaUsuario() {
+	public void pesquisaFuncionario() {
+	
+	}
+	
+	public void desativaFuncionario() {
 		
 	}
 	

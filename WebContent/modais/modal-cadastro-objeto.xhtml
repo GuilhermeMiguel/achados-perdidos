@@ -108,29 +108,32 @@
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="inputNome">Nome</label> 
-						<h:inputText type="text" styleClass="form-control" id="inputNome" pt:placeholder="Ex: João..." />
+						<h:inputText type="text" value="#{entregadorController.entregador.nome}" styleClass="form-control" 
+									 id="inputNome" pt:placeholder="Ex: João..." />
 					</div>
 					<div class="form-group col-md-8">
 						<label for="inputSobrenome">Sobrenome</label> 
-						<h:inputText type="text" styleClass="form-control" id="inputSobrenome" pt:placeholder="Ex: Maciel da silva" />
+						<h:inputText type="text" styleClass="form-control" value="#{entregadorController.entregador.sobrenome}"
+									id="inputSobrenome" pt:placeholder="Ex: Maciel da silva" />
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="inputTelefone01">Telefone 01</label> 
-						<h:inputText type="text" styleClass="form-control" id="inputTelefone01"
-							pt:placeholder="Ex:" />
+						<h:inputText type="text" styleClass="form-control" value="#{entregadorController.entregador.telefone01}"
+						id="inputTelefone01" pt:placeholder="Ex:" />
 					</div>
 
 					<div class="form-group col-md-4">
 						<label for="inputTelefone02">Telefone 02</label> 
-						<h:inputText type="text" styleClass="form-control" id="inputTelefone02"
-							pt:placeholder="Ex:" />
+						<h:inputText type="text" styleClass="form-control" value="#{entregadorController.entregador.telefone02}"
+						id="inputTelefone02" pt:placeholder="Ex:" />
 					</div>
 
 					<div class="form-group col-md-4">
 						<label for="inputTurma">Turma</label> 
-						<h:inputText type="text" styleClass="form-control" id="inputTurma" pt:placeholder="Ex: 6° ADS" />
+						<h:inputText type="text" styleClass="form-control" value="#{entregadorController.entregador.turma}"
+									id="inputTurma" pt:placeholder="Ex: 6° ADS" />
 					</div>
 				</div>
 			</div>
@@ -138,10 +141,10 @@
 
 		<div class="form-row area-botao-salvar">
 			<div class="form-group col-md-4">
-				<h:commandButton value="Salvar" styleClass="login100-form-btn" />
+				<h:commandButton value="Salvar"  styleClass="login100-form-btn" />
 			</div>
 			<div class="form-group col-md-4">
-				<h:commandButton value="Cancelar" styleClass="login100-form-btn"
+				<h:commandButton value="Cancelar"  styleClass="login100-form-btn"
 					style="margin-left: -40%;" />
 			</div>
 		</div>
@@ -151,7 +154,7 @@
 	<div class="form-row area-botao-salvar-entregador"
 		style="display: none;">
 		<div class="form-group col-md-4">
-			<h:commandButton value="Salvar" styleClass="btn-salvar-entragador" />
+			<h:commandButton value="Salvar" actionListener="#{entregadorController.cadastraEntregador}" styleClass="btn-salvar-entragador" />
 		</div>
 		<div class="form-group col-md-4">
 			<h:commandButton value="Cancelar" styleClass="btn-cancelar-entregador"

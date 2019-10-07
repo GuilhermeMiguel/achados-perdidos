@@ -1,27 +1,38 @@
-package controle;
+package Controle;
 
-import Service.CategoriaService;
+import DAO.CategoriaDAO;
+import modelo.Categoria;
 
 public class CategoriaController {
 
-	CategoriaService catService = new CategoriaService();
-		
+	private Categoria categoria;
+	private CategoriaDAO categoriaDAO = CategoriaDAO.getInstance();
+
+	public CategoriaController() {
+		categoria = new Categoria();
+	}
+	
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	
 	public void cadastraCategoria() {
-		catService.cadastraCategoria();
-		
+		categoriaDAO.create(categoria);
 	}
 	
 	public void atualizaCategoria() {
-		catService.atualizaCategoria();
-	
+		categoriaDAO.update(categoria);
 	}
 	
 	public void desativaCategoria() {
-		catService.desativaCategoria();
+		categoriaDAO.desabilitaCategoria(categoria);
 	}
 	
 	public void pesquisaCategoria() {
-		catService.pesquisaCategoria();
+		categoriaDAO.pesquisaCategoria(categoria.getId());
 	}
-	
 }
