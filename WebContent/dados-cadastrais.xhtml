@@ -57,7 +57,7 @@
 					<div id="area-cadastro-formulario">
 						<!-- Text input-->
 						<div class="form-group">
-							<label class="col-md-3 control-label" for="Nome" id="texto-label">Nome</label>
+							<label class="col-md-3 control-label" for="Nome" id="texto-label" style="margin-top: 0px !important;">Nome</label>
 							<div class="col-md-8">
 								<div class="wrap-input100 validate-input m-b-26">
 									<h:inputText value="#{funcionariocontroller.funcionario.nome}" 
@@ -70,7 +70,7 @@
 
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="Nascimento"
-								id="texto-label">Nascimento</label>
+								id="texto-label"  style="margin-top: 0px !important;">Nascimento</label>
 							<div class="col-md-5">
 								<div class="wrap-input100 validate-input m-b-26">
 									<h:inputText value="#{funcionariocontroller.funcionario.nascimento}" 
@@ -84,22 +84,26 @@
 
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="radios"
-								id="texto-label-sexo">Sexo</label>
+								id="texto-label-sexo"  style="margin-top: 0px !important;">Sexo</label>
 							<div class="col-md-8">
-								<label class="radio-inline" for="radios-0" id="label-sexo">
-									<input name="sexo" id="sexo" value="feminino" type="radio" />
-									Feminino
-								</label> <label class="radio-inline" for="radios-1" id="label-sexo">
-									<input name="sexo" id="sexo" value="masculino" type="radio" />
-									Masculino
-								</label>
+<!-- 								<label class="radio-inline" for="radios-0" id="label-sexo"> -->
+<!-- 									<input name="sexo" id="sexo" value="feminino" type="radio" /> -->
+<!-- 									Feminino -->
+<!-- 								</label> <label class="radio-inline" for="radios-1" id="label-sexo"> -->
+<!-- 									<input name="sexo" id="sexo" value="masculino" type="radio" /> -->
+<!-- 									Masculino -->
+<!-- 								</label> -->
+								<h:selectOneRadio value="#{funcionariocontroler.funcionario.sexo}">
+								 	<f:selectItem itemValue="Feminino" id="option1" itemLabel="Feminino" />
+								 	<f:selectItem itemValue="Masculino" id="option2" itemLabel="Masculino" />
+								 </h:selectOneRadio>
 							</div>
 						</div>
 
 						<!-- Prepended text-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="prependedtext"
-								id="texto-label">Telefone</label>
+								id="texto-label"  style="margin-top: 0px !important;">Telefone</label>
 							<div class="col-md-5">
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
@@ -115,7 +119,7 @@
 						<div class="form-group">
 
 							<label class="col-md-3 control-label" for="prependedtext"
-								id="texto-label">Email</label>
+								id="texto-label"  style="margin-top: 0px !important;">Email</label>
 							<div class="col-md-5">
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
@@ -131,7 +135,7 @@
 
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="usuario"
-								id="texto-label">Usuário</label>
+								id="texto-label"  style="margin-top: 0px !important;">Usuário</label>
 							<div class="col-md-5">
 								<div class="wrap-input100 validate-input m-b-26">
 									<h:inputText value="#{funcionariocontroller.funcionario.usuario}" 
@@ -144,7 +148,7 @@
 						<!-- Select Basic -->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="Cargo"
-								id="texto-label-cargo">Cargo</label>
+								id="texto-label-cargo"  style="margin-top: 0px !important;">Cargo</label>
 							<div class="col-md-5">
 								<h:selectOneMenu id="Cargo" name="Cargo" class="form-control combobox-tamanho">
 									<f:selectItem itemValue="Selecione"/>

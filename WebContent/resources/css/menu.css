@@ -29,7 +29,7 @@ body {
 body,
 html { height: 100%;
     background-color: #ebeeef;
-    font-family: Poppins-Regular, sans-serif;}
+    font-family: Poppins-Regular, sans-serif !important;}
 .nav .open > a, 
 .nav .open > a:hover, 
 .nav .open > a:focus {background-color: transparent;}
@@ -121,7 +121,7 @@ html { height: 100%;
 }
 
 .sidebar-nav li:nth-child(4):before{
-	background-color: #365463 !importants;
+	background-color: #365463 !important;
 }
 
 .sidebar-nav li:nth-child(5):before{
@@ -157,7 +157,7 @@ html { height: 100%;
 	display: block;
 	color: #ddd !important;
 	text-decoration: none;
-	padding: 10px 15px 15px 18px;
+	padding: 10px 15px 15px 18px !important;
 }
 
 .sidebar-nav li a:hover,

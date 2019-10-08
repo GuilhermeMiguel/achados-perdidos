@@ -83,6 +83,15 @@ body, html {
 	padding: 5%;
 }
 
+label{
+	font-family: Poppins-Regular;
+	font-size: 15px; 
+	color: #555555;
+	font-weight: 500 !important;
+	padding-right: 10px;
+	margin-top: 8px
+}
+
 .modal-container {
 	width: 100vw;
 	height: 100vh;

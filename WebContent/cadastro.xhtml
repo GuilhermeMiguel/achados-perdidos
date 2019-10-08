@@ -49,7 +49,7 @@
 
 						<!-- Text input-->
 						<div class="form-group">
-							<label class="col-md-3 control-label texto-label" for="nome">Nome*</label>
+							<label class="col-md-3 control-label texto-label" for="nome" style="font-weight :700 !important; margin-top: 0%;">Nome*</label>
 							<div class="col-md-8">
 								<div class="wrap-input100 validate-input m-b-26">
 									<h:inputText value="#{funcionariocontroller.funcionario.nome}" 
@@ -61,7 +61,7 @@
 
 						<div class="form-group">
 							<label class="col-md-3 control-label texto-label"
-								for="nascimento">Nascimento*</label>
+								for="nascimento" style="font-weight :700 !important; margin-top: 0%;">Nascimento*</label>
 							<div class="col-md-6">
 								<div class="wrap-input100 validate-input m-b-26">
 									<h:inputText value="#{funcionariocontroller.funcionario.nascimento}" 
@@ -75,18 +75,17 @@
 
 						<div class="form-group">
 							<label class="col-md-3 control-label texto-label-sexo"
-								for="radios">Sexo*</label>
-							<div class="col-md-8">
+								for="radios" style="font-weight :700 !important; margin-top: 0%;">Sexo*</label>
+							<div class="col-md-8 radio-botao">
 <!-- 								<label class="radio-inline label-sexo sexo" for="radios-0"> -->
 <!-- 									<input type="radio" name="sexo" value="feminino" -->
 <!-- 									required="true" /> Feminino -->
 <!-- 								</label> <label class="radio-inline label-sexo sexo" for="radios-1"> -->
 <!-- 									<input type="radio" name="sexo" value="masculino" /> Masculino -->
 <!-- 								</label> -->
-								<h:selectOneRadio value="#{funcionariocontroler.funcionario.sexo}" >
-								   			<f:selectItem itemValue="Feminino" itemLabel="Feminino" layout=" font-family: Poppins-Regular !important;
-   															font-size: 15px !important; color: #555555 !important;"/>
-								   			<f:selectItem itemValue="Masculino" itemLabel="Masculino" class="label-sexo"/>
+								<h:selectOneRadio value="#{funcionariocontroler.funcionario.sexo}">
+								   			<f:selectItem itemValue="Feminino" id="option1" itemLabel="Feminino"/>
+								   			<f:selectItem itemValue="Masculino" id="option2" itemLabel="Masculino"/>
 								   		</h:selectOneRadio>
 
 							</div>
@@ -95,7 +94,7 @@
 
 						<!-- Prepended text-->
 						<div class="form-group">
-							<label class="col-md-3 control-label texto-label" for="email">Email*</label>
+							<label class="col-md-3 control-label texto-label" for="email" style="font-weight :700 !important; margin-top: 0%;">Email*</label>
 							<div class="col-md-6">
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
@@ -109,7 +108,7 @@
 						
 							<!-- Text input-->
 						<div class="form-group">
-							<label class="col-md-3 control-label texto-label" for="usuario">Usuário*</label>
+							<label class="col-md-3 control-label texto-label" for="usuario" style="font-weight :700 !important; margin-top: 0%;">Usuário*</label>
 							<div class="col-md-6">
 								<div class="wrap-input100 validate-input m-b-26">
 									<h:inputText value="#{funcionariocontroller.funcionario.usuario}"  
@@ -121,7 +120,7 @@
 						
 							<!-- Prepended text-->
 						<div class="form-group">
-							<label class="col-md-3 control-label texto-label" for="senha">Senha*</label>
+							<label class="col-md-3 control-label texto-label" for="senha" style="font-weight :700 !important; margin-top: 0%;">Senha*</label>
 							<div class="col-md-6">
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
@@ -137,7 +136,7 @@
 						<!-- Select Basic -->
 						<div class="form-group">
 							<label class="col-md-3 control-label texto-label-sexo"
-								for="cargo">Cargo*</label>
+								for="cargo" style="font-weight :700 !important; margin-top: 0%;">Cargo*</label>
 							<div class="col-md-5">
 								<h:selectOneMenu value="#{funcionariocontroller.funcionario.cargo}" id="Cargo" 
 									name="cargo" class="form-control combobox-tamanho">
@@ -170,7 +169,6 @@
 		</div>
 	</h:form> 
 	</section>
-
 
 	<script src="resources/js/main.js"></script>
 

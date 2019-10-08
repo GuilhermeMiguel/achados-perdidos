@@ -38,18 +38,24 @@
 		<ui:include src="menu.xhtml" />
 	</div>
 
-	<div>
-		<div class="form-group">
-			<label class="col-md-3 control-label" for="data-inicio">Data Inicio*</label>
-			<div class="col-md-6">
-				<div class="wrap-input100 validate-input m-b-26">
-					<h:inputText	styleClass="input100" name="nascimento"
-						pt:placeholder="DD/MM/AAAA" />
-					<span class="focus-input100"></span>
+		<div class="form-row" style="width:50%; margin-left:25%;">
+		<div class="caixa-pesquisa">
+				<div class="form-group col-md-4">
+					<label for="inputCategoria">Data Inicio</label> 
+					<h:inputText value="#{objetocontroller.objeto.cor}" 
+								styleClass="form-control input-data" pt:placeholder="10/05/2019" />
+				</div>
+				<div class="form-group col-md-4">
+					<label for="inputCor">Data Fim</label>
+					<h:inputText value="#{objetocontroller.objeto.cor}"
+								styleClass="form-control input-data" pt:placeholder="10/06/2019" />
+				</div>
+
+				<div class="form-group col-md-2">
+					<h:commandButton value="Pesquisar" class="botao-dashboard"/>
 				</div>
 			</div>
 		</div>
-	</div>
 
 	<div id="area-dashboard">
 		<div class="row">
@@ -94,10 +100,11 @@
 			</div>
 
 			<div class="col-md-4" id="area-porcentagem">
+			<h5>Categorias mais perdidas</h5>
 				<ul class="widget widget-usage unstyled span4">
 					<li>
 						<p>
-							<strong>#{dashboard.categoria1}</strong> <span
+							<strong>Teste</strong> <span
 								class="pull-right small muted">78%</span>
 						</p>
 						<div class="progress tight">
@@ -144,7 +151,7 @@
 			</div>
 		</div>
 
-		<div id="grafico">
+		<div class="grafico">
 			<canvas class="line-chart"></canvas>
 		</div>
 
