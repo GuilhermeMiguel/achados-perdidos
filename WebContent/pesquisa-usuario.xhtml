@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<head>
+
+  <title>Cadastro</title>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" type="text/css" href="resources/css/pesquisa-usuario.css" />
+  <link rel="stylesheet" type="text/css" href="resources/css/menu-abas.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!--===============================================================================================-->
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <section class="cadastro">
+
+    <h:form class="form-horizontal">
+      <div class="container">
+
+        <div class="row" id="linha-cadastro">
+
+          <div class="panel-body" id="area-cadastro">
+            <div id="titulo">
+              <img src="images/icone-tela-objeto.png" /> Objetos
+            </div>
+
+            <!-- Text input-->
+            <div id="area-pesquisa">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="inputCategoria">Categoria</label>
+                       <h:selectOneMenu value="#{objetocontroller.objeto.categoria}"
+							 id="inputCategoria" class="form-control combobox-tamanho">
+							<f:selectItem itemValue="Escolher..."/>
+							<f:selectItem itemValue="..."/>
+						</h:selectOneMenu>
+                      </div>
+                  <div class="form-group col-md-3">
+                    <label for="inputCor">Cor</label>
+                    <h:inputText  styleClass="form-control" id="inputCor" pt:placeholder="Ex: Preto" />
+                  </div>
+                   
+                <div class="form-group col-md-3">
+                  <label for="inputDataInicio">Data Inicio</label>
+                  <h:inputText type="text" styleClass="form-control" id="inputDataInicio" pt:placeholder="Ex: 10/05/2019" />
+                </div>
+
+
+                <div class="form-group col-md-3">
+                    <label for="inputDataFim">Data Fim</label>
+                    <h:inputText styleClass="form-control" id="inputDataFim" pt:placeholder="Ex: 10/06/2019" />
+                  </div>
+              </div>
+            </div>
+
+            <div id="area-botao">
+              <div class="item" id="botao1">
+                <img src="images/icone-search.png" />
+                <h:commandButton  styleClass="pesquisar" value="Pesquisar" id="botoes" />
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </h:form>
+  </section>
+
+</body>
+</html>

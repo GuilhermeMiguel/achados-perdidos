@@ -83,3 +83,11 @@ $(document).on('click','.voltar',function(){
 		$(".user").text("Email/User");
 	});
 });
+
+$( ".lupa" ).hover(function() {
+	$('.pesquisar-objetos').fadeIn('slow');
+});
+
+$( ".lupa" ).mouseout(function() {
+	$('.pesquisar-objetos').delay(1200).fadeOut('slow');
+});
