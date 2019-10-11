@@ -1,11 +1,13 @@
 
 .caixa-pesquisa {
-	background-color: #ebeeef;
+    background-color: #ebeeef;
     border: 1px solid transparent;
     border-radius: 5px;
     margin-top: 3%;
-    margin-left: 18%;
+    margin-left: 25%;
+    width: 600px;
 }
+
 
 #area-dashboard {
     position: absolute;

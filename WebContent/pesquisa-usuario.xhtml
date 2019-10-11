@@ -64,7 +64,6 @@
                   <h:inputText type="text" styleClass="form-control" id="inputDataInicio" pt:placeholder="Ex: 10/05/2019" />
                 </div>
 
-
                 <div class="form-group col-md-3">
                     <label for="inputDataFim">Data Fim</label>
                     <h:inputText styleClass="form-control" id="inputDataFim" pt:placeholder="Ex: 10/06/2019" />
@@ -75,15 +74,50 @@
             <div id="area-botao">
               <div class="item" id="botao1">
                 <img src="images/icone-search.png" />
-                <h:commandButton  styleClass="pesquisar" value="Pesquisar" id="botoes" />
+                <h:commandButton styleClass="pesquisar botoes" value="Pesquisar" />
               </div>
 
             </div>
           </div>
         </div>
       </div>
+      
+       <a id="modalID" class="regras">Regras</a>
     </h:form>
   </section>
 
+<div id="modal-principal" class="modal-container">
+    <div class="modal-regras">
+    
+        <div id="banner2">
+            <p class="titulo">Regras</p>
+            <div class="fechar-modal" style="background-image: url(images/icone-fechar-modal.png);">
+               </div>
+              </div>
+              <ul>
+                <li>
+                  Teste
+                </li>
+
+                <li>
+                  Teste
+                </li>
+
+                <li>
+                  Teste
+                </li>
+
+                <li>
+                  Teste
+                </li>
+
+                <li>
+                  Teste
+                </li>
+              </ul>
+    </div> 
+ </div>
+ 
+ <script src="resources/js/pesquisa-usuario.js"></script>
 </body>
 </html>

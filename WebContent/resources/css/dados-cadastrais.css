@@ -223,7 +223,7 @@ to {
 #banner {
 	width: 114%;
 	margin-left: -52px;
-	margin-top: -52px;
+	margin-top: -55px;
 	height: 60px;
 	background-color: rgba(132, 165, 181, 0.7);
 	z-index: 1;
@@ -239,7 +239,7 @@ to {
     border-top-color: rgba(132, 165, 181, 0.7);
     content: "";
     position: absolute;
-    top: 101px;
+    top: 98px;
     left: 20%;
 }
 

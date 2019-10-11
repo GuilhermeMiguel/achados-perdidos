@@ -72,7 +72,7 @@ $(document).on('click','.texto-esqueceu',function(){
 	$('.login100-form-btn').css("display","none");
 	$('.input-checkbox100, .label-checkbox100, .texto-esqueceu, #caixa-senha').fadeOut('slow', function(){
 		$('.mensagem, .enviar-email, .voltar').fadeIn();
-		$(".formulario-titulo-1").text("Recuperar Senha");
+		$(".formulario-titulo-1").text("Recuperar senha");
 		$(".user").text("Email");
 	});
 });
@@ -80,6 +80,7 @@ $(document).on('click','.texto-esqueceu',function(){
 $(document).on('click','.voltar',function(){
 	$('.mensagem, .enviar-email, .voltar').fadeOut('slow', function(){
 		$('.label-checkbox100, .texto-esqueceu, #caixa-senha, .login100-form-btn').fadeIn();
+		$(".formulario-titulo-1").text("Login");
 		$(".user").text("Email/User");
 	});
 });

@@ -136,6 +136,11 @@
     margin-left: 150px;
     }
   
+  
+  .mensagem {
+    font-size: 17px;
+    margin-left: -9%;
+  }
   /*//////////////////////////////////////////////////////////////////
   [ login ]*/
   
@@ -195,7 +200,6 @@
     font-family: Poppins-Bold;
     font-size: 30px;
     color: #fff;
-    text-transform: uppercase;
     line-height: 1.2;
     text-align: center;
   }
@@ -422,6 +426,8 @@
   
     margin-top: 30px;
     margin-left: 50px;
+    
+    cursor: pointer;
   }
   
   .login100-form-btn:hover, .enviar-email:hover {
