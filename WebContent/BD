@@ -5,7 +5,7 @@ use achadosperdidos;
 
 create table entregador(
 	id int auto_increment primary key,
-	documento varchar(14),
+	ra varchar(14),
 	nome varchar(30),
 	telefone varchar(14),
 	turma varchar(15),
@@ -14,7 +14,8 @@ create table entregador(
     
     create table categoria(
 	id int auto_increment primary key,
-	descricao varchar(50)
+	descricao varchar(50), 
+	status varchar(15)
     );
     
 create table objeto(

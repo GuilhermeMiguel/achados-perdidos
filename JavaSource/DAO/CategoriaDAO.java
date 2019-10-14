@@ -174,7 +174,7 @@ public class CategoriaDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
-		String sql = "UPDATE categoria SET descricao = ? WHERE id = ?";
+		String sql = "UPDATE categoria SET descricao = ? WHERE id = ?;";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -191,7 +191,7 @@ public class CategoriaDAO {
 
 	}
 	
-	public void desabilitaCategoria(Categoria c) {
+	public void desabilitaCategoria(int id) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
@@ -199,16 +199,42 @@ public class CategoriaDAO {
 
 		try {
 			stmt = con.prepareStatement(sql);
-			stmt.setString(1, c.getStatus());
-			stmt.setInt(2, c.getId());
+			stmt.setString(1, StatusCategoria.Desabiliada.toString());
+			stmt.setInt(2, id);
 			stmt.executeUpdate();
-			System.out.println("Atualizado com sucesso");
+			System.out.println("Categoria desabilitada");
 
 		} catch (SQLException ex) {
 			System.out.println("Erro ao atualizar: " + ex);
 		} finally {
 			ConnectionFactory.closeConnection(con, stmt);
 		}
+	}
+	
+	public boolean categoriaExiste(int id) {
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		boolean resultado = false;
+		
+		String sql = "SELECT descricao FROM categoria WHERE id = ? ";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, id);
+		    rs = stmt.executeQuery();
+			while (rs.next()) {
+				resultado = true;
+			}
+
+		} catch (SQLException ex) {
+			System.out.println("Erro" + ex);
+			
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+
+		return resultado;
 	}
 }
 

@@ -116,11 +116,11 @@
 
 			<div class="form-group" id="area-botao-modal">
 				<div class="col-md-3">
-					<input type="button" value="Salvar" class="login100-form-btn" />
+					<h:commandButton value="Salvar" actionListener="#{categoriaController.cadastraCategoria}" styleClass="login100-form-btn salvar" />
 				</div>
 
 				<div class="col-md-4">
-					<input type="button" value="Cancelar" class="login100-form-btn" />
+					<h:commandButton value="Cancelar"  actionListener="#{categoriaController.limpaCampos}" styleClass="login100-form-btn cancelar" />
 				</div>
 			</div>
 		</div>

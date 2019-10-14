@@ -62,16 +62,6 @@
                 </span>
             </div>
 					</div>
-					<script type="text/javascript">
-					 $(function () {
-					        $('#datetimepicker6').datetimepicker();
-					       
-					        $("#datetimepicker6").on("dp.change", function (e) {
-					            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-					        });
-					        
-					    });
-					</script>
 				</div>
 
 				<div class="form-row">
@@ -102,7 +92,7 @@
 					 <h:inputText styleClass="form-control" id="inputValor" pt:placeholder="..." />
 				</div>
 				<div class="form-group col-md-2">
-					<h:commandButton value="Pesquisar" styleClass="pesquisar-entregador" />
+					<h:commandButton value="Pesquisar" actionListener="#{entregadorController.cadastraEntregador}" styleClass="pesquisar-entregador" />
 				</div>
 			</div>
 

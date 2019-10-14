@@ -212,6 +212,7 @@ input.input100 {
   transition: all 0.4s;
 
   margin-left: 35%;
+  margin-top: 6%;
 }
 
 .login100-form-btn:hover {

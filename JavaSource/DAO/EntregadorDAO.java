@@ -125,8 +125,6 @@ public class EntregadorDAO {
 			stmt.setString(1, documento);
 		    rs = stmt.executeQuery();
 			while (rs.next()) {
-				entregador.setDocumento(rs.getString("documento"));				
-				entregador.setNome(rs.getString("nome"));
 				resultado = true;
 			}
 
