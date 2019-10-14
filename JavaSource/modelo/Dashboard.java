@@ -11,6 +11,8 @@ public class Dashboard {
     private int quantCategoria2;
     private int quantCategoria3;
     private int quantCategoria4;
+    private String dataInicio;
+    private String dataFim;
     
 	public int getQuantDevolvidos() {
 		return quantDevolvidos;
@@ -67,7 +69,16 @@ public class Dashboard {
 	public void setQuantCategoria4(int quantCategoria4) {
 		this.quantCategoria4 = quantCategoria4;
 	}
-    
-
-    
+	public String getDataInicio() {
+		return dataInicio;
+	}
+	public void setDataInicio(String dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+	public String getDataFim() {
+		return dataFim;
+	}
+	public void setDataFim(String dataFim) {
+		this.dataFim = dataFim;
+	}  
 }

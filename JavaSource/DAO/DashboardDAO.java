@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import connection.ConnectionFactory;
-import modelo.Categoria;
 import modelo.Dashboard;
 
 public class DashboardDAO {
@@ -24,7 +23,7 @@ public class DashboardDAO {
 		return instance;
 	}
 	
-	public int retornoPerdidos () {
+	public int retornoPerdidos (String dataInicio, String dataFim) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -50,7 +49,7 @@ public class DashboardDAO {
 	}
 	
 	
-	public int retornoDevolvidos () {
+	public int retornoDevolvidos (String dataInicio, String dataFim) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -75,7 +74,7 @@ public class DashboardDAO {
 		return dash.getQuantDevolvidos();
 	}
 	
-	public int retornoReciclados () {
+	public int retornoReciclados (String dataInicio, String dataFim) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -100,7 +99,7 @@ public class DashboardDAO {
 		return dash.getQuantReciclados();
 	}
 	
-	public int retornoDoados () {
+	public int retornoDoados (String dataInicio, String dataFim) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -127,7 +126,7 @@ public class DashboardDAO {
 	
 	
 	//Arrumar todos esses selects para agregar a data e testar esse retornoLocal
-	public String retornoLocal () {
+	public String retornoLocal (String dataInicio, String dataFim) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -153,7 +152,7 @@ public class DashboardDAO {
 		return dash.getQuantLocal();
 	}
 
-	public void rankingCategorias() {
+	public void rankingCategorias(String dataInicio, String dataFim) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;

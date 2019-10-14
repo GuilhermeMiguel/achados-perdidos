@@ -1,5 +1,4 @@
-	TAREFAS PELA FRENTE:
-	
+	TAREFAS PELA FRENTE:	
 	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL
 	
 	<h:commandLink value="Logout" action="#{loginController.deslogar}"/> Pra colocar funcao em tag a
@@ -11,8 +10,6 @@
 	*Arrumar tela para pesquisa dos objetos -- OK
 	
 	*Fazer todo o back end necessário para o restante do crud
-
-	*PROCURAR FAZER AS TABELAS DE CATEGORIA E OBJETOS
 
 	*Depois implementar o back para a pesquisa de objetos
 
@@ -27,5 +24,3 @@ na fatec, para o aluno ver
 	*DEFINIR NOME, LOGO E FAVICON
 		*NO CADASTRO DE OBJETOS E VOU USAR O NUMERO DO RA DO ENTREGADOR COM CHAVE ESTRANGEIRA, VER O JAVA SCRIPT QUE FAZ JOGAR 
 O VALOR DE UM INPUT PARA O OUTRO
-	
-	

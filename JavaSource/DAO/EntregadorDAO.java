@@ -116,7 +116,6 @@ public class EntregadorDAO {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		boolean resultado = false;
-		Entregador entregador = new Entregador();
 		
 		String sql = "SELECT documento, nome FROM entregador WHERE documento = ? ";
 
