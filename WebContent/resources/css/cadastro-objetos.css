@@ -148,6 +148,8 @@ background-color: #694077;
 }
 
 
+
+
 /*//////////////////////////////////////////////////////////////////
 [CONTROLE PAGINA TABELA]*/
 
@@ -262,6 +264,11 @@ background-color: #694077;
     align-items: center;
 }
 
+.identificacao {
+	float: left;
+    margin-top: 3%;
+    margin-left: -7%;
+}
 .modal-container.mostrar {
     display: flex;
 }
@@ -336,10 +343,19 @@ background-color: #694077;
 }
 
 .area-botao-salvar-entregador{
-  position: absolute;
-  margin-left: -17%;
-  margin-top: 18%;
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 31%;
 }
+
+.docEntregador {
+	position: absolute;
+    width: 21px;
+    margin-top: 19%;
+    margin-left: 6%;
+    background-color: gray;
+}
+
 
 .pesquisar-entregador, .btn-salvar-entragador, .btn-cancelar-entregador {
   min-width: 100px;
@@ -388,6 +404,12 @@ background-color: #694077;
   position: absolute;
   right: 22%;
   bottom: 6%;
+}
+
+.cadastro-entregador{
+	margin-top: 20%;
+    position: absolute;
+    margin-left: 7%;
 }
 
 /*---------------------------------------------

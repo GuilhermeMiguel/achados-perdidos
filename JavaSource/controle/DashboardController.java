@@ -13,5 +13,14 @@ public class DashboardController {
 	Dashboard dash = new Dashboard();
 	
 	private  DashboardDAO dashDAO = DashboardDAO.getInstance();
-
+	
+	
+	public void pesquisaDashboard() {
+		dashDAO.retornoPerdidos();
+		dashDAO.retornoDevolvidos();
+		dashDAO.retornoDoados();
+		dashDAO.retornoReciclados();
+		
+		dashDAO.rankingCategorias();
+	}
 }

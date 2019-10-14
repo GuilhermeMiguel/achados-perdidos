@@ -152,5 +152,29 @@ public class DashboardDAO {
 		
 		return dash.getQuantLocal();
 	}
+
+	public void rankingCategorias() {
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		Dashboard dash = new Dashboard();
+		String sql = "SELECT categoria, SUM( categoria ) FROM objeto GROUP BY categoria ORDER BY n DESC LIMIT 4";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				dash.setQuantCategoria1(rs.getInt("quantCategoria1"));
+			}
+
+		} catch (SQLException ex) {
+			System.out.println("Erro" + ex);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+		
+	}
 	
 }

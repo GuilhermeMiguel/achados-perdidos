@@ -1,5 +1,9 @@
 	TAREFAS PELA FRENTE:
 	
+	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL
+	
+	<h:commandLink value="Logout" action="#{loginController.deslogar}"/> Pra colocar funcao em tag a
+	
 	!!!!!!!!!
 	DEPOIS DE IMPLEMENTAR O BACK -- ARRUMAR AS TABELAS 
 		: Colocar barra de rolagem horizontal nelas
@@ -19,6 +23,9 @@
 na fatec, para o aluno ver
 
 	*Modal implementado -- agora arrumar o conteúdo que está dentro dele
-	
-	
+		
 	*DEFINIR NOME, LOGO E FAVICON
+		*NO CADASTRO DE OBJETOS E VOU USAR O NUMERO DO RA DO ENTREGADOR COM CHAVE ESTRANGEIRA, VER O JAVA SCRIPT QUE FAZ JOGAR 
+O VALOR DE UM INPUT PARA O OUTRO
+	
+	

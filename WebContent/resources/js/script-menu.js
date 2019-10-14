@@ -9,3 +9,8 @@
 //  $('#wrapper').toggleClass('toggled');
 //}
 //
+
+//
+//$(document).on('click','.menu-devolucao',function(){
+//	$('.pesquisar').trigger('click');
+//});

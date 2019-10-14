@@ -191,8 +191,8 @@ public class FuncionarioDAO {
 		}
 	}
 	
-	
-	public boolean existe(String email, String senha) {
+	//usar na LoginController
+	public boolean funcionarioExiste(String email, String senha) {
 		
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;

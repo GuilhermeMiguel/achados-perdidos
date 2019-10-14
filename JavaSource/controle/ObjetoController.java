@@ -19,7 +19,12 @@ public class ObjetoController {
 	}
 	
 	public void cadastraObjeto() {
-		objDAO.create(objeto);
+		if(!objDAO.objetoExiste(objeto.getId())){
+			objDAO.create(objeto);
+		}
+		else {
+			atualizaObjeto();
+		}
 	}
 	
 	public void atualizaObjeto() {

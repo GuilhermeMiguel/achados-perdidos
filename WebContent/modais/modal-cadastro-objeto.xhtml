@@ -17,6 +17,7 @@
 			</div>
 		</div>
 
+	<h:form>
 		<div class="form-row area-cadastro-modal-objetos">
 			<div class="form-row">
 				<div class="form-group col-md-4">
@@ -73,11 +74,33 @@
 					</div>
 				</div>
 			</div>
+			<div class="form-row">
+				<div class="form-group col-md-1">
+					<div class="titulo-entregador">
+						<h4>Entregador</h4>
+					</div>
+				</div>
+				</div>
+						<h:inputText value="#{objetocontroller.objeto.documento}" 
+										styleClass="docEntregador" id="inputDocEntregador" 
+											pt:placeholder="" />
+					
 
-			<div class="titulo-entregador">
-				<h4>Entregador</h4>
+			<div class="form-row area-botao-salvar">
+				<div class="form-group col-md-4">
+				<h:commandButton value="Salvar"  styleClass="login100-form-btn"  style=" margin-top: 58%;
+    						position: absolute; margin-left: -24%;"/>
+				</div>
+					<div class="form-group col-md-4">
+						<h:commandButton value="Cancelar"  styleClass="login100-form-btn" style="margin-left: -55%;
+						 	margin-top: 58%; position: absolute;" />
+					</div>
 			</div>
+		</div>
 
+</h:form>
+
+<h:form>
 			<div class="form-row identificacao">
 				<div class="form-group col-md-4">
 					<label for="inputCampo">Campo</label>
@@ -92,13 +115,14 @@
 					 <h:inputText styleClass="form-control" id="inputValor" pt:placeholder="..." />
 				</div>
 				<div class="form-group col-md-2">
-					<h:commandButton value="Pesquisar" actionListener="#{entregadorController.cadastraEntregador}" styleClass="pesquisar-entregador" />
+					<h:commandButton value="Pesquisar" actionListener="#{entregadorController.cadastraEntregador}" styleClass="pesquisar-entregador" 
+								style="margin-top: 26px;"/>
 				</div>
 			</div>
 
 			<div class="cadastro-entregador" style="display: none;">
 				<div class="form-row">
-					<div class="form-group col-md-8">
+					<div class="form-group col-md-8" style="margin-left:-8%;">
 						<label for="inputNome">Nome</label> 
 						<h:inputText value="#{entregadorController.entregador.nome}" styleClass="form-control" 
 									 id="inputNome" pt:placeholder="Ex: João..." />
@@ -110,7 +134,7 @@
 					</div>
 				</div>
 				<div class="form-row">
-					<div class="form-group col-md-4">
+					<div class="form-group col-md-4" style="margin-left:-8%;">
 						<label for="inputTelefone01">Telefone</label> 
 						<h:inputText value="#{entregadorController.entregador.telefone}" 
 							styleClass="form-control" id="inputTelefone01" pt:placeholder="Ex:" />
@@ -129,19 +153,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-
-		<div class="form-row area-botao-salvar">
-			<div class="form-group col-md-4">
-				<h:commandButton value="Salvar"  styleClass="login100-form-btn" />
-			</div>
-			<div class="form-group col-md-4">
-				<h:commandButton value="Cancelar"  styleClass="login100-form-btn"
-					style="margin-left: -40%;" />
-			</div>
-		</div>
-	</div>
-
+		
 
 	<div class="form-row area-botao-salvar-entregador"
 		style="display: none;">
@@ -167,6 +179,8 @@
 	<div class="entregador-cadastrado" style="display: none;">
 		<p class="texto-entregador-cadastrado">Já cadastrado?</p>
 	</div>
-</div>
 
+</h:form>
+</div>
+</div>
 </html>

@@ -38,3 +38,12 @@ function iniciaModal(modalID) {
 			$('.identificacao, .acoes-entregador, .area-botao-salvar').fadeIn();
 		});
 	});
+	
+	$('#inputDocumento').keyup(function(){
+		$('#inputDocEntregador').val($(this).val());
+	});
+	
+//	$(document).on('click','.btn.cadastrar-entregador',function(){
+//		console.log($('#inputDocumento').val());
+//			$('#inputDocEntregador').val($('#inputDocumento').val());
+//	});

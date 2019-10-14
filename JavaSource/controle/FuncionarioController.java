@@ -26,7 +26,7 @@ public class FuncionarioController {
 	}
 	
 	public void pesquisaFuncionario() {
-	
+		
 	}
 	
 	public void desativaFuncionario() {

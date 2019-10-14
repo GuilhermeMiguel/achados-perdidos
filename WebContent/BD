@@ -5,7 +5,7 @@ use achadosperdidos;
 
 create table entregador(
 	id int auto_increment primary key,
-	ra varchar(14),
+	documento varchar(14),
 	nome varchar(30),
 	telefone varchar(14),
 	turma varchar(15),
@@ -20,7 +20,7 @@ create table entregador(
     
 create table objeto(
 	id int auto_increment primary key,
-    idEntregador int,
+    docEntregador varchar(20),
     idCategoria int,
 	cor varchar(30),
 	tamanho varchar(30),
@@ -28,7 +28,7 @@ create table objeto(
 	statusObjeto varchar(20),
 	localEncontro varchar(100),
 	turnoEncontro varchar(5),
-    constraint idEntregador FOREIGN KEY (idEntregador) REFERENCES entregador (id),
+    constraint docEntregador FOREIGN KEY (docEntregador) REFERENCES entregador (documento),
     constraint idCategoria FOREIGN KEY (idCategoria) REFERENCES Categoria (id)
     );
 

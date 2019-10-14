@@ -258,4 +258,30 @@ public class ObjetoDAO {
 			ConnectionFactory.closeConnection(con, stmt);
 		}
 	}
+
+	public boolean objetoExiste(int id) {
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		boolean resultado = false;
+		
+		String sql = "SELECT infoComplementares FROM cadastroObjeto WHERE id = ? ";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, id);
+		    rs = stmt.executeQuery();
+			while (rs.next()) {
+				resultado = true;
+			}
+
+		} catch (SQLException ex) {
+			System.out.println("Erro" + ex);
+			
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+
+		return resultado;
+	}
 }

@@ -4,6 +4,7 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <head>
 <title>Cadastro Categoria</title>
@@ -126,6 +127,27 @@
 		</div>
 	</div>
 </h:form>
+
+		<div id="table">
+					<h:form>
+					<table class="table">
+					  <thead class="thead-dark">
+					    <tr>
+					      <th scope="col">Id</th>
+					      <th scope="col">Categoria</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					   <c:forEach var="veiculo" items="#{veiculoController.veiculos}">
+						   	<tr>
+						      <th scope="row">#{categoria.id}</th>
+						      <td>#{categoria.descricao}</td>
+						    </tr>
+          				</c:forEach>
+					  </tbody>
+					</table>
+					</h:form>
+			</div>
   <script src="resources/js/cadastro-categoria.js"></script>
 </body>
 </html>
