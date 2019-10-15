@@ -57,11 +57,11 @@
 					<div class="form-group">
 					<label for="inputData">Data</label>
 						<div class='input-group date' id='datetimepicker6'>
-                <h:inputText styleClass="form-control" pt:placeholder="10/06/2019"/>
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-            </div>
+                			<h:inputText styleClass="form-control" pt:placeholder="10/06/2019"/>
+               					 <span class="input-group-addon">
+                    				<span class="glyphicon glyphicon-calendar"></span>
+                				</span>
+            			</div>
 					</div>
 				</div>
 
@@ -81,9 +81,10 @@
 					</div>
 				</div>
 				</div>
-						<h:inputText value="#{objetocontroller.objeto.documento}" 
-										styleClass="docEntregador" id="inputDocEntregador" 
-											pt:placeholder="" />
+				
+				<h:inputText value="#{objetocontroller.objeto.documento}" 
+						styleClass="docEntregador iptDocEntregador" id="inputDocEntregador"	
+							style="opacity:0;" pt:placeholder="" />
 					
 
 			<div class="form-row area-botao-salvar">
@@ -115,8 +116,8 @@
 					 <h:inputText styleClass="form-control" id="inputValor" pt:placeholder="..." />
 				</div>
 				<div class="form-group col-md-2">
-					<h:commandButton value="Pesquisar" actionListener="#{entregadorController.cadastraEntregador}" styleClass="pesquisar-entregador" 
-								style="margin-top: 26px;"/>
+					<h:commandButton value="Pesquisar" actionListener="#{entregadorController.cadastraEntregador}" 
+							styleClass="pesquisar-entregador" style="margin-top: 26px;"/>
 				</div>
 			</div>
 
@@ -124,32 +125,32 @@
 				<div class="form-row">
 					<div class="form-group col-md-8" style="margin-left:-8%;">
 						<label for="inputNome">Nome</label> 
-						<h:inputText value="#{entregadorController.entregador.nome}" styleClass="form-control" 
+							<h:inputText value="#{entregadorController.entregador.nome}" styleClass="form-control" 
 									 id="inputNome" pt:placeholder="Ex: João..." />
 					</div>
 					<div class="form-group col-md-4">
 						<label for="inputDocumento">RA</label> 
-						<h:inputText styleClass="form-control" value="#{entregadorController.entregador.documento}"
+							<h:inputText styleClass="form-control iptDocumento" value="#{entregadorController.entregador.documento}"
 									id="inputDocumento" pt:placeholder="Ex: " />
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-4" style="margin-left:-8%;">
 						<label for="inputTelefone01">Telefone</label> 
-						<h:inputText value="#{entregadorController.entregador.telefone}" 
-							styleClass="form-control" id="inputTelefone01" pt:placeholder="Ex:" />
+							<h:inputText value="#{entregadorController.entregador.telefone}" 
+								styleClass="form-control" id="inputTelefone01" pt:placeholder="Ex:" />
 					</div>
 
 					<div class="form-group col-md-4">
 						<label for="inputTurma">Turma</label> 
-						<h:inputText type="text" styleClass="form-control" value="#{entregadorController.entregador.turma}"
+							<h:inputText type="text" styleClass="form-control" value="#{entregadorController.entregador.turma}"
 									id="inputTurma" pt:placeholder="Ex: 6° ADS" />
 					</div>
 					
 					<div class="form-group col-md-4">
 						<label for="inputTurnoEntregador">Turno</label> 
-						<h:inputText styleClass="form-control" value="#{entregadorController.entregador.turno}"
-							id="inputTurnoEntregador" pt:placeholder="Ex:" />
+							<h:inputText styleClass="form-control" value="#{entregadorController.entregador.turno}"
+								id="inputTurnoEntregador" pt:placeholder="Ex:" />
 					</div>
 				</div>
 			</div>
@@ -158,14 +159,14 @@
 	<div class="form-row area-botao-salvar-entregador"
 		style="display: none;">
 		<div class="form-group col-md-4">
-			<h:commandButton value="Salvar" actionListener="#{entregadorController.cadastraEntregador}" styleClass="btn-salvar-entragador" />
+			<h:commandButton value="Salvar" actionListener="#{entregadorController.cadastraEntregador}" 
+					styleClass="btn-salvar-entragador" />
 		</div>
 		<div class="form-group col-md-4">
 			<h:commandButton value="Cancelar" styleClass="btn-cancelar-entregador"
-				style="margin-left: 86%;" />
+					style="margin-left: 86%;" />
 		</div>
 	</div>
-
 
 	<div class="acoes-entregador">
 		<div class="cadastrar-entregador">

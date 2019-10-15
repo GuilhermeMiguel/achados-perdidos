@@ -51,13 +51,13 @@
 						<div id="elementos">
 							<div class="form-group">
 								<label class="col-md-1 control-label" for="Selecione"
-									id="texto-label">Selecione<h11>*</h11></label> 
-									<label class="col-md-1">
+											id="texto-label">Selecione*</label> 
+								<label class="col-md-1">
 									
 									</label> 
 									<label class="col-md-3 control-label"
-									for="Contenha" id="texto-label2">Que Contenha<h11>*</h11>
-								</label> <br />
+												for="Contenha" id="texto-label2">Que Contenha*
+									</label> <br />
 							</div>
 
 							<div class="form-group">
@@ -71,7 +71,7 @@
 
 								<div class="col-md-5">
 									<h:inputText class="form-control" type="text" name="pesquisa"
-										pt:placeholder="Deixe vazio para pesquisar todos" />
+											pt:placeholder="Deixe vazio para pesquisar todos" />
 								</div>
 							</div>
 						</div>
@@ -97,31 +97,32 @@
 		<div class="modal-categoria">
 			<div id="banner">
 				<p class="titulo">Cadastro de categoria</p>
-				<div class="fechar-modal" style="background-image: url(images/icone-fechar-modal.png);">
-				</div>
+				<div class="fechar-modal" style="background-image: url(images/icone-fechar-modal.png);"></div>
 			</div>
 
 			<div class="form-row area-cadastro-categoria">
 				<div class="form-group col-md-4">
 					<label for="inputId">Id</label>
-					<h:inputText value="#{categoriaController.categoria.id}"
-					styleClass="form-control" id="inputId"	pt:placeholder="Id..." />
+						<h:inputText value="#{categoriaController.categoria.id}"
+								styleClass="form-control" id="inputId"	pt:placeholder="Id..." />
 				</div>
 				
 				<div class="form-group col-md-6">
 					<label for="inputCategoria">Categoria</label>
-					<h:inputText value="#{categoriaController.categoria.descricao}"
-						styleClass="form-control" id="inputCategoria" pt:placeholder="Ex: Relógio" />
+						<h:inputText value="#{categoriaController.categoria.descricao}"
+								styleClass="form-control" id="inputCategoria" pt:placeholder="Ex: Relógio" />
 				</div>
 			</div>
 
 			<div class="form-group" id="area-botao-modal">
 				<div class="col-md-3">
-					<h:commandButton value="Salvar" actionListener="#{categoriaController.cadastraCategoria}" styleClass="login100-form-btn salvar" />
+					<h:commandButton value="Salvar" actionListener="#{categoriaController.cadastraCategoria}" 
+							styleClass="login100-form-btn salvar" />
 				</div>
 
 				<div class="col-md-4">
-					<h:commandButton value="Cancelar"  actionListener="#{categoriaController.limpaCampos}" styleClass="login100-form-btn cancelar" />
+					<h:commandButton value="Cancelar"  actionListener="#{categoriaController.limpaCampos}" 
+							styleClass="login100-form-btn cancelar" />
 				</div>
 			</div>
 		</div>
@@ -138,7 +139,7 @@
 <!-- 					    </tr> -->
 <!-- 					  </thead> -->
 <!-- 					  <tbody> -->
-<!-- 					   <c:forEach var="veiculo" items="#{veiculoController.veiculos}"> -->
+<!-- 					   <c:forEach var="categoria" items="#{categoriaController.categoriaList}"> -->
 <!-- 						   	<tr> -->
 <!-- 						      <th scope="row">#{categoria.id}</th> -->
 <!-- 						      <td>#{categoria.descricao}</td> -->

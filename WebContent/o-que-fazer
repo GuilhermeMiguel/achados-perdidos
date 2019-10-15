@@ -1,8 +1,16 @@
 	TAREFAS PELA FRENTE:	
-	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL
+!!!!!!!!!!!!!!!!!!!!!!!!!	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+https://pt.stackoverflow.com/questions/247854/obter-item-da-linha-e-coluna-de-uma-tabela-html-din%C3%A2mica
+
+https://pt.stackoverflow.com/questions/231886/mudar-o-%C3%ADcone-da-linha-da-tabela-quando-clicar-dinamicamente
+
+--NAO FECHAR MODAL
+https://pt.stackoverflow.com/questions/327385/enviar-form-sem-fechar-modal
 	
 	<h:commandLink value="Logout" action="#{loginController.deslogar}"/> Pra colocar funcao em tag a
 	
+	*Ver como eu faço em javaScript para clicar em icone e carregar valores daquela linha em inputs
 	!!!!!!!!!
 	DEPOIS DE IMPLEMENTAR O BACK -- ARRUMAR AS TABELAS 
 		: Colocar barra de rolagem horizontal nelas

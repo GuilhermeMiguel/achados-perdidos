@@ -1,5 +1,7 @@
 package controle;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -10,14 +12,19 @@ import modelo.Categoria;
 @SessionScoped
 public class CategoriaController {
 
+	private List<Categoria> categoriaList;
 	private Categoria categoria;
 	private CategoriaDAO categoriaDAO = CategoriaDAO.getInstance();
 
 	boolean categoriaExiste;
+	
+	
 	public CategoriaController() {
 		categoria = new Categoria();
+		//exibeListaCategorias();
 	}
 	
+
 	public Categoria getCategoria() {
 		return categoria;
 	}
@@ -25,12 +32,23 @@ public class CategoriaController {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	
+		
+	public List<Categoria> getCategoriaList() {
+		return categoriaList;
+	}
+
+
+	public void setCategoriaList(List<Categoria> categoriaList) {
+		this.categoriaList = categoriaList;
+	}
+
+
 	//Funciona
 	public void cadastraCategoria() {
 		
 		if(!categoriaDAO.categoriaExiste(categoria.getId())){
 			categoriaDAO.create(categoria);
+			exibeListaCategorias();
 		}
 		else {
 			atualizaCategoria();
@@ -43,11 +61,13 @@ public class CategoriaController {
 	
 	public void atualizaCategoria() {
 		categoriaDAO.update(categoria);
+		exibeListaCategorias();
 	}
 	
 	//Funciona
 	public void desabilitaCategoria() {
 		categoriaDAO.desabilitaCategoria(categoria.getId());
+		exibeListaCategorias();
 	}
 	
 	//Funciona
@@ -59,4 +79,9 @@ public class CategoriaController {
 		categoria.setId(0);
 		categoria.setDescricao("");
 	}
+	
+	public void exibeListaCategorias() {
+		categoriaList = categoriaDAO.read();
+	}
+
 }

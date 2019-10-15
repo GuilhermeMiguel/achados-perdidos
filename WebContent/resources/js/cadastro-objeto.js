@@ -39,11 +39,7 @@ function iniciaModal(modalID) {
 		});
 	});
 	
-	$('#inputDocumento').keyup(function(){
-		$('#inputDocEntregador').val($(this).val());
+	$('.iptDocumento').keyup(function(){
+		$('.iptDocEntregador').val($(this).val());
 	});
 	
-//	$(document).on('click','.btn.cadastrar-entregador',function(){
-//		console.log($('#inputDocumento').val());
-//			$('#inputDocEntregador').val($('#inputDocumento').val());
-//	});
