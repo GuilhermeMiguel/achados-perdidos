@@ -32,17 +32,15 @@
 </head>
 
 <body>
-	<section id="section-cadastro">
+<section id="section-cadastro">
 
 	<div class="menu-incluso">
 		<ui:include src="menu.xhtml"/>
-		</div>
+	</div>
 	
 	<h:form class="form-horizontal">
 		<div class="container">
-
 			<div class="row" id="linha-cadastro">
-
 				<div class="panel-body" id="area-cadastro">
 					<div id="banner">
 						<div class="container-flex">
@@ -57,7 +55,6 @@
 					</div>
 
 					<div id="area-cadastro-formulario">
-						<!-- Text input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="Nome" id="texto-label" style="margin-top: 0px !important;">Nome</label>
 							<div class="col-md-8">
@@ -69,32 +66,22 @@
 							</div>
 						</div>
 
-
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="Nascimento"
 								id="texto-label"  style="margin-top: 0px !important;">Nascimento</label>
 							<div class="col-md-5">
 								<div class="wrap-input100 validate-input m-b-26">
 									<h:inputText value="#{funcionariocontroller.funcionario.nascimento}" 
-										styleClass="input100" 	name="nascimento" pt:placeholder="" />
+											styleClass="input100" 	name="nascimento" pt:placeholder="" />
 									<span class="focus-input100"></span>
 								</div>
 							</div>
 						</div>
 
-						<!-- Multiple Radios (inline) -->
-
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="radios"
-								id="texto-label-sexo"  style="margin-top: 0px !important;">Sexo</label>
+								id="texto-label-sexo" style="margin-top: 0px !important;">Sexo</label>
 							<div class="col-md-8">
-<!-- 								<label class="radio-inline" for="radios-0" id="label-sexo"> -->
-<!-- 									<input name="sexo" id="sexo" value="feminino" type="radio" /> -->
-<!-- 									Feminino -->
-<!-- 								</label> <label class="radio-inline" for="radios-1" id="label-sexo"> -->
-<!-- 									<input name="sexo" id="sexo" value="masculino" type="radio" /> -->
-<!-- 									Masculino -->
-<!-- 								</label> -->
 								<h:selectOneRadio value="#{funcionariocontroler.funcionario.sexo}">
 								 	<f:selectItem itemValue="Feminino" id="option1" itemLabel="Feminino" />
 								 	<f:selectItem itemValue="Masculino" id="option2" itemLabel="Masculino" />
@@ -102,7 +89,6 @@
 							</div>
 						</div>
 
-						<!-- Prepended text-->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="prependedtext"
 								id="texto-label"  style="margin-top: 0px !important;">Telefone</label>
@@ -110,30 +96,26 @@
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
 										<h:inputText value="#{funcionariocontroller.funcionario.telefone}"
-											 styleClass="input100" name="telefone" pt:placeholder="" />
+											 	styleClass="input100" name="telefone" pt:placeholder="" />
 										<span class="focus-input100"></span>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<!-- Prepended text-->
 						<div class="form-group">
-
 							<label class="col-md-3 control-label" for="prependedtext"
 								id="texto-label"  style="margin-top: 0px !important;">Email</label>
 							<div class="col-md-5">
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
 										<h:inputText value="#{funcionariocontroller.funcionario.email}" 
-											styleClass="input100" name="email" pt:placeholder="" />
+												styleClass="input100" name="email" pt:placeholder="" />
 										<span class="focus-input100"></span>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<!-- Text input-->
 
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="usuario"
@@ -147,7 +129,6 @@
 							</div>
 						</div>
 						
-						<!-- Select Basic -->
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="Cargo"
 								id="texto-label-cargo"  style="margin-top: 0px !important;">Cargo</label>
@@ -180,7 +161,6 @@
 			</div>
 		</div>
 	</h:form>
-
 	</section>
 
 <h:form>
@@ -197,25 +177,24 @@
 			<div class="form-row area-alteracao-senha">
 				<div class="form-group col-md-6">
 					<label for="inputSenhaAntiga">Senha Antiga</label>
-					<h:inputText styleClass="form-control"	id="inputSenhaAntiga" />
+						<h:inputText styleClass="form-control"	id="inputSenhaAntiga" />
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputSenhaNova">Nova Senha </label>
-					<h:inputSecret value="#{funcionariocontroller.funcionario.senha}"
-						styleClass="form-control" id="inputSenhaNova" />
+						<h:inputSecret value="#{funcionariocontroller.funcionario.senha}"
+							styleClass="form-control" id="inputSenhaNova" />
 				</div>
 			</div>
 
 			<div class="form-group" id="area-botao-modal">
-
 				<div class="col-md-3">
-					<h:commandButton actionListener="#{funcionariocontroller.atualizaFuncionario}" value="Salvar" styleClass="login100-form-btn" />
+					<h:commandButton actionListener="#{funcionariocontroller.atualizaFuncionario}" value="Salvar" 
+							styleClass="login100-form-btn" />
 				</div>
 
 				<div class="col-md-4">
 					<h:commandButton value="Cancelar" styleClass="login100-form-btn" />
 				</div>
-
 			</div>
 		</div>
 	</div>

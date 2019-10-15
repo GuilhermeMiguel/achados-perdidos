@@ -10,6 +10,12 @@ https://pt.stackoverflow.com/questions/327385/enviar-form-sem-fechar-modal
 	
 	<h:commandLink value="Logout" action="#{loginController.deslogar}"/> Pra colocar funcao em tag a
 	
+	
+	[quote="marlonmeneses"]coloque a table dentro de uma div <div style="overflow: auto; width: 640px"> table aqui </div>
+Você ainda pode especificar qual barra de rolagem deseja, a da direita ou a a de baixo, com overflow-x e overflow-y
+
+https://www.devmedia.com.br/forum/barra-de-rolagem-vertical-em-tabela-div/565457
+	
 	*Ver como eu faço em javaScript para clicar em icone e carregar valores daquela linha em inputs
 	!!!!!!!!!
 	DEPOIS DE IMPLEMENTAR O BACK -- ARRUMAR AS TABELAS 

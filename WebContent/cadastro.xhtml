@@ -8,25 +8,29 @@
 
 <head>
 <title>Cadastro</title>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+
+<!--===============================================================================================-->
+
+<!-- Css do projeto -->
 <link rel="stylesheet" type="text/css" href="resources/css/cadastro.css" />
 <!--===============================================================================================-->
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+<!--===============================================================================================-->
+
+<!-- Css do projeto -->
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
 
 <!-- jQuery library -->
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
+<!-- JavaScript -->
 <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-	<section id="section-cadastro"> 
+<section id="section-cadastro"> 
 	<h:form	styleClass="form-horizontal">
 		<div class="container">
 			<div class="row" id="linha-cadastro">
@@ -47,7 +51,6 @@
 							</div>
 						</div>
 
-						<!-- Text input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label texto-label" for="nome" style="font-weight :700 !important; margin-top: 0%;">Nome*</label>
 							<div class="col-md-8">
@@ -77,22 +80,13 @@
 							<label class="col-md-3 control-label texto-label-sexo"
 								for="radios" style="font-weight :700 !important; margin-top: 0%;">Sexo*</label>
 							<div class="col-md-8 radio-botao">
-<!-- 								<label class="radio-inline label-sexo sexo" for="radios-0"> -->
-<!-- 									<input type="radio" name="sexo" value="feminino" -->
-<!-- 									required="true" /> Feminino -->
-<!-- 								</label> <label class="radio-inline label-sexo sexo" for="radios-1"> -->
-<!-- 									<input type="radio" name="sexo" value="masculino" /> Masculino -->
-<!-- 								</label> -->
-								<h:selectOneRadio value="#{funcionariocontroler.funcionario.sexo}">
+									<h:selectOneRadio value="#{funcionariocontroler.funcionario.sexo}">
 								   			<f:selectItem itemValue="Feminino" id="option1" itemLabel="Feminino"/>
 								   			<f:selectItem itemValue="Masculino" id="option2" itemLabel="Masculino"/>
-								   		</h:selectOneRadio>
-
+								   	</h:selectOneRadio>
 							</div>
 						</div>
 
-
-						<!-- Prepended text-->
 						<div class="form-group">
 							<label class="col-md-3 control-label texto-label" for="email" style="font-weight :700 !important; margin-top: 0%;">Email*</label>
 							<div class="col-md-6">
@@ -106,7 +100,6 @@
 							</div>
 						</div>
 						
-							<!-- Text input-->
 						<div class="form-group">
 							<label class="col-md-3 control-label texto-label" for="usuario" style="font-weight :700 !important; margin-top: 0%;">Usuário*</label>
 							<div class="col-md-6">
@@ -118,7 +111,6 @@
 							</div>
 						</div>
 						
-							<!-- Prepended text-->
 						<div class="form-group">
 							<label class="col-md-3 control-label texto-label" for="senha" style="font-weight :700 !important; margin-top: 0%;">Senha*</label>
 							<div class="col-md-6">
@@ -131,7 +123,6 @@
 								</div>
 							</div>
 						</div>
-						
 
 						<!-- Select Basic -->
 						<div class="form-group">
@@ -139,7 +130,7 @@
 								for="cargo" style="font-weight :700 !important; margin-top: 0%;">Cargo*</label>
 							<div class="col-md-5">
 								<h:selectOneMenu value="#{funcionariocontroller.funcionario.cargo}" id="Cargo" 
-									name="cargo" class="form-control combobox-tamanho">
+										name="cargo" class="form-control combobox-tamanho">
 									<f:selectItem itemValue="Selecione...."/>
 									<f:selectItem itemValue="Administrativo"/>
 									<f:selectItem itemValue="Professor"/>
@@ -150,17 +141,14 @@
 						</div>
 
 						<div id="area-login">
-							<a href="index.xhtml" class="texto-login"> Já possui perfil?
-							</a>
+							<a href="index.xhtml" class="texto-login"> Já possui perfil?</a>
 						</div>
 
 						<div class="form-group">
-							<div class="col-md-2">
-							
-							</div>
+							<div class="col-md-2"></div>
 							
 							<div class="col-md-4">
-								<h:commandButton class="login100-form-btn" actionListener="#{funcionarioController.cadastraFuncionario}" value="Cadastrar"/>
+								<h:commandButton class="login100-form-btn" actionListener="#{funcionariocontroller.cadastraFuncionario}" value="Cadastrar"/>
 							</div>
 						</div>
 					</div>
