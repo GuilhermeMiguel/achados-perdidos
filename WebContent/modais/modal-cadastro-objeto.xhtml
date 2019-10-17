@@ -22,7 +22,7 @@
 			<div class="form-row">
 				<div class="form-group col-md-4">
 					<label for="inputCategoria">Categoria</label> 
-					<h:selectOneMenu value="#{objetocontroller.objeto.categoria}"
+					<h:selectOneMenu value="#{objetoController.objeto.categoria}"
 						 id="inputCategoria" class="form-control combobox-tamanho">
 						<f:selectItem itemValue="Escolher..."/>
 						<f:selectItem itemValue="..."/>
@@ -30,13 +30,13 @@
 				</div>
 				<div class="form-group col-md-4">
 					<label for="inputCor">Cor</label>
-					<h:inputText value="#{objetocontroller.objeto.cor}" 
+					<h:inputText value="#{objetoController.objeto.cor}" 
 								styleClass="form-control" id="inputCor" pt:placeholder="Ex: Preto" />
 				</div>
 
 				<div class="form-group col-md-4">
 					<label for="inputTamanho">Tamanho</label>
-					<h:inputText value="#{objetocontroller.objeto.tamanho}" 
+					<h:inputText value="#{objetoController.objeto.tamanho}" 
 								styleClass="form-control" id="inputTamanho" pt:placeholder="Ex: 10 cm" />
 				</div>
 			</div>
@@ -44,13 +44,13 @@
 			<div class="form-row">
 				<div class="form-group col-md-4">
 					<label for="inputLocal">Local</label>
-					<h:inputText value="#{objetocontroller.objeto.local}" 
+					<h:inputText value="#{objetoController.objeto.local}" 
 								styleClass="form-control" id="inputLocal" pt:placeholder="Ex: Aquário" />
 				</div>
 
 				<div class="form-group col-md-4">
 					<label for="inputTurno">Turno</label>
-					<h:inputText value="#{objetocontroller.objeto.turno}" 
+					<h:inputText value="#{objetoController.objeto.turno}" 
 								styleClass="form-control" id="inputTurno" pt:placeholder="Ex: Noite" />
 				</div>
 				<div class=" form-group col-md-4">
@@ -68,7 +68,7 @@
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="inputInfoComplementar">Informações Complementares</label> 
-							<h:inputText value="#{objetocontroller.objeto.infoComlementares}" 
+							<h:inputText value="#{objetoController.objeto.infoComplementares}" 
 										styleClass="form-control" id="inputInfoComplementar" 
 											pt:placeholder="Ex: Objeto com..." />
 					</div>
@@ -82,14 +82,15 @@
 				</div>
 				</div>
 				
-				<h:inputText value="#{objetocontroller.objeto.documento}" 
+				<h:inputText value="#{objetoController.objeto.docEntregador}" 
 						styleClass="docEntregador iptDocEntregador" id="inputDocEntregador"	
 							style="opacity:0;" pt:placeholder="" />
 					
 
 			<div class="form-row area-botao-salvar">
 				<div class="form-group col-md-4">
-				<h:commandButton value="Salvar"  styleClass="login100-form-btn"  style=" margin-top: 58%;
+				<h:commandButton value="Salvar"  actionListener="#{objetoController.cadastraObjeto}" 
+					styleClass="login100-form-btn"					 style=" margin-top: 58%;
     						position: absolute; margin-left: -24%;"/>
 				</div>
 					<div class="form-group col-md-4">
@@ -116,7 +117,7 @@
 					 <h:inputText styleClass="form-control" id="inputValor" pt:placeholder="..." />
 				</div>
 				<div class="form-group col-md-2">
-					<h:commandButton value="Pesquisar" actionListener="#{entregadorController.cadastraEntregador}" 
+					<h:commandButton value="Pesquisar" 
 							styleClass="pesquisar-entregador" style="margin-top: 26px;"/>
 				</div>
 			</div>
@@ -160,7 +161,7 @@
 		style="display: none;">
 		<div class="form-group col-md-4">
 			<h:commandButton value="Salvar" actionListener="#{entregadorController.cadastraEntregador}" 
-					styleClass="btn-salvar-entragador" />
+					styleClass="btn-salvar-entregador" />
 		</div>
 		<div class="form-group col-md-4">
 			<h:commandButton value="Cancelar" styleClass="btn-cancelar-entregador"

@@ -31,13 +31,13 @@ public class ObjetoDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
-		String sql = "INSERT INTO cadastroObjeto (id, idEntregador, categoria, cor, tamanho, local, turno, infoComplementares, status ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO cadastroObjeto (id, docEntregador, categoria, cor, tamanho, local, turno, infoComplementares, status ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, c.getId());
-			stmt.setInt(2, c.getIdEntregador());
+			stmt.setString(2, c.getDocEntregador());
 			stmt.setString(3, c.getCategoria());
 			stmt.setString(4, c.getCor());
 			stmt.setDouble(5, c.getTamanho());
@@ -74,7 +74,7 @@ public class ObjetoDAO {
 
 				Objeto CadObj = new Objeto();
 				CadObj.setId(rs.getInt("id"));
-				CadObj.setIdEntregador(rs.getInt("identregador"));
+				CadObj.setDocEntregador(rs.getString("identregador"));
 				CadObj.setCategoria(rs.getString("categoria"));
 				CadObj.setCor(rs.getString("cor"));
 				CadObj.setTamanho(rs.getDouble("tamanho"));

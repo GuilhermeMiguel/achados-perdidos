@@ -3,7 +3,7 @@ package modelo;
 public class Objeto {
 
 	private int Id;
-	private int idEntregador;
+	private String docEntregador;
 	private String categoria;
 	private String cor;
 	private Double tamanho;
@@ -18,13 +18,13 @@ public class Objeto {
 	public void setId(int id) {
 		Id = id;
 	}
-	public int getIdEntregador() {
-		return idEntregador;
+		
+	public String getDocEntregador() {
+		return docEntregador;
 	}
-	public void setIdEntregador(int idEntregador) {
-		this.idEntregador = idEntregador;
+	public void setDocEntregador(String docEntregador) {
+		this.docEntregador = docEntregador;
 	}
-	
 	public String getCategoria() {
 		return categoria;
 	}

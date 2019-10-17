@@ -34,9 +34,9 @@ public class EntregadorDAO {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, e.getDocumento());
 			stmt.setString(2, e.getNome());
-			stmt.setString(4, e.getTelefone());
-			stmt.setString(6, e.getTurma());
-			stmt.setString(7, e.getTurno());
+			stmt.setString(3, e.getTelefone());
+			stmt.setString(4, e.getTurma());
+			stmt.setString(5, e.getTurno());
 			stmt.executeUpdate();
 
 			System.out.println("Salvo com sucesso");
