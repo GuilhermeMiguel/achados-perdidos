@@ -13,30 +13,46 @@ import modelo.Dashboard;
 @SessionScoped
 public class DashboardController {
 
-	Dashboard dash = new Dashboard();
+	Dashboard dashboard = new Dashboard();
 	
 	private  DashboardDAO dashDAO = DashboardDAO.getInstance();
-	private String dataInicio;
-	private String dataFim;
+	private String dtInicio;
+	private String dtFim;
 	
 	public void pesquisaDashboard() {
-		if(dash.getDataInicio() == "" && dash.getDataFim() == "") {
+		if(dashboard.getDataInicio() == "" && dashboard.getDataFim() == "") {
 			java.util.Date diaHoje = new Date();
 			String dataAtual = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(diaHoje);
-			dataInicio = dataAtual;
-			dataFim = dataAtual;
+			dtInicio = dataAtual;
+			dtFim = dataAtual;
 		}
 		else {
-			dataInicio = dash.getDataInicio();
-			dataFim = dash.getDataFim();
+			dtInicio = dashboard.getDataInicio();
+			dtFim = dashboard.getDataFim();
 		}
 		
-		dashDAO.retornoPerdidos(dataInicio, dataFim);
-		dashDAO.retornoDevolvidos(dataInicio, dataFim);
-		dashDAO.retornoDoados(dataInicio, dataFim);
-		dashDAO.retornoReciclados(dataInicio, dataFim);
+		String[] datasFormatadas = new String[2];
+		datasFormatadas = formataDatas(dtInicio, dtFim);
 		
-		dashDAO.rankingCategorias(dataInicio, dataFim);
+		dtInicio = datasFormatadas[0];
+		dtFim = datasFormatadas[1];
 		
+		dashDAO.retornoPerdidos(dtInicio, dtFim);
+		dashDAO.retornoDevolvidos(dtInicio, dtFim);
+		dashDAO.retornoDoados(dtInicio, dtFim);
+		dashDAO.retornoReciclados(dtInicio, dtFim);
+		
+		dashDAO.rankingCategorias(dtInicio, dtFim);
+		
+	}
+	
+	public String[] formataDatas(String dtIn, String dtFim) {
+		String[] datas = new String[2];
+        datas[0] = dtIn.substring(6, 4) + "-" + dtIn.substring(3, 2) + "-"
+                        + dtIn.substring(0, 2);
+
+        datas[1] = dtFim.substring(6, 4) + "-" + dtFim.substring(3, 2) + "-"
+                      + dtFim.substring(0, 2);
+        return datas;
 	}
 }

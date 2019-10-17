@@ -10,3 +10,9 @@
    
        const cadastrar = document.querySelector('.alterar-senha');
        cadastrar.addEventListener('click', () => iniciaModal('modal-principal'));
+       
+       
+       
+$(document).ready(function(){
+    $('.iptNascimento').mask('00/00/0000');
+});

@@ -35,3 +35,9 @@
 					}
 				}
 			});
+			
+			
+			  //Importa-se o arquivo jquery de mascara no html e depois se faz uma funcao setando o campo e se faz assim
+		    $(document).ready(function(){
+		        $('.input-data').mask('00/00/0000');
+		     });

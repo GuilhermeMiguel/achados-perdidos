@@ -111,7 +111,7 @@ public class ObjetoDAO {
 			while (rs.next()) {
 
 				CadObj.setId(rs.getInt("id"));
-				CadObj.setIdEntregador(rs.getInt("identregador"));
+				CadObj.setDocEntregador(rs.getString("identregador"));
 				CadObj.setCategoria(rs.getString("categoria"));
 				CadObj.setCor(rs.getString("cor"));
 				CadObj.setTamanho(rs.getDouble("tamanho"));
@@ -149,7 +149,7 @@ public class ObjetoDAO {
 
 			while (rs.next()) {
 				CadObj.setId(rs.getInt("id"));
-				CadObj.setIdEntregador(rs.getInt("identregador"));
+				CadObj.setDocEntregador(rs.getString("identregador"));
 				CadObj.setCategoria(rs.getString("categoria"));
 				CadObj.setCor(rs.getString("cor"));
 				CadObj.setTamanho(rs.getDouble("tamanho"));
@@ -187,7 +187,7 @@ public class ObjetoDAO {
 
 			while (rs.next()) {
 				CadObj.setId(rs.getInt("id"));
-				CadObj.setIdEntregador(rs.getInt("identregador"));
+				CadObj.setDocEntregador(rs.getString("identregador"));
 				CadObj.setCategoria(rs.getString("categoria"));
 				CadObj.setCor(rs.getString("cor"));
 				CadObj.setTamanho(rs.getDouble("tamanho"));
@@ -218,7 +218,7 @@ public class ObjetoDAO {
 
 		try {
 			stmt = con.prepareStatement(sql);
-			stmt.setInt(1, c.getIdEntregador());
+			stmt.setString(1, c.getDocEntregador());
 			stmt.setString(2, c.getCategoria());
 			stmt.setString(3, c.getCor());
 			stmt.setDouble(4, c.getTamanho());

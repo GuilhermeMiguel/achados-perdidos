@@ -1,6 +1,11 @@
 	TAREFAS PELA FRENTE:	
 !!!!!!!!!!!!!!!!!!!!!!!!!	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+	NA TELA DE DADOS CADASTRAIS EU TENHO O CAMPO TELEFONE, PORÉM NA TELA DE CADASTRO EU NÃO TENHO,
+então decidir de no cadastro eu seto o telefone como nulo e dou ao usuário a opção de atualizar
+
+	Ou se tiro o campo telefone da tela de dados cadastrais também 
+
 Trocar todos os controllers de minusculo para maiusculo
 
 Trocar no banco identregador para documento entregador como chave primaria  e salvar isso na tabela de objeto como chave estrangeira

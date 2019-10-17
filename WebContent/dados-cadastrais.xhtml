@@ -72,7 +72,7 @@
 							<div class="col-md-5">
 								<div class="wrap-input100 validate-input m-b-26">
 									<h:inputText value="#{funcionariocontroller.funcionario.nascimento}" 
-											styleClass="input100" 	name="nascimento" pt:placeholder="" />
+											styleClass="input100 iptNascimento"	name="nascimento" pt:placeholder="" />
 									<span class="focus-input100"></span>
 								</div>
 							</div>
@@ -82,7 +82,7 @@
 							<label class="col-md-3 control-label" for="radios"
 								id="texto-label-sexo" style="margin-top: 0px !important;">Sexo</label>
 							<div class="col-md-8">
-								<h:selectOneRadio value="#{funcionariocontroler.funcionario.sexo}">
+								<h:selectOneRadio value="#{funcionariocontroller.funcionario.sexo}">
 								 	<f:selectItem itemValue="Feminino" id="option1" itemLabel="Feminino" />
 								 	<f:selectItem itemValue="Masculino" id="option2" itemLabel="Masculino" />
 								 </h:selectOneRadio>
@@ -133,7 +133,8 @@
 							<label class="col-md-3 control-label" for="Cargo"
 								id="texto-label-cargo"  style="margin-top: 0px !important;">Cargo</label>
 							<div class="col-md-5">
-								<h:selectOneMenu id="Cargo" name="Cargo" class="form-control combobox-tamanho">
+								<h:selectOneMenu value="#{funcionariocontroller.funcionario.cargo}"  
+										id="Cargo" name="Cargo" class="form-control combobox-tamanho">
 									<f:selectItem itemValue="Selecione"/>
 									<f:selectItem itemValue="Administrativo"/>
 									<f:selectItem itemValue="Professor"/>
@@ -199,8 +200,9 @@
 		</div>
 	</div>
 </h:form>
-       
- 	<script src="resources/js/dados-cadastrais.js"></script>
+
+<script src="resources/js/jquery.mask.js"></script>       
+<script src="resources/js/dados-cadastrais.js"></script>
 
 </body>
 

@@ -68,7 +68,7 @@
 							<div class="col-md-6">
 								<div class="wrap-input100 validate-input m-b-26">
 									<h:inputText value="#{funcionariocontroller.funcionario.nascimento}" 
-										styleClass="input100" name="nascimento" pt:placeholder="DD/MM/AAAA" />
+										styleClass="input100 iptNascimento" name="nascimento" pt:placeholder="DD/MM/AAAA" />
 									<span class="focus-input100"></span>
 								</div>
 							</div>
@@ -148,7 +148,7 @@
 							<div class="col-md-2"></div>
 							
 							<div class="col-md-4">
-								<h:commandButton class="login100-form-btn" actionListener="#{funcionariocontroller.cadastraFuncionario}" value="Cadastrar"/>
+								<h:commandButton class="login100-form-btn" actionListener="#{funcionarioController.cadastraFuncionario}" value="Cadastrar"/>
 							</div>
 						</div>
 					</div>
@@ -158,8 +158,8 @@
 	</h:form> 
 	</section>
 
-	<script src="resources/js/main.js"></script>
+<script src="resources/js/jquery.mask.js"></script>
+<script src="resources/js/main.js"></script>
 
 </body>
-
 </html>

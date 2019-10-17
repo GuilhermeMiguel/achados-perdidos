@@ -92,3 +92,7 @@ $( ".lupa" ).hover(function() {
 $( ".lupa" ).mouseout(function() {
 	$('.pesquisar-objetos').delay(1200).fadeOut('slow');
 });
+
+$(document).ready(function(){
+    $('.iptNascimento').mask('00/00/0000');
+ });	

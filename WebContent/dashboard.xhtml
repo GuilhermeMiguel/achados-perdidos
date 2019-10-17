@@ -26,6 +26,10 @@
 
 <link rel="stylesheet"	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous">
+	</script>
 <!--===============================================================================================-->
 
 <title>Dashboard</title>
@@ -44,7 +48,7 @@
 				<div class="form-group col-md-4">
 					<label for="inputCategoria">Data Inicio</label> 
 					<div class='input-group date' id='datetimepicker6'>
-						<h:inputText value="#{objetocontroller.objeto.cor}" 
+						<h:inputText value="#{dashboardcontroller.dashboard.dataInicio}" 
 								styleClass="form-control input-data" pt:placeholder="10/05/2019" />
 							<span class="input-group-addon" style="background-color: transparent;">
                     				<span class="glyphicon glyphicon-calendar"></span>
@@ -54,7 +58,7 @@
 				<div class="form-group col-md-4">
 					<label for="inputCor">Data Fim</label>
 					<div class='input-group date' id='datetimepicker6'>
-						<h:inputText value="#{objetocontroller.objeto.cor}"
+						<h:inputText value="#{dashboardcontroller.dashboard.dataFim}"
 								styleClass="form-control input-data" pt:placeholder="10/06/2019" />
 								 <span class="input-group-addon" style="background-color: transparent;">
                     				<span class="glyphicon glyphicon-calendar"></span>
@@ -172,18 +176,18 @@
 		<script src="resources/js/dashboard.js"></script>
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous">
-	</script>
+	
 
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 		crossorigin="anonymous">
 	</script>
+	
 
-	<script src="resources/js/script-menu.js"></script>
 
+<script src="resources/js/script-menu.js"></script>
+
+<script src="resources/js/jquery.mask.js"></script>
 </body>
 </html>

@@ -27,6 +27,7 @@ create table objeto(
 	infoComplementares varchar(100),
 	statusObjeto varchar(20),
 	localEncontro varchar(100),
+	dataEncontro date,
 	turnoEncontro varchar(5),
     constraint docEntregador FOREIGN KEY (docEntregador) REFERENCES entregador (documento),
     constraint idCategoria FOREIGN KEY (idCategoria) REFERENCES Categoria (id)

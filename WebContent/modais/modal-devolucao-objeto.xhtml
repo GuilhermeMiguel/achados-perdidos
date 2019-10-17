@@ -42,7 +42,7 @@
 				<div class="form-group col-md-4">
 						<label for="inputDocumento">Documento</label> 
 						<h:inputText value="#{devolucaoController.objeto.documentoDono}"
-								styleClass="form-control" id="inputDocumento" pt:placeholder="Ex:Nº RA"/>
+								styleClass="form-control iptDocumento" id="inputDocumento" pt:placeholder="Ex: RA, RG ou CPF"/>
 					</div>
 					
 					<div class="form-group col-md-8">
@@ -57,14 +57,14 @@
 					<div class="form-group col-md-4">
 						<label for="inputTelefone01">Telefone</label> 
 							<h:inputText value="#{devolucaoController.objeto.telefoneDono}" 
-								styleClass="form-control" id="inputTelefone01" pt:placeholder="Ex: (11) 2564-8790"/>
+								styleClass="form-control iptFixo" id="inputTelefone01" pt:placeholder="Ex: (11) 2564-8790"/>
 					</div>
 					
 					<div class="form-row">
 						<div class="form-group col-md-4">
 							<label for="inputTelefone02">Celular</label> 
 								<h:inputText value="#{devolucaoController.objeto.celularDono}" 
-									styleClass="form-control" id="inputTelefone02"	pt:placeholder="Ex: (11) 2564-8790"/>
+									styleClass="form-control iptCelular" id="inputTelefone02"	pt:placeholder="Ex: (11) 2564-8790"/>
 						</div>
 					</div>
 					
@@ -72,7 +72,7 @@
 						<div class="form-group">
 							<label for="datetimepicker9">Data</label>
 							<div class='input-group date' id='datetimepicker9'>
-								<h:inputText styleClass="form-control" pt:placeholder="10/06/2019" /> 
+								<h:inputText styleClass="form-control iptData" pt:placeholder="10/06/2019" /> 
 									<span class="input-group-addon"> 
 										<span class="glyphicon glyphicon-calendar"> </span>
 								</span>

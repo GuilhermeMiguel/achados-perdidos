@@ -1,0 +1,46 @@
+  Classe com a conversão de datas para fazer as pesquisas no dashboard
+  
+  private void btn_comandos_Click(object sender, EventArgs e)
+        {
+            string[] dataComandos = new string[2];
+
+            dataComandos = capturarDatas();
+            string dtInicio = dataComandos[0];
+            string dtFim = dataComandos[1];
+
+            string SqlComando = "SELECT * FROM tbPostoReceber WHERE CAST(sys_dInsert AS DATE) BETWEEN '" + dtInicio + "' AND '" + dtFim + "' order by sys_dInsert DESC";
+            status = "comandos";
+
+            incrementarProgressBar();
+
+            ExecuteSql(SqlComando, status);
+
+        }
+
+       
+ private string[] capturarDatas()
+        {
+
+
+            string dtIn = dt_picker1.Value.ToString();
+            string dtF = dt_picker2.Value.ToString();
+
+            //Data inicial nao pode ser maior que a final
+            if (DateTime.Parse(dtIn) > DateTime.Parse(dtF))
+            {
+                lbl_arquivo.Text = "     A data inicial escolhida é maior que a final.";
+                dataGridView.DataSource = null;
+            }
+            else
+            {
+                lbl_arquivo.Text = "";
+            }
+			
+			//Aqui fazendo o substring para poder fazer a pesquisa
+            datas[0] = dtIn.Substring(6, 4) + "-" + dtIn.Substring(3, 2) + "-"
+                            + dtIn.Substring(0, 2);
+
+            datas[1] = dtF.Substring(6, 4) + "-" + dtF.Substring(3, 2) + "-"
+                          + dtF.Substring(0, 2);
+            return datas;
+        }
