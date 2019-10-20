@@ -31,7 +31,7 @@ public class FuncionarioDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
-		String sql = "INSERT INTO funcionario (nome, sexo, nascimento, usuario, senha, email, cargo)VALUES(?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO funcionario (nome, sexo, telefone, usuario, senha, email, cargo)VALUES(?,?,?,?,?,?,?)";
 
 		try {
 
@@ -39,7 +39,7 @@ public class FuncionarioDAO {
 					
 			stmt.setString(1, f.getNome());
 			stmt.setString(2, f.getSexo());
-			stmt.setString(3, f.getNascimento());
+			stmt.setString(3, f.getTelefone());
 			stmt.setString(4, f.getUsuario());
 			stmt.setString(5, f.getSenha());
 			stmt.setString(6, f.getEmail());
@@ -76,7 +76,7 @@ public class FuncionarioDAO {
 
 				fun.setId(rs.getInt("id"));
 				fun.setNome(rs.getString("nome"));
-				fun.setNascimento(rs.getString("nascimento"));
+				fun.setTelefone(rs.getString("telefone"));
 				fun.setSexo(rs.getString("sexo"));
 				fun.setUsuario(rs.getString("usuario"));
 				fun.setSenhaAntiga(rs.getString("senha"));
@@ -110,7 +110,7 @@ public class FuncionarioDAO {
 		
 				funcionario.setId(rs.getInt("id"));
 				funcionario.setNome(rs.getString("nome"));
-				funcionario.setNascimento(rs.getString("nascimento"));
+				funcionario.setTelefone(rs.getString("telefone"));
 				funcionario.setSexo(rs.getString("sexo"));
 				funcionario.setUsuario(rs.getString("usuario"));
 				funcionario.setSenhaAntiga(rs.getString("senha"));
@@ -147,7 +147,7 @@ public class FuncionarioDAO {
 		
 				funcionario.setId(rs.getInt("id"));
 				funcionario.setNome(rs.getString("nome"));
-				funcionario.setNascimento(rs.getString("nascimento"));
+				funcionario.setTelefone(rs.getString("telefone"));
 				funcionario.setSexo(rs.getString("sexo"));
 				funcionario.setUsuario(rs.getString("usuario"));
 				funcionario.setSenhaAntiga(rs.getString("senha"));
@@ -169,18 +169,39 @@ public class FuncionarioDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
-		String sql = "UPDATE funcionario SET nome = ?, sexo = ?, nascimento = ?, usuario = ?, senha = ?, email = ?, cargo = ? WHERE id = ?";
+		String sql = "UPDATE funcionario SET nome = ?, sexo = ?, telefone = ?, usuario = ?, email = ?, cargo = ? WHERE id = ?";
 
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, f.getNome());
 			stmt.setString(2, f.getSexo());
-			stmt.setString(3, f.getNascimento());
+			stmt.setString(3, f.getTelefone());
 			stmt.setString(4, f.getUsuario());
-			stmt.setString(5, f.getSenha());
-			stmt.setString(6, f.getEmail());
-			stmt.setString(7, f.getCargo());
-			stmt.setInt(8, f.getId());
+			stmt.setString(5, f.getEmail());
+			stmt.setString(6, f.getCargo());
+			stmt.setInt(7, 1);//Alterar para pegar o id do usuario
+			stmt.executeUpdate();
+			System.out.println("Atualizado com sucesso");
+
+		} catch (SQLException ex) {
+			System.out.println("Erro ao atualizar: " + ex);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt);
+		}
+	}
+	
+	public void updateSenha(String  senha, int id) {
+
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		
+		String sql = "UPDATE funcionario SET senha = ? WHERE id = ?";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			
+			stmt.setString(1, senha);
+			stmt.setInt(2, 1);
 			stmt.executeUpdate();
 			System.out.println("Atualizado com sucesso");
 

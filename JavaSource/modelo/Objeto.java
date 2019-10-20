@@ -11,6 +11,7 @@ public class Objeto {
 	private String turno;
 	private String infoComplementares;
 	private String status;
+	private String dataEncontro;
 	
 	public int getId() {
 		return Id;
@@ -66,6 +67,12 @@ public class Objeto {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getDataEncontro() {
+		return dataEncontro;
+	}
+	public void setDataEncontro(String dataEncontro) {
+		this.dataEncontro = dataEncontro;
 	}
 	
 }

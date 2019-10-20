@@ -1,14 +1,11 @@
 	TAREFAS PELA FRENTE:	
 !!!!!!!!!!!!!!!!!!!!!!!!!	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-	NA TELA DE DADOS CADASTRAIS EU TENHO O CAMPO TELEFONE, PORÉM NA TELA DE CADASTRO EU NÃO TENHO,
-então decidir de no cadastro eu seto o telefone como nulo e dou ao usuário a opção de atualizar
-
-	Ou se tiro o campo telefone da tela de dados cadastrais também 
-
-Trocar todos os controllers de minusculo para maiusculo
-
-Trocar no banco identregador para documento entregador como chave primaria  e salvar isso na tabela de objeto como chave estrangeira
+Fazer na tela de dados cadastrais um metodo que seta os valores nos campos, no caso eu vou chamar esse metodo dentro do metodo
+construtor
+porem, eu preciso pegar o id do usuario, entao eu preciso ver como capturar esse id do usuario de dentro do banco,
+ou seja, na hora de cadastrar e no login eu preciso setar no banco o id do usuario, entao no metodo construtor
+eu pego esse id, e depois passo para o metodo que faz as pesquisas
 
 https://pt.stackoverflow.com/questions/247854/obter-item-da-linha-e-coluna-de-uma-tabela-html-din%C3%A2mica
 

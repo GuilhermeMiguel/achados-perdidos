@@ -55,35 +55,36 @@
 							<label class="col-md-3 control-label texto-label" for="nome" style="font-weight :700 !important; margin-top: 0%;">Nome*</label>
 							<div class="col-md-8">
 								<div class="wrap-input100 validate-input m-b-26">
-									<h:inputText value="#{funcionariocontroller.funcionario.nome}" 
+									<h:inputText value="#{funcionarioController.funcionario.nome}" 
 											styleClass="input100" name="nome" pt:placeholder="Digite seu nome" />
 									<span class="focus-input100"></span>
 								</div>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="col-md-3 control-label texto-label"
-								for="nascimento" style="font-weight :700 !important; margin-top: 0%;">Nascimento*</label>
-							<div class="col-md-6">
-								<div class="wrap-input100 validate-input m-b-26">
-									<h:inputText value="#{funcionariocontroller.funcionario.nascimento}" 
-										styleClass="input100 iptNascimento" name="nascimento" pt:placeholder="DD/MM/AAAA" />
-									<span class="focus-input100"></span>
-								</div>
-							</div>
-						</div>
-
+						
 						<!-- Multiple Radios (inline) -->
 
 						<div class="form-group">
 							<label class="col-md-3 control-label texto-label-sexo"
 								for="radios" style="font-weight :700 !important; margin-top: 0%;">Sexo*</label>
 							<div class="col-md-8 radio-botao">
-									<h:selectOneRadio value="#{funcionariocontroler.funcionario.sexo}">
+									<h:selectOneRadio value="#{funcionarioController.funcionario.sexo}">
 								   			<f:selectItem itemValue="Feminino" id="option1" itemLabel="Feminino"/>
 								   			<f:selectItem itemValue="Masculino" id="option2" itemLabel="Masculino"/>
 								   	</h:selectOneRadio>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-3 control-label texto-label"
+								for="nascimento" style="font-weight :700 !important; margin-top: 0%;">Telefone*</label>
+							<div class="col-md-6">
+								<div class="wrap-input100 validate-input m-b-26">
+									<h:inputText value="#{funcionarioController.funcionario.telefone}"
+										styleClass="input100 iptNascimento" name="nascimento" pt:placeholder="(11) 98995-9645" />
+									<span class="focus-input100"></span>
+								</div>
 							</div>
 						</div>
 
@@ -92,7 +93,7 @@
 							<div class="col-md-6">
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
-										<h:inputText value="#{funcionariocontroller.funcionario.email}" 
+										<h:inputText value="#{funcionarioController.funcionario.email}"
 											styleClass="input100" name="email" pt:placeholder="email@email.com" />
 										<span class="focus-input100"></span>
 									</div>
@@ -104,7 +105,7 @@
 							<label class="col-md-3 control-label texto-label" for="usuario" style="font-weight :700 !important; margin-top: 0%;">Usuário*</label>
 							<div class="col-md-6">
 								<div class="wrap-input100 validate-input m-b-26">
-									<h:inputText value="#{funcionariocontroller.funcionario.usuario}"  
+									<h:inputText value="#{funcionarioController.funcionario.usuario}"  
 										styleClass="input100" name="usuario" pt:placeholder="Digite um nome de usuário" />
 									<span class="focus-input100"></span>
 								</div>
@@ -116,7 +117,7 @@
 							<div class="col-md-6">
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
-										<h:inputSecret value="#{funcionariocontroller.funcionario.senha}" 
+										<h:inputSecret value="#{funcionarioController.funcionario.senha}" 
 											styleClass="input100" name="senha" pt:placeholder="" />
 										<span class="focus-input100"></span>
 									</div>
@@ -129,7 +130,7 @@
 							<label class="col-md-3 control-label texto-label-sexo"
 								for="cargo" style="font-weight :700 !important; margin-top: 0%;">Cargo*</label>
 							<div class="col-md-5">
-								<h:selectOneMenu value="#{funcionariocontroller.funcionario.cargo}" id="Cargo" 
+								<h:selectOneMenu value="#{funcionarioController.funcionario.cargo}" id="Cargo" 
 										name="cargo" class="form-control combobox-tamanho">
 									<f:selectItem itemValue="Selecione...."/>
 									<f:selectItem itemValue="Administrativo"/>

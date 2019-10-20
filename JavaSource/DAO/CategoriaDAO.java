@@ -64,11 +64,9 @@ public class CategoriaDAO {
 		try {
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery();
-
+			
 			while (rs.next()) {
-
 				Categoria cat = new Categoria();
-
 				cat.setId(rs.getInt("id"));
 				cat.setDescricao(rs.getString("descricao"));
 				categorias.add(cat);
@@ -82,24 +80,26 @@ public class CategoriaDAO {
 		return categorias;
 	}
 	
-	public Categoria pesquisaCategoria() {
+	
+	public List<Categoria> pesquisaCategoria(String campo, String valor) {
 
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 
-		Categoria categoria = new Categoria();
-		String sql = "SELECT * FROM categoria";
+		String campoPesquisado = campo;
+		List<Categoria> categorias = new ArrayList<>();
+		String sql = "SELECT id, descricao FROM categoria WHERE "+campoPesquisado+"  = ?";
 
 		try {
 			stmt = con.prepareStatement(sql);
+			stmt.setString(1, valor);
 			rs = stmt.executeQuery();
-
 			while (rs.next()) {
-
-				categoria.setId(rs.getInt("id"));
-				categoria.setDescricao(rs.getString("descricao"));
-				
+				Categoria cat = new Categoria();
+				cat.setId(rs.getInt("id"));
+				cat.setDescricao(rs.getString("descricao"));
+				categorias.add(cat);
 			}
 
 		} catch (SQLException ex) {
@@ -108,67 +108,10 @@ public class CategoriaDAO {
 			ConnectionFactory.closeConnection(con, stmt, rs);
 		}
 		
-		return categoria;
+		return categorias;
 	}
 	
-	public Categoria pesquisaCategoria(String descricao) {
-
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-
-		Categoria categoria = new Categoria();
-		String sql = "SELECT id, descricao FROM categoria WHERE descricao = ?";
-
-		try {
-			stmt = con.prepareStatement(sql);
-			stmt.setString(1, descricao);
-			rs = stmt.executeQuery();
-
-			while (rs.next()) {
-
-				categoria.setId(rs.getInt("id"));
-				categoria.setDescricao(rs.getString("descricao"));
-				
-			}
-
-		} catch (SQLException ex) {
-			System.out.println("Erro" + ex);
-		} finally {
-			ConnectionFactory.closeConnection(con, stmt, rs);
-		}
 		
-		return categoria;
-	}
-	
-	public Categoria pesquisaCategoria(int id) {
-
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-
-		Categoria categoria = new Categoria();
-		String sql = "SELECT id, descricao FROM categoria WHERE id = ?";
-
-		try {
-			stmt = con.prepareStatement(sql);
-			stmt.setString(1, Integer.toString(id));
-			rs = stmt.executeQuery();
-
-			while (rs.next()) {
-				categoria.setId(rs.getInt("id"));
-				categoria.setDescricao(rs.getString("descricao"));
-			}
-
-		} catch (SQLException ex) {
-			System.out.println("Erro" + ex);
-		} finally {
-			ConnectionFactory.closeConnection(con, stmt, rs);
-		}
-		
-		return categoria;
-	}
-	
 	public void update(Categoria c) {
 
 		Connection con = ConnectionFactory.getConnection();

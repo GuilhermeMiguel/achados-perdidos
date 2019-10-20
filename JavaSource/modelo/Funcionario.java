@@ -5,7 +5,7 @@ public class Funcionario {
 	private int id;
 	private String nome;
 	private String sexo;
-	private String nascimento;
+	private String telefone;
 	private String usuario;
 	private String senha;
 	private String senhaAntiga;
@@ -32,11 +32,12 @@ public class Funcionario {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	public String getNascimento() {
-		return nascimento;
+	
+	public String getTelefone() {
+		return telefone;
 	}
-	public void setNascimento(String nascimento) {
-		this.nascimento = nascimento;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 	public String getUsuario() {
 		return usuario;

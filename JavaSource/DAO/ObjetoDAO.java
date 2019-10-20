@@ -31,20 +31,20 @@ public class ObjetoDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
-		String sql = "INSERT INTO cadastroObjeto (id, docEntregador, categoria, cor, tamanho, local, turno, infoComplementares, status ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO objeto (docEntregador, categoria, cor, tamanho, infoComplementares, localEncontro, dataEncontro, turnoEncontro, statusObjeto) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 
 			stmt = con.prepareStatement(sql);
-			stmt.setInt(1, c.getId());
-			stmt.setString(2, c.getDocEntregador());
-			stmt.setString(3, c.getCategoria());
-			stmt.setString(4, c.getCor());
-			stmt.setDouble(5, c.getTamanho());
+			stmt.setString(1, c.getDocEntregador());
+			stmt.setString(2, c.getCategoria());
+			stmt.setString(3, c.getCor());
+			stmt.setDouble(4, c.getTamanho());
+			stmt.setString(5, c.getInfoComplementares());
 			stmt.setString(6, c.getLocal());
-			stmt.setString(7, c.getTurno());
-			stmt.setString(8, c.getInfoComplementares());
-			stmt.setString(8, StatusObjeto.Aguardando.toString());
+			stmt.setString(7, c.getDataEncontro());
+			stmt.setString(8, c.getTurno());
+			stmt.setString(9, StatusObjeto.Aguardando.toString());
 			stmt.executeUpdate();
 
 			System.out.println("Salvo com sucesso");
@@ -64,7 +64,7 @@ public class ObjetoDAO {
 		ResultSet rs = null;
 
 		List<Objeto> CadastroObjetos = new ArrayList<>();
-		String sql = "SELECT * FROM cadastroObjeto";
+		String sql = "SELECT * FROM bjeto";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -102,7 +102,7 @@ public class ObjetoDAO {
 		ResultSet rs = null;
 
 		Objeto CadObj = new Objeto();
-		String sql = "SELECT * FROM cadastroObjeto";
+		String sql = "SELECT * FROM Objeto";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -140,7 +140,7 @@ public class ObjetoDAO {
 
 		Objeto CadObj = new Objeto();
 		String campo = opcaoSelecionada;
-		String sql = "SELECT * FROM cadastroObjeto where" +campo+ "= ?";
+		String sql = "SELECT * FROM Objeto where" +campo+ "= ?";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -178,7 +178,7 @@ public class ObjetoDAO {
 
 		Objeto CadObj = new Objeto();
 		String campo = opcaoSelecionada;
-		String sql = "SELECT * FROM cadastroObjeto where" +campo+ "= ?";
+		String sql = "SELECT * FROM Objeto where" +campo+ "= ?";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -213,7 +213,7 @@ public class ObjetoDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
-		String sql = "UPDATE cadastroObjeto SET identregador = ?, categoria = ?, cor = ?, tamanho = ?,"
+		String sql = "UPDATE Objeto SET identregador = ?, categoria = ?, cor = ?, tamanho = ?,"
 				+ "local = ?, turno = ?, infoComplementares = ?, status = ? WHERE id = ?";
 
 		try {

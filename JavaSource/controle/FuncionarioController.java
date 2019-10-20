@@ -13,6 +13,15 @@ public class FuncionarioController {
 	private Funcionario funcionario;
 	private FuncionarioDAO funcionarioDAO = FuncionarioDAO.getInstance();
 	
+	
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
 	public FuncionarioController() {
 		funcionario = new Funcionario();
 	}
@@ -25,6 +34,10 @@ public class FuncionarioController {
 		funcionarioDAO.update(funcionario);
 	}
 	
+	public void atualizaSenha() {
+		funcionarioDAO.updateSenha(funcionario.getSenha(), funcionario.getId());
+	}
+	
 	public void pesquisaFuncionario() {
 		
 	}
@@ -33,4 +46,17 @@ public class FuncionarioController {
 		
 	}
 	
+	public void limpaCampos() {
+		funcionario.setCargo("");
+		funcionario.setTelefone("");
+		funcionario.setSexo("");
+		funcionario.setNome("");
+		funcionario.setEmail("");
+		funcionario.setUsuario("");
+	}
+	
+	public void limpaSenha() {
+		funcionario.setSenhaAntiga("");
+		funcionario.setSenha("");
+	}
 }

@@ -21,7 +21,7 @@ public class CategoriaController {
 	
 	public CategoriaController() {
 		categoria = new Categoria();
-		//exibeListaCategorias();
+		exibeListaCategorias();
 	}
 	
 
@@ -33,16 +33,6 @@ public class CategoriaController {
 		this.categoria = categoria;
 	}
 		
-	public List<Categoria> getCategoriaList() {
-		return categoriaList;
-	}
-
-
-	public void setCategoriaList(List<Categoria> categoriaList) {
-		this.categoriaList = categoriaList;
-	}
-
-
 	//Funciona
 	public void cadastraCategoria() {
 		
@@ -72,7 +62,15 @@ public class CategoriaController {
 	
 	//Funciona
 	public void pesquisaCategoria() {
-		categoriaDAO.pesquisaCategoria(categoria.getId());
+		if(categoria.getCampo().equals("ID")) {
+			categoriaList = categoriaDAO.pesquisaCategoria("id", categoria.getValor());
+		}
+		else if(categoria.getCampo().equals("Descrição"))  {
+			categoriaList = categoriaDAO.pesquisaCategoria("descricao", categoria.getValor());
+		}
+		else {
+			exibeListaCategorias();
+		}
 	}
 	
 	public void limpaCampos() {
@@ -82,6 +80,15 @@ public class CategoriaController {
 	
 	public void exibeListaCategorias() {
 		categoriaList = categoriaDAO.read();
+	}
+
+	public List<Categoria> getCategoriaList() {
+		return categoriaList;
+	}
+
+
+	public void setCategoriaList(List<Categoria> categoriaList) {
+		this.categoriaList = categoriaList;
 	}
 
 }

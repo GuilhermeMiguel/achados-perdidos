@@ -15,7 +15,7 @@
 				style="background-image: url(images/icone-fechar-modal.png);">
 			</div>
 		</div>
-		<form>
+		<h:form>
 			<div class="form-row area-devolucao-modal-objetos">
 				<div class="form-row">
 
@@ -109,14 +109,15 @@
 
 					<div class="form-row area-botao-salvar-devolucao">
 						<div class="form-group col-md-3" style="margin-top: 4%;margin-left: -3%;">
-							<h:commandButton value="Salvar" styleClass="login100-form-btn"/>
+							<h:commandButton value="Salvar" actionListener="#{devolucaoController.devolucaoObjeto}"  
+									styleClass="login100-form-btn"/>
 						</div>
 						<div class="form-group col-md-3" style="margin-top: 4%;margin-left: -4%;">
 							<h:commandButton value="Cancelar" styleClass="login100-form-btn"/>
 						</div>
 					</div>
 				</div>
-		</form>
+		</h:form>
 	</div>
 </div>
 </html>
