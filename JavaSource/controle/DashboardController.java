@@ -19,10 +19,29 @@ public class DashboardController {
 	private String dtInicio;
 	private String dtFim;
 	
+	
+	public DashboardController() {
+		pesquisaDashboard();
+	}
+	
+	
+
+	public Dashboard getDashboard() {
+		return dashboard;
+	}
+
+
+
+	public void setDashboard(Dashboard dashboard) {
+		this.dashboard = dashboard;
+	}
+
+
+
 	public void pesquisaDashboard() {
-		if(dashboard.getDataInicio() == "" && dashboard.getDataFim() == "") {
+		if(dashboard.getDataInicio() == null && dashboard.getDataFim() == null) {
 			java.util.Date diaHoje = new Date();
-			String dataAtual = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(diaHoje);
+			String dataAtual = java.text.DateFormat.getDateInstance(DateFormat.SHORT).format(diaHoje);
 			dtInicio = dataAtual;
 			dtFim = dataAtual;
 		}
@@ -48,10 +67,10 @@ public class DashboardController {
 	
 	public String[] formataDatas(String dtIn, String dtFim) {
 		String[] datas = new String[2];
-        datas[0] = dtIn.substring(6, 4) + "-" + dtIn.substring(3, 2) + "-"
+        datas[0] = dtIn.substring(6, 10) + "-" + dtIn.substring(3, 5) + "-"
                         + dtIn.substring(0, 2);
 
-        datas[1] = dtFim.substring(6, 4) + "-" + dtFim.substring(3, 2) + "-"
+        datas[1] = dtFim.substring(6, 10) + "-" + dtFim.substring(3, 5) + "-"
                       + dtFim.substring(0, 2);
         return datas;
 	}

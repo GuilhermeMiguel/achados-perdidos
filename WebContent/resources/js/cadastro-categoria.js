@@ -1,6 +1,6 @@
-//$( ".adicionar, .pesquisar" ).click(function( event ) {
-//  event.preventDefault();
-//}); 
+$( ".adicionar" ).click(function( event ) {
+  event.preventDefault();
+}); 
 
 function iniciaModal(modalID) {
         const modal = document.getElementById(modalID);

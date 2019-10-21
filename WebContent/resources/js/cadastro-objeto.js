@@ -1,4 +1,4 @@
-$( ".adicionar, .pesquisar" ).click(function( event ) {
+$( ".adicionar" ).click(function( event ) {
   event.preventDefault();
 }); 
 
@@ -16,8 +16,8 @@ function iniciaModal(modalID) {
 	    cadastrar.addEventListener('click', () => iniciaModal('modal-principal'));
 
 	   
-	    const pesquisar = document.querySelector('.cadastro #botao1');
-	    pesquisar.addEventListener('click', () => iniciaModal('modal-secundario'));
+//	    const pesquisar = document.querySelector('.cadastro #botao1');
+//	    pesquisar.addEventListener('click', () => iniciaModal('modal-secundario'));
 
 	    $(document).on('click','.editar-entregador',function(){
 		$('.identificacao, .acoes-entregador, .area-botao-salvar').fadeOut('slow', function(){
@@ -60,7 +60,7 @@ function iniciaModal(modalID) {
 
     	$('.iptDocumento').mask(MaskDoc, Options);
     	
-    //Telefone
+    //Mascara Telefone
     	var SPMaskTelefone = function (val) {
     		  return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
     		},
@@ -78,8 +78,14 @@ function iniciaModal(modalID) {
     	});
     	
     	
+    	//Aplicar mascara ao if quando o combobox for data
+    	$('.combobox-tamanho').change(function (){
+    		if($('.combobox-tamanho option:selected').val()== 'Data'){
+    			$('.iptPesquisa').mask('00/00/0000');
+    		}
+    	});
     	
-    	$(".btn-salvar-entregador").trigger('.texto-entregador-cadastrado');
+    	//$(".btn-salvar-entregador").trigger('.texto-entregador-cadastrado');
 	
     	
     	

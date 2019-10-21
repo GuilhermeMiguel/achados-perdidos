@@ -12,6 +12,8 @@ public class Objeto {
 	private String infoComplementares;
 	private String status;
 	private String dataEncontro;
+	private String campo;
+	private String valor;
 	
 	public int getId() {
 		return Id;
@@ -74,5 +76,18 @@ public class Objeto {
 	public void setDataEncontro(String dataEncontro) {
 		this.dataEncontro = dataEncontro;
 	}
+	public String getCampo() {
+		return campo;
+	}
+	public void setCampo(String campo) {
+		this.campo = campo;
+	}
+	public String getValor() {
+		return valor;
+	}
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
+	
 	
 }

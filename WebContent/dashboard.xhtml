@@ -36,9 +36,11 @@
 </head>
 
 <body>
+
 <!-- JavaScript gráfico -->
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
+<h:form>
 	<div class="menu-incluso">
 		<ui:include src="menu.xhtml" />
 	</div>
@@ -48,7 +50,7 @@
 				<div class="form-group col-md-4">
 					<label for="inputCategoria">Data Inicio</label> 
 					<div class='input-group date' id='datetimepicker6'>
-						<h:inputText value="#{dashboardcontroller.dashboard.dataInicio}" 
+						<h:inputText value="#{dashboardController.dashboard.dataInicio}" 
 								styleClass="form-control input-data" pt:placeholder="10/05/2019" />
 							<span class="input-group-addon" style="background-color: transparent;">
                     				<span class="glyphicon glyphicon-calendar"></span>
@@ -58,7 +60,7 @@
 				<div class="form-group col-md-4">
 					<label for="inputCor">Data Fim</label>
 					<div class='input-group date' id='datetimepicker6'>
-						<h:inputText value="#{dashboardcontroller.dashboard.dataFim}"
+						<h:inputText value="#{dashboardController.dashboard.dataFim}"
 								styleClass="form-control input-data" pt:placeholder="10/06/2019" />
 								 <span class="input-group-addon" style="background-color: transparent;">
                     				<span class="glyphicon glyphicon-calendar"></span>
@@ -77,7 +79,7 @@
 			<div class="col-md-4">
 				<div id="area-objetos-perdidos-devolvidos">
 					<img src="images/icone-random.png" /><br /> Objetos Devolvidos: <br />
-					Quant: 10;
+					{dashboard.quantPerdidos}
 				</div>
 			</div>
 
@@ -176,7 +178,7 @@
 		<script src="resources/js/dashboard.js"></script>
 	</div>
 
-	
+</h:form>	
 
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"

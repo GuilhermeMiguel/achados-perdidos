@@ -64,7 +64,7 @@ public class ObjetoDAO {
 		ResultSet rs = null;
 
 		List<Objeto> CadastroObjetos = new ArrayList<>();
-		String sql = "SELECT * FROM bjeto";
+		String sql = "SELECT * FROM objeto";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -74,14 +74,15 @@ public class ObjetoDAO {
 
 				Objeto CadObj = new Objeto();
 				CadObj.setId(rs.getInt("id"));
-				CadObj.setDocEntregador(rs.getString("identregador"));
+				CadObj.setDocEntregador(rs.getString("docEntregador"));
 				CadObj.setCategoria(rs.getString("categoria"));
 				CadObj.setCor(rs.getString("cor"));
 				CadObj.setTamanho(rs.getDouble("tamanho"));
-				CadObj.setLocal(rs.getString("local"));
-				CadObj.setTurno(rs.getString("turno"));
+				CadObj.setLocal(rs.getString("localEncontro"));
+				CadObj.setTurno(rs.getString("turnoEncontro"));
+				CadObj.setDataEncontro(rs.getString("dataEncontro"));
 				CadObj.setInfoComplementares(rs.getString("infoComplementares"));
-				CadObj.setStatus(rs.getString("status"));
+				CadObj.setStatus(rs.getString("statusObjeto"));
 				CadastroObjetos.add(CadObj);
 			}
 
@@ -93,109 +94,36 @@ public class ObjetoDAO {
 		return CadastroObjetos;
 	}
 	
-	//O list e o pesquisa que nao recebe nada sao iguais
 	
-	public Objeto pesquisaCadastroObjeto() {
+	
+	public List<Objeto> pesquisaObjeto(String campo, String valor) {
 
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 
-		Objeto CadObj = new Objeto();
-		String sql = "SELECT * FROM Objeto";
-
-		try {
-			stmt = con.prepareStatement(sql);
-			rs = stmt.executeQuery();
-
-			while (rs.next()) {
-
-				CadObj.setId(rs.getInt("id"));
-				CadObj.setDocEntregador(rs.getString("identregador"));
-				CadObj.setCategoria(rs.getString("categoria"));
-				CadObj.setCor(rs.getString("cor"));
-				CadObj.setTamanho(rs.getDouble("tamanho"));
-				CadObj.setLocal(rs.getString("local"));
-				CadObj.setTurno(rs.getString("turno"));
-				CadObj.setInfoComplementares(rs.getString("infoComplementares"));
-				CadObj.setStatus(rs.getString("status"));
-
-			}
-
-		} catch (SQLException ex) {
-			System.out.println("Erro" + ex);
-		} finally {
-			ConnectionFactory.closeConnection(con, stmt, rs);
-		}
-		
-		return CadObj;
-	}
-	
-	
-	public Objeto pesquisaCadastroObjeto(int id, String opcaoSelecionada) {
-
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-
-		Objeto CadObj = new Objeto();
-		String campo = opcaoSelecionada;
-		String sql = "SELECT * FROM Objeto where" +campo+ "= ?";
-
-		try {
-			stmt = con.prepareStatement(sql);
-			stmt.setString(1, Integer.toString(id));
-			rs = stmt.executeQuery();
-
-			while (rs.next()) {
-				CadObj.setId(rs.getInt("id"));
-				CadObj.setDocEntregador(rs.getString("identregador"));
-				CadObj.setCategoria(rs.getString("categoria"));
-				CadObj.setCor(rs.getString("cor"));
-				CadObj.setTamanho(rs.getDouble("tamanho"));
-				CadObj.setLocal(rs.getString("local"));
-				CadObj.setTurno(rs.getString("turno"));
-				CadObj.setInfoComplementares(rs.getString("infoComplementares"));
-				CadObj.setStatus(rs.getString("status"));
-
-			}
-
-		} catch (SQLException ex) {
-			System.out.println("Erro" + ex);
-		} finally {
-			ConnectionFactory.closeConnection(con, stmt, rs);
-		}
-		
-		return CadObj;
-	}
-	
-	
-	public Objeto pesquisaCadastroObjeto(String valor, String opcaoSelecionada) {
-
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-
-		Objeto CadObj = new Objeto();
-		String campo = opcaoSelecionada;
-		String sql = "SELECT * FROM Objeto where" +campo+ "= ?";
+		List<Objeto> CadastroObjetos = new ArrayList<>();
+		String campoSelecionado = campo;
+		String sql = "SELECT * FROM objeto where " +campoSelecionado+ "= ?";
 
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, valor);
 			rs = stmt.executeQuery();
-
 			while (rs.next()) {
+
+				Objeto CadObj = new Objeto();
 				CadObj.setId(rs.getInt("id"));
-				CadObj.setDocEntregador(rs.getString("identregador"));
+				CadObj.setDocEntregador(rs.getString("docEntregador"));
 				CadObj.setCategoria(rs.getString("categoria"));
 				CadObj.setCor(rs.getString("cor"));
 				CadObj.setTamanho(rs.getDouble("tamanho"));
-				CadObj.setLocal(rs.getString("local"));
-				CadObj.setTurno(rs.getString("turno"));
+				CadObj.setLocal(rs.getString("localEncontro"));
+				CadObj.setTurno(rs.getString("turnoEncontro"));
+				CadObj.setDataEncontro(rs.getString("dataEncontro"));
 				CadObj.setInfoComplementares(rs.getString("infoComplementares"));
-				CadObj.setStatus(rs.getString("status"));
-
+				CadObj.setStatus(rs.getString("statusObjeto"));
+				CadastroObjetos.add(CadObj);
 			}
 
 		} catch (SQLException ex) {
@@ -203,11 +131,12 @@ public class ObjetoDAO {
 		} finally {
 			ConnectionFactory.closeConnection(con, stmt, rs);
 		}
-		
-		return CadObj;
+		return CadastroObjetos;
 	}
+	//O list e o pesquisa que nao recebe nada sao iguais
 	
 	
+		
 	public void update(Objeto c) {
 
 		Connection con = ConnectionFactory.getConnection();

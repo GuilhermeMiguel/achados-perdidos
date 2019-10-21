@@ -35,15 +35,13 @@ public class ObjetoController {
 
 	public ObjetoController() {
 		objeto = new Objeto();
-		//objetoLista();
+		exibeListaObjetos();
 	}
-	
-	
 	
 	public void cadastraObjeto() {
 		if(!objDAO.objetoExiste(objeto.getId())){
 			objDAO.create(objeto);
-			objetoLista();
+			exibeListaObjetos();
 		}
 		else {
 			atualizaObjeto();
@@ -52,14 +50,40 @@ public class ObjetoController {
 	
 	public void atualizaObjeto() {
 		objDAO.update(objeto);
-		objetoLista();
+		exibeListaObjetos();
 	}
 	
 	public void pesquisaObjeto() {
-		objDAO.pesquisaCadastroObjeto();
+		if(objeto.getCampo().equals("ID")) {
+			objetoList = objDAO.pesquisaObjeto("id", objeto.getValor());
+		}
+		else if(objeto.getCampo().equals("Doc Entregador"))  {
+			objetoList = objDAO.pesquisaObjeto("descricao", objeto.getValor());
+		}
+		else if(objeto.getCampo().equals("Categoria"))  {
+			objetoList = objDAO.pesquisaObjeto("categoria", objeto.getValor());
+		}
+		else if(objeto.getCampo().equals("Cor"))  {
+			objetoList = objDAO.pesquisaObjeto("cor", objeto.getValor());
+		}
+		else if(objeto.getCampo().equals("Tamanho"))  {
+			objetoList = objDAO.pesquisaObjeto("tamanho", objeto.getValor());
+		}
+		else if(objeto.getCampo().equals("Local"))  {
+			objetoList = objDAO.pesquisaObjeto("localEncontro", objeto.getValor());
+		}
+		else if(objeto.getCampo().equals("Turno"))  {
+			objetoList = objDAO.pesquisaObjeto("turnoEncontro", objeto.getValor());
+		}
+		else if(objeto.getCampo().equals("Data"))  {
+			objetoList = objDAO.pesquisaObjeto("dataEncontro", objeto.getValor());
+		}
+		else {
+			exibeListaObjetos();
+		}
 	}
 	
-	public void objetoLista() {
+	public void exibeListaObjetos() {
 		objetoList = objDAO.read();
 	}
 	

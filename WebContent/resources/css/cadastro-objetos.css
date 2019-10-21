@@ -148,8 +148,19 @@ background-color: #694077;
 }
 
 
+#table {
+	width: 100%;
+}
 
+.scroll-table {
+	margin-top: -26%;
+    margin-left: 20%;
+   /* overflow-x: scroll;*/
+}
 
+th, td {
+    min-width: 50px; /* width/largura das células à escolha */
+}
 /*//////////////////////////////////////////////////////////////////
 [CONTROLE PAGINA TABELA]*/
 

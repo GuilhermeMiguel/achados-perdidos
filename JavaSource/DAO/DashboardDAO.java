@@ -29,7 +29,7 @@ public class DashboardDAO {
 		ResultSet rs = null;
 
 		Dashboard dash = new Dashboard();
-		String sql = "SELECT COUNT(id) FROM objeto where statusObjeto = 'Aguardando'";
+		String sql = "SELECT COUNT(id) FROM objeto where statusObjeto = 'Aguardando' as quantPerdidos";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -55,7 +55,7 @@ public class DashboardDAO {
 		ResultSet rs = null;
 
 		Dashboard dash = new Dashboard();
-		String sql = "SELECT COUNT(id) FROM objeto where statusObjeto = 'Devolvido'";
+		String sql = "SELECT COUNT(id) FROM objeto where statusObjeto = 'Devolvido' as quantDevolvidos";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -80,7 +80,7 @@ public class DashboardDAO {
 		ResultSet rs = null;
 
 		Dashboard dash = new Dashboard();
-		String sql = "SELECT COUNT(id) FROM objeto where statusObjeto = 'Reciclado'";
+		String sql = "SELECT COUNT(id) FROM objeto where statusObjeto = 'Reciclado' as quantReciclados";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -105,7 +105,7 @@ public class DashboardDAO {
 		ResultSet rs = null;
 
 		Dashboard dash = new Dashboard();
-		String sql = "SELECT COUNT(id) FROM objeto where statusObjeto = 'Doado'";
+		String sql = "SELECT COUNT(id) FROM objeto where statusObjeto = 'Doado' as quantDoados";
 
 		try {
 			stmt = con.prepareStatement(sql);
