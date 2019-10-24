@@ -1,38 +1,37 @@
 	TAREFAS PELA FRENTE:	
 !!!!!!!!!!!!!!!!!!!!!!!!!	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-Fazer na tela de dados cadastrais um metodo que seta os valores nos campos, no caso eu vou chamar esse metodo dentro do metodo
+--Fazer na tela de dados cadastrais um metodo que seta os valores nos campos, no caso eu vou chamar esse metodo dentro do metodo
 construtor
 porem, eu preciso pegar o id do usuario, entao eu preciso ver como capturar esse id do usuario de dentro do banco,
 ou seja, na hora de cadastrar e no login eu preciso setar no banco o id do usuario, entao no metodo construtor
 eu pego esse id, e depois passo para o metodo que faz as pesquisas
-
-https://pt.stackoverflow.com/questions/247854/obter-item-da-linha-e-coluna-de-uma-tabela-html-din%C3%A2mica
-
-https://pt.stackoverflow.com/questions/231886/mudar-o-%C3%ADcone-da-linha-da-tabela-quando-clicar-dinamicamente
+	|
+	 `--> Talvez fazer com cookie, mas ai ver as informações que deveria carregar no cookie
+	 
+	 
+	 =================================================
+	 VER INPUT TYPE DATE
+	 
+--https://pt.stackoverflow.com/questions/231886/mudar-o-%C3%ADcone-da-linha-da-tabela-quando-clicar-dinamicamente
 
 --NAO FECHAR MODAL
 https://pt.stackoverflow.com/questions/327385/enviar-form-sem-fechar-modal
 	
 	<h:commandLink value="Logout" action="#{loginController.deslogar}"/> Pra colocar funcao em tag a
 	
+	*Fazer metodo de enviar senha para o email 
 	
-	[quote="marlonmeneses"]coloque a table dentro de uma div <div style="overflow: auto; width: 640px"> table aqui </div>
-Você ainda pode especificar qual barra de rolagem deseja, a da direita ou a a de baixo, com overflow-x e overflow-y
-
 https://www.devmedia.com.br/forum/barra-de-rolagem-vertical-em-tabela-div/565457
 	
-	*Ver como eu faço em javaScript para clicar em icone e carregar valores daquela linha em inputs
 	!!!!!!!!!
 	DEPOIS DE IMPLEMENTAR O BACK -- ARRUMAR AS TABELAS 
 		: Colocar barra de rolagem horizontal nelas
 		: Colocar um icone de x para desabilitar o usuario e um icone de v para habilitar
-	*Arrumar tela para pesquisa dos objetos -- OK
 	
 	*Fazer todo o back end necessário para o restante do crud
 
 	*Depois implementar o back para a pesquisa de objetos
-
 
 	*TELAS BASICAMENTE PRONTAS - EM CASA IMPLEMENTAR O BACK END DE UMA VEZ POR TODAS
 
