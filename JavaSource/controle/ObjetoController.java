@@ -5,7 +5,9 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import DAO.CategoriaDAO;
 import DAO.ObjetoDAO;
+import modelo.Categoria;
 import modelo.Objeto;
 
 @ManagedBean
@@ -15,7 +17,14 @@ public class ObjetoController {
 	private List<Objeto> objetoList;
 	private Objeto objeto;
 	private ObjetoDAO objDAO = ObjetoDAO.getInstance();
+	private CategoriaDAO categoriaDAO = CategoriaDAO.getInstance();
+	private List<Categoria> categoriaList;
 	
+	
+	public ObjetoController() {
+		objeto = new Objeto();
+		exibeListaObjetos();
+	}
 	
 	public List<Objeto> getObjetoList() {
 		return objetoList;
@@ -32,12 +41,15 @@ public class ObjetoController {
 	public void setObjeto(Objeto objeto) {
 		this.objeto = objeto;
 	}
-
-	public ObjetoController() {
-		objeto = new Objeto();
-		exibeListaObjetos();
-	}
 	
+	public List<Categoria> getCategoriaList() {
+		return categoriaList;
+	}
+
+	public void setCategoriaList(List<Categoria> categoriaList) {
+		this.categoriaList = categoriaList;
+	}
+
 	public void cadastraObjeto() {
 		if(!objDAO.objetoExiste(objeto.getId())){
 			objDAO.create(objeto);
@@ -87,4 +99,7 @@ public class ObjetoController {
 		objetoList = objDAO.read();
 	}
 	
+	public void carregaCombo() {
+		categoriaList = categoriaDAO.buscaCategoriaCombo();
+	}
 }

@@ -17,11 +17,9 @@ public class EntregadorController {
 		entregador = new Entregador();
 	}
 		
-	
 	public Entregador getEntregador() {
 		return entregador;
 	}
-
 
 	public void setEntregador(Entregador entregador) {
 		this.entregador = entregador;
@@ -29,7 +27,15 @@ public class EntregadorController {
 
 
 	public void pesquisaEntregador() {
-		
+		if(entregador.getCampo().equals("ID")) {
+			entregadorDAO.pesquisaEntregador("id", entregador.getValor());
+		}
+		else if(entregador.getCampo().equals("Sobrenome")){
+			entregadorDAO.pesquisaEntregador("sobrenome", entregador.getValor());
+		}
+		else if(entregador.getCampo().equals("Documento")){
+			entregadorDAO.pesquisaEntregador("documento", entregador.getValor());
+		}
 	}
 	
 	//Estou utilizando o mesmo botao para cadastrar ou atualizar o entregador, caso ele já exista eu pego

@@ -93,6 +93,15 @@ $( ".lupa" ).mouseout(function() {
 	$('.pesquisar-objetos').delay(1200).fadeOut('slow');
 });
 
-$(document).ready(function(){
-    $('.iptNascimento').mask('00/00/0000');
- });	
+//Mascara Telefone
+var SPMaskTelefone = function (val) {
+	  return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+	},
+	spOptions = {
+	  onKeyPress: function(val, e, field, options) {
+	      field.mask(SPMaskTelefone.apply({}, arguments), options);
+	    }
+	};
+
+	$('.iptTelefone').mask(SPMaskTelefone, spOptions);
+	

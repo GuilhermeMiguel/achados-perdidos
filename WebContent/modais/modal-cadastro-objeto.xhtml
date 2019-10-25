@@ -107,15 +107,18 @@
 			<div class="form-row identificacao">
 				<div class="form-group col-md-4">
 					<label for="inputCampo">Campo</label>
-					 <h:selectOneMenu  id="inputCampo" class="form-control combobox-tamanho">
+					 <h:selectOneMenu value="#{entregadorController.entregador.campo}"
+					 			 id="inputCampo" class="form-control combobox-tamanho">
 						<f:selectItem itemValue="Escolher..."/>
 						<f:selectItem itemValue="Id"/>
 						<f:selectItem itemValue="Sobrenome"/>
+						<f:selectItem itemValue="Documento"/>
 					</h:selectOneMenu >
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputValor">Valor</label>
-					 <h:inputText styleClass="form-control" id="inputValor" pt:placeholder="..." />
+					 <h:inputText value="#{entregadorController.entregador.valor}"
+					 		styleClass="form-control" id="inputValor" pt:placeholder="..." />
 				</div>
 				<div class="form-group col-md-2">
 					<h:commandButton value="Pesquisar" 

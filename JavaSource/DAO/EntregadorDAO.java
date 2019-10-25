@@ -51,14 +51,15 @@ public class EntregadorDAO {
 	
 	
 	
-	public Entregador pesquisaEntregador(String valor) {
+	public Entregador pesquisaEntregador(String campo, String valor) {
 
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 
 		Entregador Ent = new Entregador();
-		String sql = "SELECT * FROM entregador where sobrenome = ?";
+		String campoPesquisado = campo;
+		String sql = "SELECT * FROM entregador where" +campoPesquisado+ "= ?";
 
 		try {
 			stmt = con.prepareStatement(sql);

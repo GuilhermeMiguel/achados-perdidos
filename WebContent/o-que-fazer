@@ -1,17 +1,43 @@
 	TAREFAS PELA FRENTE:	
 !!!!!!!!!!!!!!!!!!!!!!!!!	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
---Fazer na tela de dados cadastrais um metodo que seta os valores nos campos, no caso eu vou chamar esse metodo dentro do metodo
-construtor
-porem, eu preciso pegar o id do usuario, entao eu preciso ver como capturar esse id do usuario de dentro do banco,
-ou seja, na hora de cadastrar e no login eu preciso setar no banco o id do usuario, entao no metodo construtor
-eu pego esse id, e depois passo para o metodo que faz as pesquisas
+	-- Fazer na tela de dados cadastrais um metodo que seta os valores nos campos, no caso eu vou chamar esse metodo dentro do 
+metodo construtor porem, eu preciso pegar o id do usuario, entao eu preciso ver como capturar esse id do usuario 
+de dentro do banco,ou seja, na hora de cadastrar e no login eu preciso setar no banco o id do usuario, entao no metodo 
+construtor eu pego esse id, e depois passo para o metodo que faz as pesquisas
 	|
 	 `--> Talvez fazer com cookie, mas ai ver as informações que deveria carregar no cookie
 	 
-	 
+	 metodo de pesquisa desse usuario implementado agora ver como passar esse id assim que a tela for carregada
+	 	 
+	 	 FAZER PARTE RESTANTE DO LOGIN, PARTE DOS ARQUIVOS INTERNOS E FAZER LOGOUT
 	 =================================================
-	 VER INPUT TYPE DATE
+	 	VER INPUT TYPE DATE
+
+	VER COMO CARREGAR O COMBOBOX COM OS DADOS DO BANCO
+		https://www.guj.com.br/t/selectonemenu-puxar-dados-do-banco/181413/4
+
+	METODO QUE BUSCA A CATEGORIA IMPLEMENTADO, AGORA NO MENU COLOCAR A CHAMADA PARA ESSE METODO QUANDO SE CLICAR EM CADASTRO OU 
+DEVOLUÇÃO DE OBJETOS, QUE LEVAM A MESMA TELA
+
+
+	VER COMO CADASTRAR ENTREGADOR E NAO FECHAR MODAL, E FAZER COM QUE ELE APAGUE OS OUTROS CAMPOS MAS MANTENHA O 
+VALOR DO DOCUMENTO CASO QUEIRA SALVAR O ENTREGADOR NECESSÁRIO
+
+	NA TELA DE CADASTRO DE ENTREGADOR COLOCAR UM COMBOBOX PARA CASO ELE SEJA UM FUNCIONARIO, CASO ELE SEJA, OS CAMPOS 
+TURNO E TURMA DEVEM SER ESCONDIDOS, ENTÃO TALVEZ ADICIONAR NO BANCO UM CAMPO PARA ADICIONAR SE É UM FUNCIONARIO OU ALUNO
+
+	TAMBEM VER UMA MANEIRA DO ALUNO NAO PODER CADASTRAR-SE NO SISTEMA, ENTAO NO CAMPO DE USUARIO NA TELA DE CADASTRO 
+EU DEVO VERIFICAR SE CONSTA O PADRÃO NECESSÁRIO PARA SE CADASTRAR, OU SEJA, O USUARIO DE UM FUNCIONARIO QUE 
+IRA UTILIZAR O SISTEMA DEVE TER UM PREFIXO POR EXEMPLO: F@TZL, TALVEZ SEJA INTERESSANTE ELE UTILIZAR O EMAIL INSTITUICIONAL
+	|
+	 `---> Está meio caminho andado, funcionando bem
+
+	FAZER UM REGEX PARA VERIFICAR SE O FUNCIONARIO ESTA ENTRANDO COM O SEU EMAIL OU USUARIO, ENTÃO FAZ A PESQUISA
+DE ACORDO COM ISSO  
+
+	NA TELA DE PESQUISA DOS OBJETOS, DEPEDENDO DO CONTEUDO DO COMBOBOX EU TROCO OS CAMPOS APRESENTANDO, POR EXEMPLO
+SE FOR UM DOCUMENTO NÃO PRECISA DE CAMPO E TAMANHO
 	 
 --https://pt.stackoverflow.com/questions/231886/mudar-o-%C3%ADcone-da-linha-da-tabela-quando-clicar-dinamicamente
 
@@ -22,8 +48,10 @@ https://pt.stackoverflow.com/questions/327385/enviar-form-sem-fechar-modal
 	
 	*Fazer metodo de enviar senha para o email 
 	
-https://www.devmedia.com.br/forum/barra-de-rolagem-vertical-em-tabela-div/565457
+	https://www.devmedia.com.br/forum/barra-de-rolagem-vertical-em-tabela-div/565457
 	
+	
+	*na tela onde o usuario atualiza a senha dele carregar a senha antiga
 	!!!!!!!!!
 	DEPOIS DE IMPLEMENTAR O BACK -- ARRUMAR AS TABELAS 
 		: Colocar barra de rolagem horizontal nelas
@@ -33,13 +61,12 @@ https://www.devmedia.com.br/forum/barra-de-rolagem-vertical-em-tabela-div/565457
 
 	*Depois implementar o back para a pesquisa de objetos
 
-	*TELAS BASICAMENTE PRONTAS - EM CASA IMPLEMENTAR O BACK END DE UMA VEZ POR TODAS
-
 	*Fazer um modal simples com as informações referentes a como funciona o processo de achados e perdidos 
 na fatec, para o aluno ver
 
 	*Modal implementado -- agora arrumar o conteúdo que está dentro dele
 		
 	*DEFINIR NOME, LOGO E FAVICON
-		*NO CADASTRO DE OBJETOS E VOU USAR O NUMERO DO RA DO ENTREGADOR COM CHAVE ESTRANGEIRA, VER O JAVA SCRIPT QUE FAZ JOGAR 
-O VALOR DE UM INPUT PARA O OUTRO
+	
+	*ORGANIZAR A SEQUENCIA DOS METODOS NOS JAVASCRIPTS E SEPARAR O CSS, OS MODAIS, AS TELAS PRINCIPAIS, AS TABELAS, 
+IMPLEMENTAR CSS DO BOOTSTRAP

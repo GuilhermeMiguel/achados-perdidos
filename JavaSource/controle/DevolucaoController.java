@@ -16,6 +16,9 @@ public class DevolucaoController {
 	private  DevolucaoObjetoDAO devObjetoDAO = DevolucaoObjetoDAO.getInstance();
 	private  ObjetoDAO objDAO = ObjetoDAO.getInstance();
 
+	public DevolucaoController() {
+		objeto = new DevolucaoObjeto();
+	}
 	
 	public DevolucaoObjeto getObjeto() {
 		return objeto;
@@ -25,10 +28,6 @@ public class DevolucaoController {
 		this.objeto = objeto;
 	}
 
-	public DevolucaoController() {
-		objeto = new DevolucaoObjeto();
-	}
-	
 	public void devolucaoObjeto() {
 		devObjetoDAO.Devolucao(objeto);
 		objDAO.alteraStatus(objeto.getStatus(), objeto.getId());

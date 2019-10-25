@@ -72,7 +72,6 @@ function iniciaModal(modalID) {
 
     		$('.iptTelefone').mask(SPMaskTelefone, spOptions);
     
-    		
     	$('.iptDocumento').keyup(function(){
     		$('.iptDocEntregador').val($(this).val());
     	});
@@ -83,11 +82,10 @@ function iniciaModal(modalID) {
     		if($('.combobox-tamanho option:selected').val()== 'Data'){
     			$('.iptPesquisa').mask('00/00/0000');
     		}
+    		else if($('.combobox-tamanho option:selected').val()== 'Doc Entregador'){
+    			$('.iptPesquisa').mask(MaskDoc, Options);
+    		}
     	});
-    	
-    	//$(".btn-salvar-entregador").trigger('.texto-entregador-cadastrado');
-	
-    	
     	
     	/*Segundo Modal*/
     	 $(document).ready(function(){

@@ -7,7 +7,7 @@ import org.apache.commons.mail.SimpleEmail;
 
 public class EnviadorEmail {
 
-	public void enviar(String nome, String emailDestinatario) {
+	public void enviarEmailSenha(String nome, String emailFuncionario, String senha) {
 		
 		 try {
 	            Email email = new SimpleEmail();
@@ -17,9 +17,9 @@ public class EnviadorEmail {
 	            email.setSSLOnConnect(true);
 
 	            email.setFrom("springbootalura@gmail.com.br");
-	            email.setSubject("Você foi convidado pelo ListaVIP");
-	            email.setMsg("Olá " + nome + ". Você acaba de ser convidado pelo ListaVIP.");
-	            email.addTo(emailDestinatario);
+	            email.setSubject("Recuperação da Senha");
+	            email.setMsg("Olá " + nome+ "a sua senha é:" +senha );
+	            email.addTo(emailFuncionario);
 	            email.send();
 
 	        } catch (EmailException e) {

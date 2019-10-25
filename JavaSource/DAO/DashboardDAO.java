@@ -48,7 +48,6 @@ public class DashboardDAO {
 		return dash.getQuantPerdidos();
 	}
 	
-	
 	public int retornoDevolvidos (String dataInicio, String dataFim) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
@@ -123,7 +122,6 @@ public class DashboardDAO {
 		
 		return dash.getQuantDoados();
 	}
-	
 	
 	//Arrumar todos esses selects para agregar a data e testar esse retornoLocal
 	public String retornoLocal (String dataInicio, String dataFim) {

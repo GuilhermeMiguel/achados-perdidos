@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import connection.ConnectionFactory;
 import modelo.Funcionario;
@@ -57,90 +55,18 @@ public class FuncionarioDAO {
 		}
 	}
 	
-	public List<Funcionario> read() {
-
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-
-		List<Funcionario> funcionarios = new ArrayList<>();
-		String sql = "SELECT * FROM funcionario";
-
-		try {
-			stmt = con.prepareStatement(sql);
-			rs = stmt.executeQuery();
-
-			while (rs.next()) {
-
-				Funcionario fun = new Funcionario();
-
-				fun.setId(rs.getInt("id"));
-				fun.setNome(rs.getString("nome"));
-				fun.setTelefone(rs.getString("telefone"));
-				fun.setSexo(rs.getString("sexo"));
-				fun.setUsuario(rs.getString("usuario"));
-				fun.setSenhaAntiga(rs.getString("senha"));
-				fun.setEmail(rs.getString("email"));
-				fun.setCargo(rs.getString("cargo"));
-				funcionarios.add(fun);
-			}
-
-		} catch (SQLException ex) {
-			System.out.println("Erro" + ex);
-		} finally {
-			ConnectionFactory.closeConnection(con, stmt, rs);
-		}
-		return funcionarios;
-	}
-	
-	public Funcionario pesquisaFuncionario() {
+	public Funcionario pesquisaFuncionario(int id) {
 
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 
 		Funcionario funcionario = new Funcionario();
-		String sql = "SELECT * FROM funcionario";
+		String sql = "SELECT * FROM funcionario where id = ?";
 
 		try {
 			stmt = con.prepareStatement(sql);
-			rs = stmt.executeQuery();
-
-			while (rs.next()) {
-		
-				funcionario.setId(rs.getInt("id"));
-				funcionario.setNome(rs.getString("nome"));
-				funcionario.setTelefone(rs.getString("telefone"));
-				funcionario.setSexo(rs.getString("sexo"));
-				funcionario.setUsuario(rs.getString("usuario"));
-				funcionario.setSenhaAntiga(rs.getString("senha"));
-				funcionario.setEmail(rs.getString("email"));
-				funcionario.setCargo(rs.getString("cargo"));
-				
-			}
-
-		} catch (SQLException ex) {
-			System.out.println("Erro" + ex);
-		} finally {
-			ConnectionFactory.closeConnection(con, stmt, rs);
-		}
-		
-		return funcionario;
-	}
-	
-	public Funcionario pesquisaFuncionario(String opcaoSelecionada, String valor) {
-
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-
-		Funcionario funcionario = new Funcionario();
-		String campoPesquisa = opcaoSelecionada;
-		String sql = "SELECT * FROM funcionario where" +campoPesquisa+ "= ?";
-
-		try {
-			stmt = con.prepareStatement(sql);
-			stmt.setString(1, valor);
+			stmt.setInt(1, id);
 			rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -213,7 +139,67 @@ public class FuncionarioDAO {
 	}
 	
 	//usar na LoginController
-	public boolean funcionarioExiste(String email, String senha) {
+	public boolean funcionarioExiste(String emailorusuario, String senha, String opcao) {
+		
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		boolean resultado = false;
+		Funcionario funcionario = new Funcionario();
+		String opcaoUsuario = "opcao"; 
+		
+		String sql = "SELECT email, senha FROM funcionario WHERE" +opcaoUsuario+ " = ? and senha = ? ";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, emailorusuario);
+			stmt.setString(2, senha);
+		    rs = stmt.executeQuery();
+			while (rs.next()) {
+				funcionario.setSenha(rs.getString("senha"));				
+				funcionario.setEmail(rs.getString("email"));
+				resultado = true;
+			}
+
+		} catch (SQLException ex) {
+			System.out.println("Erro" + ex);
+			
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+
+		return resultado;
+	}
+
+	public String retornaSenha(String email) {
+		
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		String emailRetornado = "";
+		
+		//Funcionario funcionario = new Funcionario();
+		String sql = "SELECT senha FROM funcionario where email = ?";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, email);
+			rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				emailRetornado = sql;
+			}
+
+		} catch (SQLException ex) {
+			System.out.println("Erro" + ex);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+		
+		return emailRetornado;
+	}
+
+	public boolean emailExiste(String email) {
 		
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
@@ -221,15 +207,13 @@ public class FuncionarioDAO {
 		boolean resultado = false;
 		Funcionario funcionario = new Funcionario();
 		
-		String sql = "SELECT email, senha FROM funcionario WHERE email = ? and senha = ? ";
+		String sql = "SELECT email FROM funcionario WHERE email = ? ";
 
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, email);
-			stmt.setString(2, senha);
 		    rs = stmt.executeQuery();
 			while (rs.next()) {
-				funcionario.setSenha(rs.getString("senha"));				
 				funcionario.setEmail(rs.getString("email"));
 				resultado = true;
 			}
