@@ -13,7 +13,7 @@ function iniciaModal(modalID) {
 	    }
 
 	    const cadastrar = document.querySelector('.cadastro #botao2');
-	    cadastrar.addEventListener('click', () => iniciaModal('modal-principal'));
+	    cadastrar.addEventListener('click', () => iniciaModal('modal-secundario'));
 
 	   
 //	    const pesquisar = document.querySelector('.cadastro #botao1');

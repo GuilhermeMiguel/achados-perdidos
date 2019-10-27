@@ -18,12 +18,13 @@ public class ObjetoController {
 	private Objeto objeto;
 	private ObjetoDAO objDAO = ObjetoDAO.getInstance();
 	private CategoriaDAO categoriaDAO = CategoriaDAO.getInstance();
-	private List<Categoria> categoriaList;
+	private List<String> categoriaList;
 	
 	
 	public ObjetoController() {
 		objeto = new Objeto();
 		exibeListaObjetos();
+		 carregaCombo();
 	}
 	
 	public List<Objeto> getObjetoList() {
@@ -42,11 +43,11 @@ public class ObjetoController {
 		this.objeto = objeto;
 	}
 	
-	public List<Categoria> getCategoriaList() {
+	public List<String> getCategoriaList() {
 		return categoriaList;
 	}
 
-	public void setCategoriaList(List<Categoria> categoriaList) {
+	public void setCategoriaList(List<String> categoriaList) {
 		this.categoriaList = categoriaList;
 	}
 

@@ -33,34 +33,35 @@ public class DashboardController {
 	}
 
 	public void pesquisaDashboard() {
-		if(dashboard.getDataInicio() == null && dashboard.getDataFim() == null) {
-			java.util.Date diaHoje = new Date();
-			String dataAtual = java.text.DateFormat.getDateInstance(DateFormat.SHORT).format(diaHoje);
-			dtInicio = dataAtual;
-			dtFim = dataAtual;
-		}
-		else {
-			dtInicio = dashboard.getDataInicio();
-			dtFim = dashboard.getDataFim();
-		}
-		
+		dtInicio = dashboard.getDataInicio();
+		dtFim = dashboard.getDataFim();
+				
 		String[] datasFormatadas = new String[2];
 		datasFormatadas = formataDatas(dtInicio, dtFim);
 		
 		dtInicio = datasFormatadas[0];
 		dtFim = datasFormatadas[1];
 		
-		dashDAO.retornoPerdidos(dtInicio, dtFim);
-		dashDAO.retornoDevolvidos(dtInicio, dtFim);
-		dashDAO.retornoDoados(dtInicio, dtFim);
-		dashDAO.retornoReciclados(dtInicio, dtFim);
+		dashboard.setQuantPerdidos(dashDAO.retornoPerdidos(dtInicio, dtFim));
+		dashboard.setQuantDevolvidos(dashDAO.retornoDevolvidos(dtInicio, dtFim));
+		dashboard.setQuantDoados(dashDAO.retornoDoados(dtInicio, dtFim));
+		dashboard.setQuantReciclados(dashDAO.retornoReciclados(dtInicio, dtFim));
 		
-		dashDAO.rankingCategorias(dtInicio, dtFim);
+		dashboard.setQuantLocal((dashDAO.retornoLocal(dtInicio, dtFim)));
+		
+		dashboard.setQuantCategoria1(dashDAO.rankingCategorias(dtInicio, dtFim));
 		
 	}
 	
 	public String[] formataDatas(String dtIn, String dtFim) {
 		String[] datas = new String[2];
+		
+		if(dtIn == null && dtFim == null || dtIn == "" && dtFim == "") {
+			datas[0] = "";
+			datas[1] = "";
+			return datas;
+		}
+		
         datas[0] = dtIn.substring(6, 10) + "-" + dtIn.substring(3, 5) + "-"
                         + dtIn.substring(0, 2);
 

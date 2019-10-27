@@ -180,13 +180,13 @@ public class CategoriaDAO {
 		return resultado;
 	}
 
-	public List<Categoria> buscaCategoriaCombo() {
+	public List<String> buscaCategoriaCombo() {
 		
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 
-		List<Categoria> categorias = new ArrayList<>();
+		List<String> categorias = new ArrayList<>();
 		String sql = "SELECT descricao FROM categoria";
 
 		try {
@@ -195,7 +195,7 @@ public class CategoriaDAO {
 			while (rs.next()) {
 				Categoria cat = new Categoria();
 				cat.setDescricao(rs.getString("descricao"));
-				categorias.add(cat);
+				categorias.add(cat.getDescricao());
 			}
 
 		} catch (SQLException ex) {

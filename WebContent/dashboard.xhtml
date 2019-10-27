@@ -69,7 +69,8 @@
 				</div>
 
 				<div class="form-group col-md-2">
-					<h:commandButton value="Pesquisar" class="botao-dashboard"/>
+					<h:commandButton actionListener="#{dashboardController.pesquisaDashboard}"  
+						value="Pesquisar" class="botao-dashboard"/>
 				</div>
 			</div>
 		</div>
@@ -79,20 +80,22 @@
 			<div class="col-md-4">
 				<div id="area-objetos-perdidos-devolvidos">
 					<img src="images/icone-random.png" /><br /> Objetos Devolvidos: <br />
-					{dashboard.quantPerdidos}
+					<h:outputText value="#{dashboardController.dashboard.quantDevolvidos}"/>
 				</div>
 			</div>
 
 			<div class="col-md-4">
 				<div id="area-objetos-perdidos-devolvidos">
 					<img src="images/icone-objetos.png" /> <br /> Objetos Perdidos: <br />
-					Quant: 10;
+					<h:outputText value="#{dashboardController.dashboard.quantPerdidos}"/>
 				</div>
 			</div>
 
 			<div class="col-md-4">
 				<div id="area-objetos-perdidos-devolvidos">
-					<img src="images/icone-lost.png" /> <br /> Local: <br /> Local;
+					<img src="images/icone-lost.png" /> <br /> Local: <br /> 
+					<h:outputText value="#{dashboardController.dashboard.quantLocal}"/>
+					
 				</div>
 			</div>
 		</div>
@@ -103,14 +106,14 @@
 					<div class="col-md-6">
 						<div id="area-objetos-perdidos-devolvidos">
 							<img src="images/icone-doacao.png" /><br /> Objetos doados: <br />
-							Quant: 10;
+							<h:outputText value="#{dashboardController.dashboard.quantDoados}"/>
 						</div>
 					</div>
 
 					<div class="col-md-6">
 						<div id="area-objetos-perdidos-devolvidos">
 							<img src="images/icone-reciclagem.png" /><br /> Objetos
-							recilados: <br /> Quant: 10;
+							recilados: <br /> <h:outputText value="#{dashboardController.dashboard.quantReciclados}"/>
 						</div>
 					</div>
 				</div>
