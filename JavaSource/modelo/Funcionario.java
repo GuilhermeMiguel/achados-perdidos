@@ -11,6 +11,7 @@ public class Funcionario {
 	private String senhaAntiga;
     private String email;
     private String cargo;
+    private int IdLogado;
     
     
 	public int getId() {
@@ -69,6 +70,12 @@ public class Funcionario {
 	}
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
+	}
+	public int getIdLogado() {
+		return IdLogado;
+	}
+	public void setIdLogado(int idLogado) {
+		IdLogado = idLogado;
 	}
 	
 }

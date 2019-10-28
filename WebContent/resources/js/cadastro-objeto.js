@@ -13,7 +13,7 @@ function iniciaModal(modalID) {
 	    }
 
 	    const cadastrar = document.querySelector('.cadastro #botao2');
-	    cadastrar.addEventListener('click', () => iniciaModal('modal-secundario'));
+	    cadastrar.addEventListener('click', () => iniciaModal('modal-primario'));
 
 	   
 //	    const pesquisar = document.querySelector('.cadastro #botao1');
@@ -96,3 +96,61 @@ function iniciaModal(modalID) {
     	 $(document).ready(function(){
  	        $('.iptCelular').mask('(00) 00000-0000');
  	     });
+    	 
+    	 
+    	 /*Editar*/
+    	 
+    	 $(document).on("click", ".editar", function(){
+    	        var idObjeto = $(this).closest('tr').find(".idObjeto").text();
+    	        var categoria = $(this).closest('tr').find(".categoria").text();
+    	        var cor = $(this).closest('tr').find(".cor").text();
+    	        var tamanho = $(this).closest('tr').find(".tamanho").text();
+    	        var local = $(this).closest('tr').find(".local").text();
+    	        var turno = $(this).closest('tr').find(".turno").text();
+    	        var data = $(this).closest('tr').find(".data").text();
+    	        var info = $(this).closest('tr').find(".info").text();
+    	        var doc = $(this).closest('tr').find(".doc").text();
+    	        alert(id);
+    	        $('.inputId').val(idObjeto);
+    	        $('.combobox-categoria').val(categoria);
+    	        $('.iptCor').val(cor);
+    	        $('.iptTamanho').val(tamanho);
+    	        $('.iptLocal').val(local);
+    	        $('.iptTurno').val(turno);
+    	        $('.iptData').val(data);
+    	        $('.iptInfo').val(info);
+    	        $('.iptDocEntregador').val(doc);
+    	        iniciaModal('modal-primario');
+    	    });
+    	 
+    	 
+    	 $(document).on("click", ".devolver", function(){
+    	        var id = $(this).closest('tr').find(".idObjeto").text();
+    	        alert('objetoDevolvido desabilitada');
+    	        $('.iptIdObjeto').val(id);
+    	        //iniciaModal('modal-principal');
+    	        $('.btn-desabilitar').click();
+    	    });
+    	 
+    	 
+    	 $(document).on("click", ".desabilitar", function(){
+ 	        var id = $(this).closest('tr').find(".idObjeto").text();
+ 	        alert('objeto desabilitada');
+ 	        $('.iptIdObjeto').val(id);
+ 	        //iniciaModal('modal-principal');
+ 	        $('.btn-desabilitar').click();
+ 	    });
+    	 
+    	 
+    	 if( $(".chkProfessor").is(":checked") == true){
+    		 $('.iptTurno').val("func");
+   	         $('.iptTurnoEntregador').val("func");
+    		 
+   	         $('.iptTurno, .iptTurnoEntregador').fadeOut('slow');
+    	 }
+    	 else {
+    		 $('.iptTurno').val();
+   	         $('.iptTurnoEntregador').val();
+    		 
+   	         $('.iptTurno, .iptTurnoEntregador').fadeIn();
+    	 }

@@ -28,7 +28,7 @@
 					<div class="form-group col-md-4">
 						<label for="inputIdObjeto">Id Objeto</label>
 						 <h:inputText value="#{devolucaoController.objeto.idObjeto}" 
-						 		styleClass="form-control" id="inputIdObjeto" pt:placeholder=""/>
+						 		styleClass="form-control iptIdObjeto" id="inputIdObjeto" pt:placeholder=""/>
 					</div>
 
 					<div class="form-group col-md-4" style="opacity:0;">
@@ -48,7 +48,7 @@
 					<div class="form-group col-md-8">
 						<label for="inputNome">Nome</label>
 						 <h:inputText value="#{devolucaoController.objeto.nomeDono}" 
-						 		styleClass="form-control" id="inputNome" pt:placeholder="Ex: João"/>
+						 		styleClass="form-control iptNome" id="inputNome" pt:placeholder="Ex: João"/>
 					</div>
 					
 				</div>
@@ -96,7 +96,7 @@
 					<div class="form-group col-md-4">
 					<label for="inputStatus">Situação</label>
 					 <h:selectOneMenu value="#{devolucaoController.objeto.status}" id="inputStatus" 
-					 class="form-control combobox-tamanho">
+					 styleClass="form-control combobox-situacao">
 						<f:selectItem itemValue="Aguardando"/>
 						<f:selectItem itemValue="Devolvido"/>
 						<f:selectItem itemValue="Reciclado"/>

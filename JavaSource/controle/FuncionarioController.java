@@ -51,7 +51,12 @@ public class FuncionarioController {
 	}
 	
 	public void pesquisaFuncionario() {
-		funcionarioDAO.pesquisaFuncionario(funcionario.getId());
+		if(funcionario.getEmail() != null ) {
+			funcionarioDAO.pesquisaFuncionario(funcionario.getEmail());
+		}
+		else {
+			funcionarioDAO.pesquisaFuncionario(funcionario.getUsuario());
+		}
 	}
 	
 	public void desativaFuncionario() {

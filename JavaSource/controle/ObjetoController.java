@@ -7,7 +7,6 @@ import javax.faces.bean.SessionScoped;
 
 import DAO.CategoriaDAO;
 import DAO.ObjetoDAO;
-import modelo.Categoria;
 import modelo.Objeto;
 
 @ManagedBean

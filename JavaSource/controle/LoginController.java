@@ -36,11 +36,13 @@ public class LoginController {
 		
 		boolean existe = false;
 		
+		String userPadrao = "f@zl";
+		
 		if(funcionario.getEmail().length() > 0 && funcionario.getEmail().matches(regexEmail.toString())) {
 			existe = funcionarioDAO.funcionarioExiste(funcionario.getEmail(), funcionario.getSenha(), "email");
 			
 		}
-		else if(funcionario.getEmail().length() > 0 && funcionario.getEmail().matches(regexEmail.toString())){
+		else if(funcionario.getEmail().length() > 0 && funcionario.getEmail().matches(userPadrao)){
 			existe = funcionarioDAO.funcionarioExiste(funcionario.getEmail(), funcionario.getSenha(), "user");
 		}
 		else {
@@ -50,6 +52,12 @@ public class LoginController {
 		if(existe == true) {
 			FacesContext context = FacesContext.getCurrentInstance();
 			context.getExternalContext().getSessionMap().put("usuarioLogado", this.funcionario);
+			
+			//Tratativa para conseguir retornar na tela os dados do funcionário já logado
+//			int idLogado = funcionarioDAO.retornaId(funcionario.getEmail());
+//			if (idLogado != 0) {
+//				funcionario.setIdLogado(idLogado);	
+//			}
 			return "dashboard.xhtml";
 		}
 		

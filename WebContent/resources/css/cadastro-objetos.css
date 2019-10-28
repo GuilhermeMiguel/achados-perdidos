@@ -442,7 +442,7 @@ SEGUNDO MODAL
   margin-top: -10%;
 }
 
-.combobox-tamanho {
+.combobox-categoria, .combobox-situacao, .combobox-pesquisa {
 	height: 34px !important;	
 }
 

@@ -55,18 +55,24 @@ public class FuncionarioDAO {
 		}
 	}
 	
-	public Funcionario pesquisaFuncionario(int id) {
+	public Funcionario pesquisaFuncionario(String opcao) {
 
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-
+		
+		String sql;
 		Funcionario funcionario = new Funcionario();
-		String sql = "SELECT * FROM funcionario where id = ?";
+		if(opcao.matches("f@zl")) {
+			sql = "SELECT * FROM funcionario where usuario = ?";
+		}
+		else {
+			sql = "SELECT * FROM funcionario where email = ?";
+		}
 
 		try {
 			stmt = con.prepareStatement(sql);
-			stmt.setInt(1, id);
+			stmt.setString(1, opcao);
 			rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -156,8 +162,13 @@ public class FuncionarioDAO {
 			stmt.setString(2, senha);
 		    rs = stmt.executeQuery();
 			while (rs.next()) {
-				funcionario.setSenha(rs.getString("senha"));				
-				funcionario.setEmail(rs.getString("email"));
+				funcionario.setSenha(rs.getString("senha"));	
+				if(opcaoUsuario == "email") {
+					funcionario.setEmail(rs.getString("email"));
+				}
+				else {
+					funcionario.setUsuario(rs.getString("usuario"));
+				}
 				resultado = true;
 			}
 
@@ -226,5 +237,32 @@ public class FuncionarioDAO {
 		}
 
 		return resultado;
+	}
+
+	public int retornaId(String email) {
+
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		int idRetornado = 0;
+		
+		String sql = "SELECT id FROM funcionario WHERE email = ? ";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, email);
+		    rs = stmt.executeQuery();
+			while (rs.next()) {
+				idRetornado = rs.getInt("id");
+			}
+
+		} catch (SQLException ex) {
+			System.out.println("Erro" + ex);
+			
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+
+		return idRetornado;
 	}
 }

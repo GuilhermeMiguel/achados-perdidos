@@ -51,14 +51,20 @@
                     <div class="form-group col-md-3">
                         <label for="inputCategoria">Categoria</label>
                        <h:selectOneMenu value="#{objetocontroller.objeto.categoria}"
-							 id="inputCategoria" class="form-control combobox-tamanho">
+							 id="inputCategoria" class="form-control combobox-categoria">
 							<f:selectItem itemValue="Escolher..."/>
 							<f:selectItem itemValue="..."/>
 						</h:selectOneMenu>
                       </div>
                   <div class="form-group col-md-3">
-                    <label for="inputCor">Cor</label>
-                    	<h:inputText styleClass="form-control" id="inputCor" pt:placeholder="Ex: Preto" />
+                    <label for="inputCor" class="lblCor">Cor</label>
+                    	<h:inputText styleClass="form-control iptCor" id="inputCor"
+                    		 pt:placeholder="Ex: Preto" />
+                  </div>
+                  
+                  <label for="inputCor" class="lblDococumento" style="dsiplay:none;">Documento</label>
+                    	<h:inputText styleClass="form-control iptDocumento" 
+                    		style="display:none;"id="inputCor" pt:placeholder="Ex: Preto" />
                   </div>
                    
                 <div class="form-group col-md-3">

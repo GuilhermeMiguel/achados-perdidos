@@ -1,8 +1,5 @@
 package controle;
 
-import java.text.DateFormat;
-import java.util.Date;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 

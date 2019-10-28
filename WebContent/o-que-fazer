@@ -1,24 +1,14 @@
 	TAREFAS PELA FRENTE:	
 !!!!!!!!!!!!!!!!!!!!!!!!!	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-	-- Fazer na tela de dados cadastrais um metodo que seta os valores nos campos, no caso eu vou chamar esse metodo dentro do 
-metodo construtor porem, eu preciso pegar o id do usuario, entao eu preciso ver como capturar esse id do usuario 
-de dentro do banco,ou seja, na hora de cadastrar e no login eu preciso setar no banco o id do usuario, entao no metodo 
-construtor eu pego esse id, e depois passo para o metodo que faz as pesquisas
-	|
-	 `--> Talvez fazer com cookie, mas ai ver as informações que deveria carregar no cookie
-	 
-	 metodo de pesquisa desse usuario implementado agora ver como passar esse id assim que a tela for carregada
-	 	 
-	 	 FAZER PARTE RESTANTE DO LOGIN, PARTE DOS ARQUIVOS INTERNOS E FAZER LOGOUT
-	 =================================================
-	 	VER INPUT TYPE DATE
+	*Estou fazendo um método que na hora que o usuario loga ele seta numa variavel o valor do usuario logado
+e quando eu for abrir a tela de dados cadastrais ele pega esse id e faz uma pesquisa no banco
 
 
 	VER COMO CADASTRAR ENTREGADOR E NAO FECHAR MODAL, E FAZER COM QUE ELE APAGUE OS OUTROS CAMPOS MAS MANTENHA O 
 VALOR DO DOCUMENTO CASO QUEIRA SALVAR O ENTREGADOR NECESSÁRIO
 
-	NA TELA DE CADASTRO DE ENTREGADOR COLOCAR UM select box PARA CASO ELE SEJA UM FUNCIONARIO, CASO ELE SEJA, OS CAMPOS 
+	NA TELA DE CADASTRO DE ENTREGADOR COLOCAR UM checkbox PARA CASO ELE SEJA UM FUNCIONARIO, CASO ELE SEJA, OS CAMPOS 
 TURNO E TURMA DEVEM SER ESCONDIDOS, ENTÃO TALVEZ ADICIONAR NO BANCO UM CAMPO PARA ADICIONAR SE É UM FUNCIONARIO OU ALUNO
 
 	TAMBEM VER UMA MANEIRA DO ALUNO NAO PODER CADASTRAR-SE NO SISTEMA, ENTAO NO CAMPO DE USUARIO NA TELA DE CADASTRO 
@@ -42,7 +32,7 @@ https://pt.stackoverflow.com/questions/327385/enviar-form-sem-fechar-modal
 	
 	https://www.devmedia.com.br/forum/barra-de-rolagem-vertical-em-tabela-div/565457
 	
-	
+	Para fazer logout ir ate o arquivo faces-config e descomentar codigo comentado
 	*na tela onde o usuario atualiza a senha dele carregar a senha antiga
 	!!!!!!!!!
 	DEPOIS DE IMPLEMENTAR O BACK -- ARRUMAR AS TABELAS 
