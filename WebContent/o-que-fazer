@@ -59,3 +59,127 @@ na fatec, para o aluno ver
 	
 	*ORGANIZAR A SEQUENCIA DOS METODOS NOS JAVASCRIPTS E SEPARAR O CSS, OS MODAIS, AS TELAS PRINCIPAIS, AS TABELAS, 
 IMPLEMENTAR CSS DO BOOTSTRAP
+
+
+
+
+
+
+
+
+
+
+
+CURSO DE ITIL
+	*Gerenciamentos de Serviço de TI	*Qual o ciclo de vidas dos serviços?
+	
+	Antigamente seu significado era Information Technology Infrastructure Library. Em português, 
+sua tradução era a seguinte: Biblioteca de Infraestrutura de Tecnologia da Informação. Agora mudou,
+é conehcido apenas pela silga ITIL, pois ITIL passou a ser uma marca, é aplicada em todos os serviços de 
+ti, não somente para a infraestrutura.
+
+ 	Com a associação entre o Cabinet Office (departamento do governo britânico) e a prestadora 
+ de serviços Capita, também do Reino Unido, nasceu o licenciamento da ITIL. 
+ 	Essa iniciativa resultou na criação de uma nova empresa chamada AXELOS. 
+
+	Surgiu no governo britanico e passou por algumas edições.
+
+	ITIL é um conjunto de publicações das melhores práticas para gerenciamento de serviços de TI.
+É o framework mais utilizado para gerenciamento de serviços de TI em todo o mundo.
+
+	Oferece orientações sobre como fornecer serviços de Ti para mais valor abordando processos, funções
+e outras habilidades necessárias.
+
+	ITIL não é uma norma que tenha que ser seguida na ponta da faca, mas sim um guia de práticas que podem
+ser adotadas e adaptadas a organização conforme necessidade.
+
+	Para se ter uma definição de o que é ITIL® é importante entender que ela é organizada em torno 
+do ciclo de vida de um serviço dentro de uma organização e contém os seguintes volumes:
+
+	*Estratégia do Serviço (“Service Strategy”): Definição dos requisitos e necessidades do negócio
+	*Projeto de Serviço (“Service Design”): Definição da solução a ser adotada
+	*Transição de Serviço (“Service Transition”): Relacionado ao gerenciamento de mudanças
+	*Operação do Serviço (“Service Operation”): Assegura que os serviços estão sendo atendidos 
+baseado nos SLAs
+	*Melhoria Contínua do Serviço (“Continual Service Improvement”): Manter a constante melhoria dos 
+serviços baseando-se no cliclo PDCA.
+
+	Benefícios que podem ser vivenciados a partir da implementação da ITIL:
+
+		*Os processos são otimizados;
+		*A produtividade da equipe aumenta;
+		*Os processos são desenvolvidos de maneira mais precisa;
+		*O número de incidentes e erros é reduzido;
+		*Há uso de uma nomenclatura comum, o que facilita a comunicação 
+	entre membros da equipe de suporte;
+		*A troca de comunicação é facilitada;
+		*Melhorias podem ser aplicadas mais facilmente;
+		*Há redução nos custos dos processos internos;
+		*Os níveis de serviço são elevados;
+			*Entre outros.
+
+	Sinteticamente, é como se a receita para o gerenciamento perfeito e agregador ao crescimento 
+dos negócios fosse escrita em sete livros. 
+	As empresas, cujos profissionais dominam cada fundamento da ITIL, sempre terão posição 
+privilegiada no mercado.
+
+
+
+	Cada livro aborda uma diferente modalidade, ou seja, embora essa biblioteca 
+represente um conjunto de melhores práticas, elas são tratadas de maneira distinta. 
+Portanto, as publicações se dividem em:
+
+1.      Service Support (suporte a serviços);
+
+2.      Service Delivery (entrega de serviços);
+
+3.      ICT – Infrastructure Management (gerenciamento de infraestrutura);
+
+4.      Planning to implement ITSM (planejamento para implementação do gerenciamento de serviços);
+
+5.      Business Perspective (perspectivas de negócio);
+
+6.      Application Management (gerenciamento de aplicação);
+
+7.      Security Management (gerenciamento da segurança).
+
+			A ITIL enfatiza a necessidade de um forte patrocínio da alta direção
+	A ITIL para alcançar a efetividade, necessita de uma mudança cultural na empresa. 
+Isso significa que alguns desafios relativos ao modo como os colaboradores estão habituados a 
+trabalhar podem surgir. Portanto, é providencial o apoio de um patrocinador da alta direção 
+para influenciar na transição. 
+Sem um bom patrocinador, a tendência é que as estratégias sejam inefetivas em longo prazo.
+
+
+			ITIL não é gestão de projetos
+	O foco da ITIL não está na criação de produtos, mas sim, concentrar-se em práticas para 
+o fornecimento de serviços de TI para a empresa, organizadas em processos de gerenciamento.
+	
+	
+			Apesar de sua popularidade, nem todas as respostas estão disponíveis na ITIL
+	Apesar de conter alguns processos e templates, ela não é uma metodologia, 
+ou seja, não contém todos os detalhes de como a implementação deve ser feita.
+
+	Organizações que visem adotar as recomendações da ITIL podem seguir as orientações gerais e, 
+a partir disso, desenvolver processos mais detalhados que façam sentido para a própria empresa.
+	
+	O material fornece direcionamentos sobre o que precisa ser feito e tudo a ser levado em consideração, 
+mas a responsabilidade de colocar os planos em prática e medir a efetividade deles ficará a cargo 
+da empresa. 
+	
+			ITIL não é uma ferramenta
+		No caso das organizações de pequeno porte, é certo que planilhas e templates 
+simples podem dar conta do recado. 
+
+		Pode ser necessário, para as empresas maiores, encontrar ferramentas específicas, 
+desenvolvidas para suportar o gerenciamento de serviços de TI.
+	
+	
+	
+	As empresas, por sua vez, não têm a opção de adquirir certificações ITIL. 
+	A norma internacional ISO/OEC20000 é o caminho a ser seguido para que a qualidade dos serviços de TI, 
+fornecidos e operados pela instituição, sejam atestados e acreditados pelas principais 
+instituições globais.
+
+
+
