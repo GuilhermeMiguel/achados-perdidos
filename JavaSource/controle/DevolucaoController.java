@@ -1,6 +1,7 @@
 package controle;
 
 import modelo.DevolucaoObjeto;
+import util_pdf.gerarPdf;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -31,6 +32,13 @@ public class DevolucaoController {
 	public void devolucaoObjeto() {
 		devObjetoDAO.Devolucao(objeto);
 		objDAO.alteraStatus(objeto.getStatus(), objeto.getId());
+		gerarPdf pdf = new gerarPdf();
+		
+		//colocar um campo para a pessoa dizer ou nao se quer gerar pdf
+		if(objeto.getStatus().equals("Devolvido")) {
+			pdf.geraPdf(objeto.getNomeDono(), objeto.getNomeDono(), objeto.getDataDevolucao());
+		}
+		
 	}
 	
 	public void atualizaDevolucaoObjeto() {

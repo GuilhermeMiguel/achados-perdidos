@@ -26,4 +26,25 @@ public class EnviadorEmail {
 	            e.printStackTrace();
 	        }
 	}
+	
+	
+	public void enviarEmailSecretaria(String nome, String objeto) {
+		
+		 try {
+	            Email email = new SimpleEmail();
+	            email.setHostName("smtp.googlemail.com");
+	            email.setSmtpPort(465);
+	            email.setAuthenticator(new DefaultAuthenticator("springbootalura@gmail.com.br", "springboot"));
+	            email.setSSLOnConnect(true);
+
+	            email.setFrom("springbootalura@gmail.com.br");
+	            email.setSubject("Recuperação da Senha");
+	            email.setMsg("Olá sou" +nome+ "meu objeto está na secretária de serviços!");
+	            email.addTo("fateczlsolicitacaodedocumento@gmail.com");
+	            email.send();
+
+	        } catch (EmailException e) {
+	            e.printStackTrace();
+	        }
+	}
 }

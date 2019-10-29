@@ -208,4 +208,76 @@ public class DashboardDAO {
 		return dash.getQuantCategoria1();
 	}
 	
+	//Para o gráfico
+	//
+	public String[] retornoGraficoPerdidos (String ano) {
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		String anoEscolhido = ano;
+		String sql;
+		String[] meses = new String[12];
+		
+		for(int i=1; i<=12; i++) {
+			
+		
+		sql = "SELECT * FROM tabela WHERE MONTH(str_to_date (dataEncontro, '%d/%m/%Y')) = '" +i+ "' and "
+					+ "YEAR(str_to_date (dataEncontro, '%d/%m/%Y')) = '" +anoEscolhido+ "'"
+					+ "and statusObjeto = 'Aguardando'";
+		
+		
+		try {
+			stmt = con.prepareStatement(sql);
+			rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				meses[i] = rs.getString("quantDoados");
+			}
+
+			} catch (SQLException ex) {
+			System.out.println("Erro" + ex);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+	}
+	
+		return meses;
+	}
+	
+	
+	public String[] retornoGraficoDevolvidos (String ano) {
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		String anoEscolhido = ano;
+		String sql;
+		String[] meses = new String[12];
+		
+		for(int i=1; i<=12; i++) {
+			
+		
+		sql = "SELECT * FROM tabela WHERE MONTH(str_to_date (dataEncontro, '%d/%m/%Y')) = '" +i+ "' and "
+					+ "YEAR(str_to_date (dataEncontro, '%d/%m/%Y')) = '" +anoEscolhido+ "'"
+					+ "and statusObjeto = 'Devolvido'";
+		
+		
+		try {
+			stmt = con.prepareStatement(sql);
+			rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				meses[i] = rs.getString("quantDoados");
+			}
+
+			} catch (SQLException ex) {
+			System.out.println("Erro" + ex);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+	}
+	
+		return meses;
+	}
 }

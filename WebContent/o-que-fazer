@@ -1,19 +1,28 @@
 	TAREFAS PELA FRENTE:	
 !!!!!!!!!!!!!!!!!!!!!!!!!	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-	*Estou fazendo um método que na hora que o usuario loga ele seta numa variavel o valor do usuario logado
-e quando eu for abrir a tela de dados cadastrais ele pega esse id e faz uma pesquisa no banco
+	*Na hora que eu faço login ele carrega valor no email ou so usuario, entao eu uso essas variaveis para 
+fazer a pesquisa no banco.
 
+	*Ver como cadastrar entregador e nao fechar modal, e fazer com que ele apague 
+os outros campos mas mantenha o valor do documento caso queira salvar o entregador necessário
 
-	VER COMO CADASTRAR ENTREGADOR E NAO FECHAR MODAL, E FAZER COM QUE ELE APAGUE OS OUTROS CAMPOS MAS MANTENHA O 
-VALOR DO DOCUMENTO CASO QUEIRA SALVAR O ENTREGADOR NECESSÁRIO
+	*Na tela de cadastro de entregador colocar um checkbox para caso ele seja um funcionario, 
+caso ele seja, os campos Turno e turma devem ser escondidos, então talvez adicionar no banco 
+um campo para adicionar se é um funcionario ou aluno (acho melhor nao)
+	*js implementado
+	
+	*VER COMO EU POSSO FAZR PARA ARMAZENAR O ARRAY DE RETORNO DA QUANTIDADE DE PERDIDOS E QUANTIDADE
+DE DEVOLVIDOS NUM OUTRO SET DE ARRAY E VER COMO EU POSSO FAZER PARA PEGAR CADA UM DELES NO GRAFICO, SE NAO
+DER CERTO EU CRIO 12 VARIAVEIS NA OUTRA CLASSE MESMO
 
-	NA TELA DE CADASTRO DE ENTREGADOR COLOCAR UM checkbox PARA CASO ELE SEJA UM FUNCIONARIO, CASO ELE SEJA, OS CAMPOS 
-TURNO E TURMA DEVEM SER ESCONDIDOS, ENTÃO TALVEZ ADICIONAR NO BANCO UM CAMPO PARA ADICIONAR SE É UM FUNCIONARIO OU ALUNO
-
-	TAMBEM VER UMA MANEIRA DO ALUNO NAO PODER CADASTRAR-SE NO SISTEMA, ENTAO NO CAMPO DE USUARIO NA TELA DE CADASTRO 
-EU DEVO VERIFICAR SE CONSTA O PADRÃO NECESSÁRIO PARA SE CADASTRAR, OU SEJA, O USUARIO DE UM FUNCIONARIO QUE 
-IRA UTILIZAR O SISTEMA DEVE TER UM PREFIXO POR EXEMPLO: F@TZL, TALVEZ SEJA INTERESSANTE ELE UTILIZAR O EMAIL INSTITUICIONAL
+	*Tambem ver uma maneira do aluno nao poder cadastrar-se no sistema, entao no campo de usuario 
+na tela de cadastro 
+	*Eu devo verificar se consta o padrão necessário para se cadastrar, ou seja, 
+para o funcionario deve colocar o padrao de cadastro no campo usuario
+	*Ira utilizar o sistema deve ter um prefixo por exemplo: f@tzl, talvez seja 
+interessante ele utilizar o email instituicional
+	
 	|
 	 `---> Está meio caminho andado, funcionando bem
 
@@ -39,9 +48,7 @@ https://pt.stackoverflow.com/questions/327385/enviar-form-sem-fechar-modal
 		: Colocar barra de rolagem horizontal nelas
 		: Colocar um icone de x para desabilitar o usuario e um icone de v para habilitar
 	
-	*Fazer todo o back end necessário para o restante do crud
-
-	*Depois implementar o back para a pesquisa de objetos
+	*Implementar o back para a pesquisa de objetos
 
 	*Fazer um modal simples com as informações referentes a como funciona o processo de achados e perdidos 
 na fatec, para o aluno ver
