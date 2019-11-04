@@ -168,12 +168,12 @@ background-color: #694077;
 }
 
 #area-botao {
-    color: white;
+  color: white;
     background-color: black;
     width: 1113px;
-    margin-left: -60px;
+    margin-left: 34px;
     height: 40px;
-    margin-top: 83px;
+    margin-top: -39px;
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -362,9 +362,9 @@ input.input100 {
 
 
 .modal-regras{
-  background-color: #FFF;
-    width: 600px;
-    height: 210px;
+    background-color: #FFF;
+    width: 692px;
+    height: 260px;
     box-shadow: 4px 4px 25px rgba(0,0,0,0.5);
 }
 
@@ -441,7 +441,7 @@ margin-top: 22%;
 .fechar-modal{
   position: relative;
     top: -40px;
-    margin-left: 541px;
+    margin-left: 633px;
     width: 60px;
     line-height: 30px;
     font-size: 13px;
@@ -457,6 +457,10 @@ margin-top: 22%;
     height: 30px;
 }
 
+.caixa-texto{
+	margin-top: 18px;
+    margin-left: 50px;
+}
 
 .area-regras {
   margin-top: 5%;  

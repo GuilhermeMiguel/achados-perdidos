@@ -23,7 +23,7 @@ public class ObjetoController {
 	public ObjetoController() {
 		objeto = new Objeto();
 		exibeListaObjetos();
-		 carregaCombo();
+		carregaCombo();
 	}
 	
 	public List<Objeto> getObjetoList() {

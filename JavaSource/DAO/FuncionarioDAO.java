@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import connection.ConnectionFactory;
 import modelo.Funcionario;
@@ -55,12 +57,13 @@ public class FuncionarioDAO {
 		}
 	}
 	
-	public Funcionario pesquisaFuncionario(String opcao) {
+	public List<Funcionario> pesquisaFuncionario(String opcao) {
 
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		
+		List<Funcionario> PesquisaFuncionarios = new ArrayList<>();
+
 		String sql;
 		Funcionario funcionario = new Funcionario();
 		if(opcao.matches("f@zl")) {
@@ -85,6 +88,7 @@ public class FuncionarioDAO {
 				funcionario.setSenhaAntiga(rs.getString("senha"));
 				funcionario.setEmail(rs.getString("email"));
 				funcionario.setCargo(rs.getString("cargo"));
+				PesquisaFuncionarios.add(funcionario);
 			}
 
 		} catch (SQLException ex) {
@@ -93,7 +97,7 @@ public class FuncionarioDAO {
 			ConnectionFactory.closeConnection(con, stmt, rs);
 		}
 		
-		return funcionario;
+		return PesquisaFuncionarios;
 	}
 	
 	public void update(Funcionario f) {
@@ -151,10 +155,9 @@ public class FuncionarioDAO {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		boolean resultado = false;
-		Funcionario funcionario = new Funcionario();
-		String opcaoUsuario = "opcao"; 
+		String opcaoUsuario = opcao; 
 		
-		String sql = "SELECT email, senha FROM funcionario WHERE" +opcaoUsuario+ " = ? and senha = ? ";
+		String sql = "SELECT email, senha FROM funcionario WHERE " +opcaoUsuario+ " = ? and senha = ? ";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -162,13 +165,6 @@ public class FuncionarioDAO {
 			stmt.setString(2, senha);
 		    rs = stmt.executeQuery();
 			while (rs.next()) {
-				funcionario.setSenha(rs.getString("senha"));	
-				if(opcaoUsuario == "email") {
-					funcionario.setEmail(rs.getString("email"));
-				}
-				else {
-					funcionario.setUsuario(rs.getString("usuario"));
-				}
 				resultado = true;
 			}
 
@@ -187,9 +183,8 @@ public class FuncionarioDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String emailRetornado = "";
+		String retornaSenha = "";
 		
-		//Funcionario funcionario = new Funcionario();
 		String sql = "SELECT senha FROM funcionario where email = ?";
 
 		try {
@@ -198,7 +193,7 @@ public class FuncionarioDAO {
 			rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				emailRetornado = sql;
+				retornaSenha = rs.getString("senha");
 			}
 
 		} catch (SQLException ex) {
@@ -207,7 +202,7 @@ public class FuncionarioDAO {
 			ConnectionFactory.closeConnection(con, stmt, rs);
 		}
 		
-		return emailRetornado;
+		return retornaSenha;
 	}
 
 	public boolean emailExiste(String email) {
@@ -264,5 +259,78 @@ public class FuncionarioDAO {
 		}
 
 		return idRetornado;
+	}
+
+	public void emailLogado(String email) {
+
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		
+		String sql = "INSERT INTO emailLogado (email) VALUES(?)";
+
+		try {
+
+			stmt = con.prepareStatement(sql);
+					
+			stmt.setString(1, email);
+			
+			stmt.executeUpdate();
+
+			System.out.println("Salvo com sucesso");
+
+		} catch (SQLException ex) {
+			
+			System.out.println("Erro ao salvar: " + ex);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt);
+		}
+	}
+	
+	public String retornaEmail () {
+		
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		String emailRetornado = "";
+		
+		//Funcionario funcionario = new Funcionario();
+		String sql = "SELECT email FROM emailLogado where id = (select max(id) from emailLogado)";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				emailRetornado = rs.getString("email");
+			}
+
+		} catch (SQLException ex) {
+			System.out.println("Erro" + ex);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+		
+		return emailRetornado;
+	}
+
+	public void limparEmail() {
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		
+		String sql = "delete tabela where id = (select max(id) from emailLogado)";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.executeUpdate();
+
+			System.out.println("Salvo com sucesso");
+
+		} catch (SQLException ex) {
+			
+			System.out.println("Erro ao salvar: " + ex);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt);
+		}
+		
 	}
 }

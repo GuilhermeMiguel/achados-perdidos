@@ -33,11 +33,11 @@ public class DashboardController {
 	public void pesquisaDashboard() {
 		dtInicio = dashboard.getDataInicio();
 		dtFim = dashboard.getDataFim();
-		String[] meses = new String[12];
+		//String[] meses = new String[12];
 		
-		meses = dashDAO.retornoGraficoPerdidos(dtFim.substring(6, 10));
+		//meses = dashDAO.retornoGraficoPerdidos(dtFim.substring(6, 10));
 		
-		dashDAO.retornoGraficoDevolvidos(dtFim.substring(6, 10));
+		//dashDAO.retornoGraficoDevolvidos(dtFim.substring(6, 10));
 		
 		String[] datasFormatadas = new String[2];
 		datasFormatadas = formataDatas(dtInicio, dtFim);
@@ -52,12 +52,12 @@ public class DashboardController {
 		
 		dashboard.setQuantLocal((dashDAO.retornoLocal(dtInicio, dtFim)));
 		
-		dashboard.setQuantCategoria1(dashDAO.rankingCategorias(dtInicio, dtFim));
+		dashboard.setQuantCategoria(dashDAO.retornoCategoria(dtInicio, dtFim));
 		
 		
-		mesesGraficoDashboard dashboardGrafico = new mesesGraficoDashboard();
+		//mesesGraficoDashboard dashboardGrafico = new mesesGraficoDashboard();
 		
-		dashboardGrafico.setJaneiro(meses[12]);
+		//dashboardGrafico.setJaneiro(meses[12]);
 		
 		//dashboardGrafico.getMesesDevolvidos();
 	}

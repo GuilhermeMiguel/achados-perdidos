@@ -12,6 +12,11 @@
      regras.addEventListener('click', () => iniciaModal('modal-principal'));
      
      
+     $(document).ready(function(){
+         $('.iptDataInicio, .iptDataFim').mask('00/00/0000');
+      });
+     
+     
      var MaskDoc = function (val) {
    	  if(val.length >= 13 && val.indexOf("111") >= 0){
    		  return '000.000.000.0000';
@@ -23,23 +28,26 @@
    	      field.mask(MaskDoc.apply({}, arguments), options);
    	    }
    	};
-     
-   //Condição no combobox para aparecer os inputs corretos para pesquisam, ou entao só trocar os nomes e tamanhos deles
- 	$('.combobox-tamanho').change(function (){
- 		if($('.combobox-categoria option:selected').val()== 'Documento' ||
- 			'.combobox-categoria option:selected').val()== 'RG' 
- 				|| '.combobox-categoria option:selected').val()== 'CPF'
- 					|| '.combobox-categoria option:selected').val()== 'RA'){
- 				
- 				$('.iptCor, .lblCor').fadeOut('slow', function(){
- 					$('.iptDocumento, .lblDocumento').fadeIn();
- 				});
- 				
- 				$('.iptDocumento').mask(MaskDoc, Options);
- 		}
- 		else {
- 			$('.iptDocumento, .lblDocumento').fadeOut('slow', function(){
-					$(' .iptCor, .lblCor').fadeIn();
-					});	
- 			 }
- 	});
+   	
+  
+//     
+//   //Condição no combobox para aparecer os inputs corretos para pesquisam, ou entao só trocar os nomes e tamanhos deles
+// 	$('.combobox-categoria').change(function (){
+// 		console.log('teste');
+// 		if($('.combobox-categoria option:selected').val()== 'Documento' ||
+// 			'.combobox-categoria option:selected').val()== 'RG' 
+// 				|| '.combobox-categoria option:selected').val()== 'CPF'
+// 					|| '.combobox-categoria option:selected').val()== 'RA'){
+// 				
+// 				$('.iptCor, .lblCor').fadeOut('slow', function(){
+// 					$('.iptDocumento, .lblDocumento').fadeIn();
+// 				});
+// 				
+// 				$('.iptDocumento').mask(MaskDoc, Options);
+// 		}
+// 		else {
+// 			$('.iptDocumento, .lblDocumento').fadeOut('slow', function(){
+//					$(' .iptCor, .lblCor').fadeIn();
+//					});	
+// 			 }
+// 	});

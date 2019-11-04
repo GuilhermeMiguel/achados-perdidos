@@ -150,14 +150,14 @@
 					</div>
 
 					<div class="form-group col-md-4">
-						<label for="inputTurma">Turma</label> 
-							<h:inputText type="text" styleClass="form-control iptTurma" 
+						<label for="inputTurmaEntregador" class="texto-iptEntregador">Turma</label> 
+							<h:inputText type="text" styleClass="form-control iptTurmaEntregador" 
 								value="#{entregadorController.entregador.turma}"
-										id="inputTurma" pt:placeholder="Ex: 6° ADS" />
+										id="inputTurmaEntregador" pt:placeholder="Ex: 6° ADS" />
 					</div>
 					
 					<div class="form-group col-md-4">
-						<label for="inputTurnoEntregador">Turno</label> 
+						<label for="inputTurnoEntregador" class="texto-iptEntregador">Turno</label> 
 							<h:inputText styleClass="form-control iptTurnoEntregador" 
 									value="#{entregadorController.entregador.turno}"
 											id="inputTurnoEntregador" pt:placeholder="Ex:" />
@@ -178,6 +178,11 @@
 		</div>
 	</div>
 
+	<div class="caixa-funcionario">
+		<input class="chkProfessor" id="ckb1" type="checkbox" name="lembre-me"/>
+		<p class="texto-eh-funcionario"  style="margin-top: -22px;">Funcionário?</p>
+	</div>
+	
 	<div class="acoes-entregador">
 		<div class="cadastrar-entregador">
 			<p class="texto-cadastrar-entregador">Cadastrar...</p>

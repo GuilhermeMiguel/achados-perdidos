@@ -32,18 +32,18 @@
 					</span>
 				</div>
 
-				<form class="formulario-login validate-form">
+				<h:form class="formulario-login validate-form">
 					<p class="mensagem" style="display: none;">Nós enviaremos sua senha para o seu email. <br/><br/></p>
-					<div class="caixa-input validate-input m-b-26" data-validate="Username is required">
+					<div class="caixa-input validate-input m-b-26">
 						<span class="label-input100 user">Email/User</span>
-						<h:inputText value="#{funcionariocontroller.funcionario.email}" 
+						<h:inputText value="#{loginController.funcionario.email}" 
 							styleClass="input100" name="username" pt:placeholder="Digite seu email ou usuário" />
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="caixa-input validate-input m-b-18" id="caixa-senha" data-validate="Password is required">
+					<div class="caixa-input validate-input m-b-18" id="caixa-senha">
 						<span class="label-input100">Senha</span>
-						<h:inputSecret value="#{funcionariocontroller.funcionario.senha}"   
+						<h:inputSecret value="#{loginController.funcionario.senha}"   
 							styleClass="input100" name="pass" pt:placeholder="Digite sua senha" />
 						<span class="focus-input100"></span>
 					</div>
@@ -63,7 +63,8 @@
                         </div>
                         
                         <div class="botoes-esqueci-senha">
-						<h:commandButton value="Enviar email" styleClass="enviar-email" style="display: none;"/>
+						<h:commandButton value="Enviar email" styleClass="enviar-email" style="display: none;" 
+							actionListener="#{loginController.recuperarSenha}"/>
 						</div>
 						
 						<a class="voltar" style="display: none;"> Voltar</a>
@@ -83,9 +84,9 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<h:commandButton styleClass="login100-form-btn" value="Login" />
+						<h:commandButton styleClass="login100-form-btn" value="Login" actionListener="#{loginController.efetuaLogin}"/>
 					</div>
-				</form>
+				</h:form>
 			</div>
 		</div>
 	</div>

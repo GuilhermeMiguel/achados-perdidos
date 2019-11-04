@@ -184,20 +184,20 @@ public class DashboardDAO {
 		return dash.getQuantLocal();
 	}
 
-	public String rankingCategorias(String dataInicio, String dataFim) {
+	public String retornoCategoria(String dataInicio, String dataFim) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 
 		Dashboard dash = new Dashboard();
-		String sql = "SELECT categoria, COUNT(categoria) as quantCategoria1 FROM objeto GROUP BY categoria ORDER BY COUNT(*) DESC LIMIT 1;";
+		String sql =  "SELECT categoria as quantCategoria FROM objeto GROUP BY categoria ORDER BY COUNT(*) DESC LIMIT 1";
 
 		try {
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				dash.setQuantCategoria1(rs.getString("quantCategoria1"));
+				dash.setQuantCategoria(rs.getString("quantCategoria"));
 			}
 
 		} catch (SQLException ex) {
@@ -205,7 +205,8 @@ public class DashboardDAO {
 		} finally {
 			ConnectionFactory.closeConnection(con, stmt, rs);
 		}
-		return dash.getQuantCategoria1();
+		
+		return dash.getQuantCategoria();
 	}
 	
 	//Para o gráfico

@@ -1,16 +1,8 @@
 	TAREFAS PELA FRENTE:	
 !!!!!!!!!!!!!!!!!!!!!!!!!	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-	*Na hora que eu faço login ele carrega valor no email ou so usuario, entao eu uso essas variaveis para 
-fazer a pesquisa no banco.
-
 	*Ver como cadastrar entregador e nao fechar modal, e fazer com que ele apague 
 os outros campos mas mantenha o valor do documento caso queira salvar o entregador necessário
-
-	*Na tela de cadastro de entregador colocar um checkbox para caso ele seja um funcionario, 
-caso ele seja, os campos Turno e turma devem ser escondidos, então talvez adicionar no banco 
-um campo para adicionar se é um funcionario ou aluno (acho melhor nao)
-	*js implementado
 	
 	*VER COMO EU POSSO FAZR PARA ARMAZENAR O ARRAY DE RETORNO DA QUANTIDADE DE PERDIDOS E QUANTIDADE
 DE DEVOLVIDOS NUM OUTRO SET DE ARRAY E VER COMO EU POSSO FAZER PARA PEGAR CADA UM DELES NO GRAFICO, SE NAO

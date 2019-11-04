@@ -367,6 +367,12 @@ th, td {
     background-color: gray;
 }
 
+.caixa-funcionario {
+	position: absolute;
+    margin-top: 33%;
+    margin-left: 32%;
+    display:none;
+}
 
 .pesquisar-entregador, .btn-salvar-entregador, .btn-cancelar-entregador {
   min-width: 100px;
@@ -397,7 +403,7 @@ th, td {
     right: 25%;
 }
 
-.texto-cadastrar-entregador, .texto-editar-entregador, .texto-entregador-cadastrado {
+.texto-cadastrar-entregador, .texto-editar-entregador, .texto-entregador-cadastrado, .texto-eh-funcionario {
   font-family: Poppins-Regular;
   font-size: 16px;
   line-height: 1.4;
@@ -407,7 +413,7 @@ th, td {
   margin-left: 20px;
 }
 
-.pesquisar-entregador, .editar-entregador, .cadastrar-entregador, .texto-entregador-cadastrado:hover {
+.pesquisar-entregador, .editar-entregador, .cadastrar-entregador, .texto-entregador-cadastrado, .texto-eh-funcionario :hover {
   cursor: pointer;
 }
 

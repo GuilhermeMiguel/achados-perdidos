@@ -47,6 +47,10 @@
 
 		<div class="form-row" style="width:50%; margin-left:25%;">
 		<div class="caixa-pesquisa">
+		
+		<h:commandButton class="login100-form-btn btnLogout" style="display:none;"
+			actionListener="#{loginController.deslogar}"/>
+			
 				<div class="form-group col-md-4">
 					<label for="inputCategoria">Data Inicio</label> 
 					<div class='input-group date' id='datetimepicker6'>
@@ -101,76 +105,29 @@
 		</div>
 
 		<div class="row">
-			<div class="col-md-8" id="container-segunda-linha">
+			<div class="col-md-12" id="container-segunda-linha">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-4">
 						<div id="area-objetos-perdidos-devolvidos">
 							<img src="images/icone-doacao.png" /><br /> Objetos doados: <br />
 							<h:outputText value="#{dashboardController.dashboard.quantDoados}"/>
 						</div>
 					</div>
 
-					<div class="col-md-6">
+					<div class="col-md-4">
 						<div id="area-objetos-perdidos-devolvidos">
 							<img src="images/icone-reciclagem.png" /><br /> Objetos
 							recilados: <br /> <h:outputText value="#{dashboardController.dashboard.quantReciclados}"/>
 						</div>
 					</div>
+					
+					<div class="col-md-4">
+						<div id="area-objetos-perdidos-devolvidos">
+							<img src="images/icone-reciclagem.png" /><br /> Categoria 
+							+ perdida: <br /> <h:outputText value="#{dashboardController.dashboard.quantCategoria}"/>
+						</div>
+					</div>
 				</div>
-			</div>
-
-			<div class="col-md-4" id="area-porcentagem">
-			<h5>Categorias mais perdidas</h5>
-				<ul class="widget widget-usage unstyled span4">
-					<li>
-						<p>
-							<strong>Teste</strong> 
-								<span class="pull-right small muted">78%</span>
-						</p>
-						<div class="progress tight">
-							<div class="progress-bar progress-bar-success" role="progressbar"
-								aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"
-									style="width: 78%">
-							</div>
-						</div>
-					</li>
-					<li>
-						<p>
-							<strong>#{dashboard.categoria2}</strong> 
-								<span class="pull-right small muted">#{dashboard.quantCategoria1}</span>
-						</p>
-						<div class="progress tight">
-							<div class="progress-bar progress-bar-success" role="progressbar"
-								aria-valuenow="#{dashboard.quantCategoria1}" aria-valuemin="0"
-									aria-valuemax="100" style="width:55">
-							</div>
-						</div>
-					</li>
-					<li>
-						<p>
-							<strong>#{dashboard.categoria3}</strong> 
-								<span class="pull-right small muted">44%</span>
-						</p>
-						<div class="progress tight">
-							<div class="progress-bar progress-bar-success" role="progressbar"
-								aria-valuenow="44" aria-valuemin="0" aria-valuemax="100"
-									style="width: 44%">
-							</div>
-						</div>
-					</li>
-					<li>
-						<p>
-							<strong>#{dashboard.categoria4}</strong> 
-								<span class="pull-right small muted">33%</span>
-						</p>
-						<div class="progress tight">
-							<div class="progress-bar progress-bar-success" role="progressbar"
-								aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"
-									style="width: 33%">
-							</div>
-						</div>
-					</li>
-				</ul>
 			</div>
 		</div>
 

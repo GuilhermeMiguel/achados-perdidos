@@ -39,7 +39,7 @@
 				</ul>
 			</li>
 			
-			<li><a href="index.xhtml"><img src="images/icone-logout.png" />Logout</a></li>
+			<li><a class="logout"><img src="images/icone-logout.png" />Logout</a></li>
 			<li><a href="#">Contact</a></li>
 
 		</ul>
@@ -64,4 +64,11 @@
 	</div>
 	<!-- /#wrapper -->
 
+<script>
+$( ".logout" ).click(function( event ) {
+	$( ".btnLogout" ).click();
+	window.location.href = "index.xhtml";
+	}); 
+
+</script>
 </html>
