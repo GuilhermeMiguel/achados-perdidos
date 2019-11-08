@@ -46,7 +46,8 @@ public class FuncionarioController {
 
 	public void pesquisaFuncionario() {
 			try {
-				funcionarioList = funcionarioDAO.pesquisaFuncionario(funcionarioDAO.retornaEmail());
+				//Estou levando em consideração que o cookie foi criado e está tudo certo
+				funcionarioList = funcionarioDAO.pesquisaFuncionario(funcionario.getEmail());
 				funcionario.setCargo(funcionarioList.get(0).getCargo());
 				funcionario.setEmail(funcionarioList.get(0).getEmail());
 				funcionario.setNome(funcionarioList.get(0).getNome());

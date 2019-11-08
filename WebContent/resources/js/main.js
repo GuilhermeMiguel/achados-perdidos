@@ -105,3 +105,12 @@ var SPMaskTelefone = function (val) {
 
 	$('.iptTelefone').mask(SPMaskTelefone, spOptions);
 	
+	
+	$(document).on('click','.login',function(){
+		//Criação do cookie
+		$.cookie("email-usuario", $.('.iptEmail').val(), { expires: 5 });
+	});
+
+	
+	//Depois pegar na tela de cadastro do usuario eu pego e seto num campo esse valor
+	

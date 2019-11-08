@@ -16,3 +16,8 @@
 $(document).ready(function(){
     $('.iptNascimento').mask('00/00/0000');
 });
+
+
+$(document).ready(function(){
+    $('.iptEmail').val($.cookie("email-usuario"));
+});

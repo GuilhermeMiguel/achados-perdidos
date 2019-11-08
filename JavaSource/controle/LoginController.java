@@ -29,7 +29,6 @@ public class LoginController {
 		funcionario = new Funcionario();
 	}
 
-
 	public Funcionario getFuncionario() {
 		return funcionario;
 	}
@@ -56,12 +55,12 @@ public class LoginController {
 		
 		if(funcionario.getEmail().length() > 0 && verificaEmail(funcionario.getEmail())) {
 			existe = funcionarioDAO.funcionarioExiste(funcionario.getEmail(), funcionario.getSenha(), "email");
-			funcionarioDAO.emailLogado(funcionario.getEmail());
+			//funcionarioDAO.emailLogado(funcionario.getEmail());
 			//func.setEmail(funcionario.getEmail());	
 		}
 		else if(funcionario.getEmail().length() > 0 && funcionario.getEmail().matches(userPadrao)){
 			existe = funcionarioDAO.funcionarioExiste(funcionario.getEmail(), funcionario.getSenha(), "usuario");
-			funcionarioDAO.emailLogado(funcionario.getEmail());
+			//funcionarioDAO.emailLogado(funcionario.getEmail());
 			//func.setEmail(funcionario.getEmail());
 		}
 		else {
