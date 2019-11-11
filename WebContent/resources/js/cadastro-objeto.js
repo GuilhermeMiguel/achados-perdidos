@@ -170,3 +170,7 @@ $( ".adicionar" ).click(function( event ) {
    	   	         $('.iptTurnoEntregador').val())
     	 }
     });
+    	 
+    	 $(document).ready(function() {
+    		    $('#table').DataTable();
+    	} );

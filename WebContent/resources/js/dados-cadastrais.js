@@ -17,7 +17,12 @@ $(document).ready(function(){
     $('.iptNascimento').mask('00/00/0000');
 });
 
-
 $(document).ready(function(){
     $('.iptEmail').val($.cookie("email-usuario"));
+ 
 });
+//
+//window.setTimeout(function(){
+//	   document.getElementById("botao_2").click();
+//	}, 8000);
+//

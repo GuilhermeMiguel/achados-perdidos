@@ -37,7 +37,7 @@
 					<div class="caixa-input validate-input m-b-26">
 						<span class="label-input100 user iptEmail">Email/User</span>
 						<h:inputText value="#{loginController.funcionario.email}" 
-							styleClass="input100" name="username" pt:placeholder="Digite seu email ou usuário" />
+							styleClass="input100 iptEmail" name="username" pt:placeholder="Digite seu email ou usuário" />
 						<span class="focus-input100"></span>
 					</div>
 
@@ -84,13 +84,14 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<h:commandButton styleClass="login100-form-btn" value="Login" actionListener="#{loginController.efetuaLogin}"/>
+						<h:commandButton styleClass="login100-form-btn login" value="Login" actionListener="#{loginController.efetuaLogin}"/>
 					</div>
 				</h:form>
 			</div>
 		</div>
 	</div>
-
+	
+	<script src="resources/js/jquery.cookie.js"></script>
 	<script src="resources/js/main.js"></script>
 
 </body>

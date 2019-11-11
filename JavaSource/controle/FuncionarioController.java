@@ -7,6 +7,9 @@ import java.util.regex.Pattern;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 
 import DAO.FuncionarioDAO;
 import modelo.Funcionario;
@@ -47,7 +50,9 @@ public class FuncionarioController {
 	public void pesquisaFuncionario() {
 			try {
 				//Estou levando em consideração que o cookie foi criado e está tudo certo
-				funcionarioList = funcionarioDAO.pesquisaFuncionario(funcionario.getEmail());
+				Cookie[] cookie = capturaCookie();
+				String email = cookie[0].getValue();
+				funcionarioList = funcionarioDAO.pesquisaFuncionario(email);
 				funcionario.setCargo(funcionarioList.get(0).getCargo());
 				funcionario.setEmail(funcionarioList.get(0).getEmail());
 				funcionario.setNome(funcionarioList.get(0).getNome());
@@ -55,13 +60,33 @@ public class FuncionarioController {
 				funcionario.setSexo(funcionarioList.get(0).getSexo());
 				funcionario.setTelefone(funcionarioList.get(0).getTelefone());
 				funcionario.setUsuario(funcionarioList.get(0).getUsuario());
+				System.out.println("Esta passando aqui!!!!!!!!!!!!");
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
 		
 		}
-			
+	
+	public Cookie[] capturaCookie() {
+		FacesContext facesContext = FacesContext.getCurrentInstance();
 
+		HttpServletRequest request = (HttpServletRequest)facesContext.getExternalContext().getRequest();
+
+		Cookie[] cookies = request.getCookies();
+
+		if(cookies != null)
+		{
+		  for(Cookie cookie: cookies)
+		  {
+		    if(cookie.getName().equals("email-usuario"))
+		    {
+		      cookie.getValue();
+		    }
+		  }
+		}
+		return cookies;
+	}
+			
 	public void cadastraFuncionario() {
 
 		if (!funcionarioDAO.emailExiste(funcionario.getEmail())) {

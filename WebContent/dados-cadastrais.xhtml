@@ -101,7 +101,7 @@
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
 										<h:inputText value="#{funcionarioController.funcionario.email}" 
-												styleClass="input100" name="email" pt:placeholder="" />
+												styleClass="input100 iptEmail" name="email" pt:placeholder="" />
 										<span class="focus-input100"></span>
 									</div>
 								</div>
@@ -134,7 +134,10 @@
 								</h:selectOneMenu>
 							</div>
 						</div>
-
+	
+						<h:commandButton actionListener="#{funcionarioController.pesquisaFuncionario}" 
+									styleClass="pesquisaFuncionario" style="display:none;"/>
+						
 
 						<div class="form-group" id="area-botao" style="margin-top: 8%;">
 
@@ -193,6 +196,7 @@
 	</div>
 </h:form>
 
+<script src="resources/js/jquery.cookie.js"></script>
 <script src="resources/js/jquery.mask.js"></script>       
 <script src="resources/js/dados-cadastrais.js"></script>
 

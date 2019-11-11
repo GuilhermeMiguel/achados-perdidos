@@ -122,13 +122,22 @@ background-color: #694077;
     flex-direction: row;
 }
 
-.table{
-	margin-top: -27%;
-    margin-left: 20%;
+.table {
+	 margin-left: -16px;
 }
 
 #table {
 	width: 100%;
+}
+
+.scroll-table {
+	margin-top: -26%;
+    margin-left: 20%;
+   /* overflow-x: scroll;*/
+}
+
+th, td {
+    min-width: 50px; /* width/largura das células à escolha */
 }
 
 

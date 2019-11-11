@@ -93,22 +93,11 @@ $( ".lupa" ).mouseout(function() {
 	$('.pesquisar-objetos').delay(1200).fadeOut('slow');
 });
 
-//Mascara Telefone
-var SPMaskTelefone = function (val) {
-	  return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
-	},
-	spOptions = {
-	  onKeyPress: function(val, e, field, options) {
-	      field.mask(SPMaskTelefone.apply({}, arguments), options);
-	    }
-	};
-
-	$('.iptTelefone').mask(SPMaskTelefone, spOptions);
-	
-	
 	$(document).on('click','.login',function(){
 		//Criação do cookie
-		$.cookie("email-usuario", $.('.iptEmail').val(), { expires: 5 });
+//		event.preventDefault();
+		console.log($('.input100').val());
+		$.cookie("email-usuario", $('.input100').val(), { expires: 5 });
 	});
 
 	

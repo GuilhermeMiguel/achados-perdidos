@@ -33,3 +33,7 @@ function iniciaModal(modalID) {
         //iniciaModal('modal-principal');
         $('.btn-desabilitar').click();
     });
+    
+    $(document).ready(function() {
+	    $('#table').DataTable();
+    } );
