@@ -51,7 +51,7 @@ public class FuncionarioController {
 			try {
 				//Estou levando em consideração que o cookie foi criado e está tudo certo
 				Cookie[] cookie = capturaCookie();
-				String email = cookie[0].getValue();
+				String email = cookie[0].getValue().replace("%40", "@");
 				funcionarioList = funcionarioDAO.pesquisaFuncionario(email);
 				funcionario.setCargo(funcionarioList.get(0).getCargo());
 				funcionario.setEmail(funcionarioList.get(0).getEmail());
