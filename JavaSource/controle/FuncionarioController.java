@@ -62,10 +62,10 @@ public class FuncionarioController {
 				funcionario.setUsuario(funcionarioList.get(0).getUsuario());
 				System.out.println("Esta passando aqui!!!!!!!!!!!!");
 			} catch (Exception e) {
-				// TODO: handle exception
-			}
-		
+			
 		}
+		
+	}
 	
 	public Cookie[] capturaCookie() {
 		FacesContext facesContext = FacesContext.getCurrentInstance();

@@ -13,7 +13,7 @@ import modelo.Objeto;
 @SessionScoped
 public class pesquisaController {
 
-	private List<Objeto> objetoList;
+	List<Objeto> objetoList;
 	private Objeto objeto;
 	private ObjetoDAO objDAO = ObjetoDAO.getInstance();
 	private CategoriaDAO categoriaDAO = CategoriaDAO.getInstance();
@@ -23,14 +23,6 @@ public class pesquisaController {
 		objeto = new Objeto();
 		exibeListaObjetos();
 		carregaCombo();
-	}
-
-	public List<Objeto> getObjetoList() {
-		return objetoList;
-	}
-
-	public void setObjetoList(List<Objeto> objetoList) {
-		this.objetoList = objetoList;
 	}
 
 	public Objeto getObjeto() {

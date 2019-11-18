@@ -1,11 +1,13 @@
 package controle;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import DAO.DashboardDAO;
 import modelo.Dashboard;
-import modelo.mesesGraficoDashboard;
 
 @ManagedBean
 @SessionScoped
@@ -16,7 +18,8 @@ public class DashboardController {
 	private  DashboardDAO dashDAO = DashboardDAO.getInstance();
 	private String dtInicio;
 	private String dtFim;
-	
+	List<Integer> mesesPerdidos = new ArrayList<>();
+	List<Integer> mesesDevolvidos = new ArrayList<>();
 	
 	public DashboardController() {
 		pesquisaDashboard();
@@ -33,6 +36,12 @@ public class DashboardController {
 	public void pesquisaDashboard() {
 		dtInicio = dashboard.getDataInicio();
 		dtFim = dashboard.getDataFim();
+		
+		
+		mesesPerdidos = dashDAO.retornoGraficoPerdidos(dtFim.substring(6, 10));
+		
+		mesesDevolvidos = dashDAO.retornoGraficoDevolvidos(dtFim.substring(6, 10));
+		
 		//String[] meses = new String[12];
 		
 		//meses = dashDAO.retornoGraficoPerdidos(dtFim.substring(6, 10));
@@ -55,6 +64,15 @@ public class DashboardController {
 		dashboard.setQuantCategoria(dashDAO.retornoCategoria(dtInicio, dtFim));
 		
 		
+		//AGORA VER COMO EU PEGO NO FRONT END OS VALORES REFERETES A ESSE LIST QUE CRIEI 
+		
+		//DAR UMA OLHADA NESSE LINK:
+		
+		//https://stackoverflow.com/questions/8637285/get-specific-element-in-a-list-or-array-using-el
+		
+		//https://www.guj.com.br/t/pegar-atributo-de-list-que-esta-dentro-de-outro-list-no-jsf/162622/4
+			
+			
 		//mesesGraficoDashboard dashboardGrafico = new mesesGraficoDashboard();
 		
 		//dashboardGrafico.setJaneiro(meses[12]);

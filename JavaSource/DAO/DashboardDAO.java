@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import connection.ConnectionFactory;
 import modelo.Dashboard;
@@ -211,14 +213,14 @@ public class DashboardDAO {
 	
 	//Para o gráfico
 	//
-	public String[] retornoGraficoPerdidos (String ano) {
+	public List<Integer> retornoGraficoPerdidos (String ano) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 
 		String anoEscolhido = ano;
 		String sql;
-		String[] meses = new String[12];
+		List<Integer> meses = new ArrayList<>();
 		
 		for(int i=1; i<=12; i++) {
 			
@@ -227,13 +229,12 @@ public class DashboardDAO {
 					+ "YEAR(str_to_date (dataEncontro, '%d/%m/%Y')) = '" +anoEscolhido+ "'"
 					+ "and statusObjeto = 'Aguardando'";
 		
-		
 		try {
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				meses[i] = rs.getString("quantDoados");
+				meses.add(rs.getInt("quantDoados"));
 			}
 
 			} catch (SQLException ex) {
@@ -247,14 +248,14 @@ public class DashboardDAO {
 	}
 	
 	
-	public String[] retornoGraficoDevolvidos (String ano) {
+	public List<Integer> retornoGraficoDevolvidos (String ano) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 
 		String anoEscolhido = ano;
 		String sql;
-		String[] meses = new String[12];
+		List<Integer> meses = new ArrayList<>();;
 		
 		for(int i=1; i<=12; i++) {
 			
@@ -263,13 +264,12 @@ public class DashboardDAO {
 					+ "YEAR(str_to_date (dataEncontro, '%d/%m/%Y')) = '" +anoEscolhido+ "'"
 					+ "and statusObjeto = 'Devolvido'";
 		
-		
 		try {
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				meses[i] = rs.getString("quantDoados");
+				meses.add(rs.getInt("quantDoados"));
 			}
 
 			} catch (SQLException ex) {

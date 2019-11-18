@@ -1,12 +1,6 @@
 	TAREFAS PELA FRENTE:	
 !!!!!!!!!!!!!!!!!!!!!!!!!	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
-	*criar cookie com JavaScript quando a tela recarregar lançar o valor dele num input, capturar o valor desse input 
-em java e pegar o valor desse input e passar para o metodo que faz a pesquisa 
-
-	*PARA O COOKIE FUNCIONAR IMPORTAR O JQUERY PLUGIN EM TODAS AS TELAS, APÓS A IMPORTAÇÃO DO JQUERY
-
 	*Ver como cadastrar entregador e nao fechar modal, e fazer com que ele apague 
 os outros campos mas mantenha o valor do documento caso queira salvar o entregador necessário
 	
@@ -14,12 +8,14 @@ os outros campos mas mantenha o valor do documento caso queira salvar o entregad
 DE DEVOLVIDOS NUM OUTRO SET DE ARRAY E VER COMO EU POSSO FAZER PARA PEGAR CADA UM DELES NO GRAFICO, SE NAO
 DER CERTO EU CRIO 12 VARIAVEIS NA OUTRA CLASSE MESMO
 
-	*Tela de pesquisa do usuario, terminar implementações
+	*Tela de pesquisa do usuario, terminar implementações  -- MUITO IMPORTANTE 
 	
-	*Colocar barra de rolagem lateral para as tabelas
+	*Arrumar tamanho das colunas na tabela
 	
-	*Colocar paginação nas tabelas 
-	
+	*Pegar o campo de status e por javaScript ver qual é o valor dele, se for Habilitado ou aguardando deixa uma imagem de um V
+se for devolvido um ok (icone relacionado a devolução) e se estiver desabilitada colocar um O com risco no meio ou algum outro
+icone.
+		
 	*Fazer método de devolução na tabela de cadastro de objetos
 	
 	*Arrumar mensagens de sucesso ou erro nas telas -- MUITO IMPORTANTE! 
@@ -35,7 +31,8 @@ SE FOR UM DOCUMENTO NÃO PRECISA DE CAMPO E TAMANHO
 	
 	<h:commandLink value="Logout" action="#{loginController.deslogar}"/> Pra colocar funcao em tag a
 	
-	*Fazer metodo de enviar senha para o email 
+	*Fazer metodo de enviar senha para o email -- Testar esse metodo, está funcionando mas estava sem permissão
+	
 	
 	https://www.devmedia.com.br/forum/barra-de-rolagem-vertical-em-tabela-div/565457
 	
@@ -43,7 +40,6 @@ SE FOR UM DOCUMENTO NÃO PRECISA DE CAMPO E TAMANHO
 	*na tela onde o usuario atualiza a senha dele carregar a senha antiga
 	!!!!!!!!!
 	DEPOIS DE IMPLEMENTAR O BACK -- ARRUMAR AS TABELAS 
-		: Nas tabelas colocar barra de rolagem horizontal e vertical, ou fazer paginação
 		: Colocar um icone de x para desabilitar o usuario e um icone de v para habilitar
 	
 	http://botmonster.com/jquery-bootpag/#pro-page-7

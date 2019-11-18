@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.List;
+
 public class Dashboard {
 
 	private int quantDevolvidos;
@@ -12,6 +14,10 @@ public class Dashboard {
         
     private String dataInicio;
     private String dataFim;
+    
+    private List<Integer> ListPerdidos;
+    private List<Integer> ListDevolvidos;
+    
     
 	public int getQuantDevolvidos() {
 		return quantDevolvidos;
@@ -63,5 +69,17 @@ public class Dashboard {
 	}
 	public void setDataFim(String dataFim) {
 		this.dataFim = dataFim;
+	}
+	public List<Integer> getListPerdidos() {
+		return ListPerdidos;
+	}
+	public void setListPerdidos(List<Integer> listPerdidos) {
+		ListPerdidos = listPerdidos;
+	}
+	public List<Integer> getListDevolvidos() {
+		return ListDevolvidos;
+	}
+	public void setListDevolvidos(List<Integer> listDevolvidos) {
+		ListDevolvidos = listDevolvidos;
 	}  
 }

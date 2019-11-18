@@ -35,5 +35,16 @@ function iniciaModal(modalID) {
     });
     
     $(document).ready(function() {
-	    $('#table').DataTable();
+    	  $('#table').DataTable( {
+				"ordering": false,
+				"language": {
+		        "lengthMenu": "Exibindo _MENU_ resultados",
+		        "sSearch": "Código ou Descrição do cBenef, CST ou Instituto",
+		        "info": "Exibindo _PAGE_ de _PAGES_ resultado(s)",
+		        "paginate": {
+		            "previous": "Anterior",
+					"next": "Próximo"
+		        }
+		    }
+			} );
     } );

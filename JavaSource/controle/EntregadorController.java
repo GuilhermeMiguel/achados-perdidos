@@ -47,7 +47,6 @@ public class EntregadorController {
 		else {
 			atualizaEntregador();
 		}
-	
 	}
 	
 	public void atualizaEntregador() {

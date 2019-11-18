@@ -63,5 +63,4 @@ public class Entregador {
 		this.valor = valor;
 	}
 	
-	
 }

@@ -12,7 +12,7 @@ import modelo.Categoria;
 @SessionScoped
 public class CategoriaController {
 
-	private List<Categoria> categoriaList;
+	List<Categoria> categoriaList;
 	private Categoria categoria;
 	private CategoriaDAO categoriaDAO = CategoriaDAO.getInstance();
 
@@ -44,11 +44,7 @@ public class CategoriaController {
 			atualizaCategoria();
 		}
 	}
-	
-	//Criar um botao na tabela que chama o metodo de pesquisa, ai ele carrega os valores, caso exista, o botao salvar vai 
-//atualizar, esse botao vai jogar os valores daquela linha dentro do input e vai chamar o metodo que verifica se categoria
-//existe por java
-	
+		
 	public void atualizaCategoria() {
 		categoriaDAO.update(categoria);
 		exibeListaCategorias();
@@ -80,15 +76,6 @@ public class CategoriaController {
 	
 	public void exibeListaCategorias() {
 		categoriaList = categoriaDAO.read();
-	}
-
-	public List<Categoria> getCategoriaList() {
-		return categoriaList;
-	}
-
-
-	public void setCategoriaList(List<Categoria> categoriaList) {
-		this.categoriaList = categoriaList;
 	}
 
 }

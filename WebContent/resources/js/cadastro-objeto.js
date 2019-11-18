@@ -16,8 +16,8 @@ $( ".adicionar" ).click(function( event ) {
 	    cadastrar.addEventListener('click', () => iniciaModal('modal-principal'));
 
 	   
-//	    const pesquisar = document.querySelector('.cadastro #botao1');
-//	    pesquisar.addEventListener('click', () => iniciaModal('modal-secundario'));
+// const pesquisar = document.querySelector('.cadastro #botao1');
+// pesquisar.addEventListener('click', () => iniciaModal('modal-secundario'));
 
 	    $(document).on('click','.editar-entregador',function(){
 		$('.identificacao, .acoes-entregador, .area-botao-salvar').fadeOut('slow', function(){
@@ -40,7 +40,8 @@ $( ".adicionar" ).click(function( event ) {
 		});
 	});
 	
-	//Importa-se o arquivo jquery de mascara no html e depois se faz uma funcao setando o campo e se faz assim
+	// Importa-se o arquivo jquery de mascara no html e depois se faz uma funcao
+	// setando o campo e se faz assim
     $(document).ready(function(){
         $('.iptData').mask('00/00/0000');
      });
@@ -60,7 +61,7 @@ $( ".adicionar" ).click(function( event ) {
 
     	$('.iptDocumento').mask(MaskDoc, Options);
     	
-    //Mascara Telefone
+    // Mascara Telefone
     	var SPMaskTelefone = function (val) {
     		  return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
     		},
@@ -77,7 +78,7 @@ $( ".adicionar" ).click(function( event ) {
     	});
     	
     	
-    	//Aplicar mascara ao if quando o combobox for data
+    	// Aplicar mascara ao if quando o combobox for data
     	$('.combobox-tamanho').change(function (){
     		if($('.combobox-tamanho option:selected').val()== 'Data'){
     			$('.iptPesquisa').mask('00/00/0000');
@@ -89,7 +90,7 @@ $( ".adicionar" ).click(function( event ) {
     	
     	
 
-    	//Aplicar mascara ao if quando o combobox for data
+    	// Aplicar mascara ao if quando o combobox for data
     	$('.combobox-pesquisa').change(function (){
     		if($('.combobox-pesquisa option:selected').val()== 'Data'){
     			$('.iptPesquisa').mask('00/00/0000');
@@ -99,7 +100,7 @@ $( ".adicionar" ).click(function( event ) {
     		}
     	});
     	
-    	/*Segundo Modal*/
+    	/* Segundo Modal */
     	 $(document).ready(function(){
     	        $('.iptFixo').mask('(00) 0000-0000');
     	     });
@@ -110,7 +111,7 @@ $( ".adicionar" ).click(function( event ) {
  	     });
     	 
     	 
-    	 /*Editar*/
+    	 /* Editar */
     	 
     	 $(document).on("click", ".editar", function(){
     	        var idObjeto = $(this).closest('tr').find(".idObjeto").text();
@@ -140,7 +141,7 @@ $( ".adicionar" ).click(function( event ) {
     	        var id = $(this).closest('tr').find(".idObjeto").text();
     	        alert('objetoDevolvido desabilitada');
     	        $('.iptIdObjeto').val(id);
-    	        //iniciaModal('modal-principal');
+    	        // iniciaModal('modal-principal');
     	        $('.btn-desabilitar').click();
     	    });
     	 
@@ -149,7 +150,7 @@ $( ".adicionar" ).click(function( event ) {
  	        var id = $(this).closest('tr').find(".idObjeto").text();
  	        alert('objeto desabilitada');
  	        $('.iptIdObjeto').val(id);
- 	        //iniciaModal('modal-principal');
+ 	        // iniciaModal('modal-principal');
  	        $('.btn-desabilitar').click();
  	    });
     	 
@@ -172,5 +173,16 @@ $( ".adicionar" ).click(function( event ) {
     });
     	 
     	 $(document).ready(function() {
-    		    $('#table').DataTable();
+    		    $('#table').DataTable( {
+    				"ordering": false,
+    				"language": {
+    		        "lengthMenu": "Exibindo _MENU_ resultados",
+    		        "sSearch": "Código ou Descrição do cBenef, CST ou Instituto",
+    		        "info": "Exibindo _PAGE_ de _PAGES_ resultado(s)",
+    		        "paginate": {
+    		            "previous": "Anterior",
+    					"next": "Próximo"
+    		        }
+    		    }
+    			} );
     	} );

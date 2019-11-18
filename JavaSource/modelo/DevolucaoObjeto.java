@@ -75,6 +75,5 @@ public class DevolucaoObjeto {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
 
 }
