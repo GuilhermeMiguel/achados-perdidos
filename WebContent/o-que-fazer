@@ -1,6 +1,17 @@
 	TAREFAS PELA FRENTE:	
 !!!!!!!!!!!!!!!!!!!!!!!!!	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+	O GRAFICO EU POSSO SIMULAR POR JAVASCRIPT PARA GRAVAR O VIDEO, NÃO PRECISO NECESSARIAMENTE FAZER POR JAVA
+	
+	DAR ATENCAO AS TABELAS E FUNÇÕES PRINCIPAIS
+	
+	COMO TAMBÉM AO LOGIN
+	
+	FAZER DIAGRAMAS E FORMATAÇÃO DO TEXTO DA MINHA PARTE DO TCC
+	
+	FAZER PLANO DE NEGÓCIOS, ARRUMAR TEXTO DOS SLIDES DE TERÇA, FAZER SLIDES DE SEXTA E SABADO
+	
+	
 	*Ver como cadastrar entregador e nao fechar modal, e fazer com que ele apague 
 os outros campos mas mantenha o valor do documento caso queira salvar o entregador necessário
 	
@@ -41,10 +52,7 @@ SE FOR UM DOCUMENTO NÃO PRECISA DE CAMPO E TAMANHO
 	!!!!!!!!!
 	DEPOIS DE IMPLEMENTAR O BACK -- ARRUMAR AS TABELAS 
 		: Colocar um icone de x para desabilitar o usuario e um icone de v para habilitar
-	
-	http://botmonster.com/jquery-bootpag/#pro-page-7
-	
-	Fazer a paginação na tabela 
+
 	
 	https://datatables.net/download/
 	*Implementar o back para a pesquisa de objetos

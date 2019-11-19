@@ -30,21 +30,24 @@ function iniciaModal(modalID) {
         var id = $(this).closest('tr').find(".id").text();
         alert('categoria desabilitada');
         $('.inputId').val(id);
-        //iniciaModal('modal-principal');
+        // iniciaModal('modal-principal');
         $('.btn-desabilitar').click();
     });
     
     $(document).ready(function() {
-    	  $('#table').DataTable( {
-				"ordering": false,
-				"language": {
-		        "lengthMenu": "Exibindo _MENU_ resultados",
-		        "sSearch": "Código ou Descrição do cBenef, CST ou Instituto",
-		        "info": "Exibindo _PAGE_ de _PAGES_ resultado(s)",
-		        "paginate": {
-		            "previous": "Anterior",
-					"next": "Próximo"
-		        }
-		    }
-			} );
-    } );
+	    $('#table').DataTable( {
+			"ordering": false,
+			"language": {
+	        "lengthMenu": "Exibindo _MENU_ resultados",
+	        "sSearch": "Pesquise por qualquer um dos campos da tabela",
+	        "zeroRecords" : "Não foram encontradas categorias para essa pesquisa.",
+			"info" : "Exibindo _PAGE_ de _PAGES_ resultado(s)",
+			"infoEmpty" : "Exibindo 0 de _PAGES_ resultado(s)",
+			"infoFiltered" : "(Resultado filtrado do total de _MAX_ registros)",
+	        "paginate": {
+	            "previous": "Anterior",
+				"next": "Próximo"
+	        }
+	    }
+		} );
+} );

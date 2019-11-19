@@ -30,6 +30,23 @@
    	};
    	
   
+   	$(document).ready(function() {
+	    $('#table').DataTable( {
+			"ordering": false,
+			"language": {
+	        "lengthMenu": "Exibindo _MENU_ resultados",
+	        "sSearch": "Pesquise por qualquer um dos campos da tabela",
+	        "zeroRecords" : "Não foram encontrados objetos para essa pesquisa.",
+			"info" : "Exibindo _PAGE_ de _PAGES_ resultado(s)",
+			"infoEmpty" : "Exibindo 0 de _PAGES_ resultado(s)",
+			"infoFiltered" : "(Resultado filtrado do total de _MAX_ registros)",
+	        "paginate": {
+	            "previous": "Anterior",
+				"next": "Próximo"
+	        }
+	    }
+		} );
+} );
 //     
 //   //Condição no combobox para aparecer os inputs corretos para pesquisam, ou entao só trocar os nomes e tamanhos deles
 // 	$('.combobox-categoria').change(function (){

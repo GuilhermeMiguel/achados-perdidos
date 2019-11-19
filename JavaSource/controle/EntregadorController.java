@@ -25,7 +25,6 @@ public class EntregadorController {
 		this.entregador = entregador;
 	}
 
-
 	public void pesquisaEntregador() {
 		if(entregador.getCampo().equals("ID")) {
 			entregadorDAO.pesquisaEntregador("id", entregador.getValor());

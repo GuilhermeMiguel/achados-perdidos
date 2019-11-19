@@ -1,4 +1,4 @@
-package util;
+package util_login;
 
 import javax.faces.application.NavigationHandler;
 import javax.faces.context.FacesContext;

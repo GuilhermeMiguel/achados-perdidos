@@ -15,6 +15,9 @@ public class Objeto {
 	private String campo;
 	private String valor;
 	
+	//Data auxiliar para a tela de pesquisa do usuario
+	private String dataAuxiliar;
+	
 	public int getId() {
 		return Id;
 	}
@@ -88,6 +91,11 @@ public class Objeto {
 	public void setValor(String valor) {
 		this.valor = valor;
 	}
-	
+	public String getDataAuxiliar() {
+		return dataAuxiliar;
+	}
+	public void setDataAuxiliar(String dataAuxiliar) {
+		this.dataAuxiliar = dataAuxiliar;
+	}
 	
 }

@@ -9,13 +9,12 @@
 <head>
 
 <title>Cadastro</title>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
 
 <!--===============================================================================================-->
 <!-- Css do projeto -->
-<link rel="stylesheet" type="text/css"	href="resources/css/cadastro-objetos.css" />
-<link rel="stylesheet" type="text/css"	href="resources/css/menu-abas.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/cadastro-objetos.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/menu-abas.css" />
 <link rel="stylesheet" href="resources/css/menu.css" />
 
 <!--===============================================================================================-->
@@ -24,9 +23,9 @@
 
 <!-- jQuery library -->
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
- 
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css" />
+
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
 
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
@@ -36,13 +35,13 @@
 <!--===============================================================================================-->
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
 
 <!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 <!--===============================================================================================-->
-	
+
 </head>
 
 <body>
@@ -57,9 +56,9 @@
 
 			<div class="row" id="linha-cadastro">
 
-		<h:commandButton class="login100-form-btn btnLogout" style="display:none;"
-			actionListener="#{loginController.deslogar}"/>
-			
+				<h:commandButton class="login100-form-btn btnLogout"
+					style="display:none;" actionListener="#{loginController.deslogar}" />
+
 				<div class="panel-body" id="area-cadastro">
 					<div id="titulo">
 						<img src="images/icone-tela-objeto.png" /> Objetos
@@ -70,34 +69,32 @@
 						<div id="elementos">
 							<div class="form-group">
 								<label class="col-md-1 control-label" for="Selecione"
-									id="texto-label">Selecione<h11>*</h11></label> 
-									<label class="col-md-1"></label> 
-											<label class="col-md-3 control-label"
-														for="Contenha" id="texto-label2">Que Contenha*</label>
-
-								<br />
+									id="texto-label">Selecione*</label> <label
+									class="col-md-1"></label> <label class="col-md-3 control-label"
+									for="Contenha" id="texto-label2">Que Contenha*</label> <br />
 							</div>
 
 							<div class="form-group">
 								<div class="col-md-3">
 									<h:selectOneMenu value="#{objetoController.objeto.campo}"
-											id="Objetos" name="Objetos" class="form-control combobox-pesquisa">
-										<f:selectItem itemValue="Selecione..."/>
+										id="Objetos" name="Objetos"
+										class="form-control combobox-pesquisa">
+										<f:selectItem itemValue="Selecione..." />
 										<f:selectItem itemValue="ID" />
 										<f:selectItem itemValue="Doc Entregador" />
 										<f:selectItem itemValue="Categoria" />
-										<f:selectItem itemValue="Cor"/>
-										<f:selectItem itemValue="Tamanho"/>
-										<f:selectItem itemValue="Local"/>
-										<f:selectItem itemValue="Turno"/>
-										<f:selectItem itemValue="Data"/>
+										<f:selectItem itemValue="Cor" />
+										<f:selectItem itemValue="Tamanho" />
+										<f:selectItem itemValue="Local" />
+										<f:selectItem itemValue="Turno" />
+										<f:selectItem itemValue="Data" />
 									</h:selectOneMenu>
 								</div>
 
 								<div class="col-md-5">
-									<h:inputText value="#{objetoController.objeto.valor}" 
+									<h:inputText value="#{objetoController.objeto.valor}"
 										styleClass="form-control iptPesquisa" name="pesquisa"
-											pt:placeholder="Deixe vazio para pesquisar todos" />
+										pt:placeholder="Deixe vazio para pesquisar todos" />
 								</div>
 							</div>
 						</div>
@@ -106,78 +103,78 @@
 					<div id="area-botao">
 						<div class="item" id="botao1">
 							<img src="images/icone-search.png" />
-							<h:commandButton actionListener="#{objetoController.pesquisaObjeto}" 
-									styleClass="pesquisar botoes" value="Pesquisar" />
+							<h:commandButton
+								actionListener="#{objetoController.pesquisaObjeto}"
+								styleClass="pesquisar botoes" value="Pesquisar" />
 						</div>
 
 						<div class="item" id="botao2">
-							<img src="images/icone-adicionar2.png" /> 
-							<h:commandButton styleClass="adicionar botoes" value="Cadastrar"/>
+							<img src="images/icone-adicionar2.png" />
+							<h:commandButton styleClass="adicionar botoes" value="Cadastrar" />
 						</div>
 
 					</div>
 				</div>
 			</div>
 		</div>
-	</h:form> 
-</section>
+	</h:form> </section>
 
-	
+
 	<div class="modal-cadastro-objeto-incluso">
 		<ui:include src="modais/modal-cadastro-objeto.xhtml" />
 	</div>
-	
-	
+
+
 	<h:form>
-	<div class="modal-devolucao-objeto-incluso">
-		<ui:include src="modais/modal-devolucao-objeto.xhtml" />
-	</div>
+		<div class="modal-devolucao-objeto-incluso">
+			<ui:include src="modais/modal-devolucao-objeto.xhtml" />
+		</div>
 	</h:form>
 
-<div class="scroll-table">
-	<div class="table">
-					<h:form>
-					<table id="table" class="table table-striped table-bordered" style="width:100%">
-					  <thead>
-					    <tr>
-					      <th scope="col">Editar</th>
-					      <th scope="col">Desabilitar</th>
-					      <th scope="col">Id</th>
-					      <th scope="col">Entregador</th>
-					      <th scope="col">Categoria</th>
-					      <th scope="col">Cor</th>
-					      <th scope="col">Tamanho</th>
-					      <th scope="col">Local</th>
-					      <th scope="col">Turno</th>
-					      <th scope="col">Data</th>
-					      <th scope="col">Info</th>
-			      
-					    </tr>
-					  </thead>
-					  <tbody>
-					   <c:forEach var="objeto" items="#{objetoController.objetoList}">
-						   	<tr>
-						      <th scope="row" class="editar">|</th>
-						      <td class="desabilitar">X</td>
-						      <td class="id">#{objeto.id}</td>
-						      <td class ="descricao">#{objeto.categoria}</td>
-						       <td class ="entregador">#{objeto.docEntregador}</td>
-						      <td class ="cor">#{objeto.cor}</td>
-						      <td class ="tamanho">#{objeto.tamanho}</td>
-						      <td class ="local">#{objeto.local}</td>
-						      <td class ="turno">#{objeto.turno}</td>
-						      <td class ="data">#{objeto.dataEncontro}</td>
-						      <td class ="informacoes">#{objeto.infoComplementares}</td>
-						    </tr>
-          				</c:forEach>
-					  </tbody>
-					</table>
-					</h:form>
-			</div>
-		</div>
-<script src="resources/js/jquery.mask.js"></script>
-<script src="resources/js/cadastro-objeto.js"></script>
+	<div class="scroll-table">
+		<div class="table">
+			<h:form>
+				<table id="table" class="table table-striped table-bordered"
+					style="width: 100%">
+					<thead>
+						<tr>
+							<th scope="col">Editar</th>
+							<th scope="col">Desabilitar</th>
+							<th scope="col">Id</th>
+							<th scope="col">Entregador</th>
+							<th scope="col">Categoria</th>
+							<th scope="col">Cor</th>
+							<th scope="col">Tamanho</th>
+							<th scope="col">Local</th>
+							<th scope="col">Turno</th>
+							<th scope="col">Data</th>
+							<th scope="col">Info</th>
 
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="objeto" items="#{objetoController.objetoList}">
+							<tr>
+								<th scope="row" class="editar">|</th>
+								<td class="desabilitar">X</td>
+								<td class="id">#{objeto.id}</td>
+								<td class="descricao">#{objeto.categoria}</td>
+								<td class="entregador">#{objeto.docEntregador}</td>
+								<td class="cor">#{objeto.cor}</td>
+								<td class="tamanho">#{objeto.tamanho}</td>
+								<td class="local">#{objeto.local}</td>
+								<td class="turno">#{objeto.turno}</td>
+								<td class="data">#{objeto.dataEncontro}</td>
+								<td class="informacoes">#{objeto.infoComplementares}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</h:form>
+		</div>
+	</div>
+	<script src="resources/js/jquery.mask.js"></script>
+	<script src="resources/js/cadastro-objeto.js"></script>
 
 </body>
 

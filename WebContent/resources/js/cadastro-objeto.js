@@ -111,7 +111,7 @@ $( ".adicionar" ).click(function( event ) {
  	     });
     	 
     	 
-    	 /* Editar */
+    	 /* Editar - dar uma atenção nesses metodos js para a tabela*/
     	 
     	 $(document).on("click", ".editar", function(){
     	        var idObjeto = $(this).closest('tr').find(".idObjeto").text();
@@ -121,9 +121,9 @@ $( ".adicionar" ).click(function( event ) {
     	        var local = $(this).closest('tr').find(".local").text();
     	        var turno = $(this).closest('tr').find(".turno").text();
     	        var data = $(this).closest('tr').find(".data").text();
-    	        var info = $(this).closest('tr').find(".info").text();
+    	        var info = $(this).closest('tr').find(".informacoes").text();
     	        var doc = $(this).closest('tr').find(".doc").text();
-    	        alert(id);
+    	        alert(idObjeto);
     	        $('.inputId').val(idObjeto);
     	        $('.combobox-categoria').val(categoria);
     	        $('.iptCor').val(cor);
@@ -139,10 +139,11 @@ $( ".adicionar" ).click(function( event ) {
     	 
     	 $(document).on("click", ".devolver", function(){
     	        var id = $(this).closest('tr').find(".idObjeto").text();
-    	        alert('objetoDevolvido desabilitada');
+    	        alert('objetoDevolvido');
     	        $('.iptIdObjeto').val(id);
-    	        // iniciaModal('modal-principal');
-    	        $('.btn-desabilitar').click();
+    	        //Talvez fazer um metodo que procura o objeto de acordo com o id, então eu crio um botao
+    	     //que quando clicado chama a funcao que fazer essa pesquisa e seta esses valores dentro do modal
+    	         iniciaModal('modal-secundario');
     	    });
     	 
     	 
@@ -167,7 +168,7 @@ $( ".adicionar" ).click(function( event ) {
     		 $('.iptTurmaEntregador').val("");
    	         $('.iptTurnoEntregador').val("");
    	         $('.texto-iptEntregador, .iptTurmaEntregador, .iptTurnoEntregador').css("opacity", "1");
-   	      console.log($('.iptTurmaEntregador').val() +
+   	         console.log($('.iptTurmaEntregador').val() +
    	   	         $('.iptTurnoEntregador').val())
     	 }
     });
@@ -177,8 +178,11 @@ $( ".adicionar" ).click(function( event ) {
     				"ordering": false,
     				"language": {
     		        "lengthMenu": "Exibindo _MENU_ resultados",
-    		        "sSearch": "Código ou Descrição do cBenef, CST ou Instituto",
-    		        "info": "Exibindo _PAGE_ de _PAGES_ resultado(s)",
+    		        "sSearch": "Pesquise por qualquer um dos campos da tabela",
+    		        "zeroRecords" : "Não foram encontrados objetos para essa pesquisa.",
+    				"info" : "Exibindo _PAGE_ de _PAGES_ resultado(s)",
+    				"infoEmpty" : "Exibindo 0 de _PAGES_ resultado(s)",
+    				"infoFiltered" : "(Resultado filtrado do total de _MAX_ registros)",
     		        "paginate": {
     		            "previous": "Anterior",
     					"next": "Próximo"

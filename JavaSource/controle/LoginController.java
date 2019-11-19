@@ -1,5 +1,6 @@
 package controle;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -33,7 +34,6 @@ public class LoginController {
 		return funcionario;
 	}
 
-
 	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
 	}
@@ -46,7 +46,7 @@ public class LoginController {
 		this.funcionarioList = funcionarioList;
 	}
 	
-	public String efetuaLogin() {
+	public void efetuaLogin() {
 		System.out.println("Fazendo Login do usuário " + funcionario.getEmail());
 
 		boolean existe = false;
@@ -72,14 +72,16 @@ public class LoginController {
 			FacesContext context = FacesContext.getCurrentInstance();
 			context.getExternalContext().getSessionMap().put("funcionarioLogado", this.funcionario);
 			
-			
-			return "/dashboard?faces-redirect=true";
+			try {
+				context.getExternalContext().redirect("dashboard.xhtml");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			//return "/dashboard?faces-redirect=true";
 		}
 		
-		return "";
+		//return "";
 	}
-	
-	
 	
 	public String deslogar() {
 		FacesContext context = FacesContext.getCurrentInstance();

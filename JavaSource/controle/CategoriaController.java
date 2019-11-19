@@ -12,7 +12,7 @@ import modelo.Categoria;
 @SessionScoped
 public class CategoriaController {
 
-	List<Categoria> categoriaList;
+	private List<Categoria> categoriaList;
 	private Categoria categoria;
 	private CategoriaDAO categoriaDAO = CategoriaDAO.getInstance();
 
@@ -24,6 +24,16 @@ public class CategoriaController {
 		exibeListaCategorias();
 	}
 	
+	
+	public List<Categoria> getCategoriaList() {
+		return categoriaList;
+	}
+
+
+	public void setCategoriaList(List<Categoria> categoriaList) {
+		this.categoriaList = categoriaList;
+	}
+
 
 	public Categoria getCategoria() {
 		return categoria;
