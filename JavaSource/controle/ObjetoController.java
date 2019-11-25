@@ -26,16 +26,13 @@ public class ObjetoController {
 		carregaCombo();
 	}
 	
-	
 	public List<Objeto> getObjetoList() {
 		return objetoList;
 	}
 
-
 	public void setObjetoList(List<Objeto> objetoList) {
 		this.objetoList = objetoList;
 	}
-
 
 	public Objeto getObjeto() {
 		return objeto;

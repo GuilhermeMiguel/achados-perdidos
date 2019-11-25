@@ -14,6 +14,7 @@ public class Objeto {
 	private String dataEncontro;
 	private String campo;
 	private String valor;
+	private String numDocumento;
 	
 	//Data auxiliar para a tela de pesquisa do usuario
 	private String dataAuxiliar;
@@ -91,11 +92,18 @@ public class Objeto {
 	public void setValor(String valor) {
 		this.valor = valor;
 	}
+	public String getNumDocumento() {
+		return numDocumento;
+	}
+	public void setNumDocumento(String numDocumento) {
+		this.numDocumento = numDocumento;
+	}
 	public String getDataAuxiliar() {
 		return dataAuxiliar;
 	}
 	public void setDataAuxiliar(String dataAuxiliar) {
 		this.dataAuxiliar = dataAuxiliar;
 	}
+
 	
 }

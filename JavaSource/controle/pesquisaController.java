@@ -24,16 +24,13 @@ public class pesquisaController {
 		carregaCombo();
 	}
 
-	
 	public List<Objeto> getObjetoList() {
 		return objetoList;
 	}
 
-
 	public void setObjetoList(List<Objeto> objetoList) {
 		this.objetoList = objetoList;
 	}
-
 
 	public Objeto getObjeto() {
 		return objeto;
@@ -54,9 +51,13 @@ public class pesquisaController {
 	public void pesquisaObjeto() {
 	
 		if(objeto.getCor().length() > 0 && objeto.getCategoria().length() > 0 
-				&& objeto.getDataEncontro().length() > 0 ) {
+				&& objeto.getDataEncontro().length() > 0 && objeto.getDataAuxiliar().length() > 0) {
 			String[] datas = formataDatas(objeto.getDataEncontro(), objeto.getDataAuxiliar());
 			objetoList = objDAO.pesquisaObjeto(objeto.getCor(), objeto.getCategoria(), datas[0], datas[1]);
+		}
+		
+		else if(objeto.getNumDocumento().length() > 0) {
+			objetoList = objDAO.pesquisaObjeto(objeto.getNumDocumento());
 		}
 	}
 	

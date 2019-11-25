@@ -221,12 +221,50 @@ public class ObjetoDAO {
 
 		List<Objeto> CadastroObjetos = new ArrayList<>();
 		String sql = "SELECT * FROM objeto where cor = ? categoria = ? and \"\r\n" 
-		+	 "str_to_date (dataEncontro, '%d/%m/%Y') BETWEEN '" + dtInicio + "' AND '" + dtFim + "'";
+		+	 "str_to_date (dataEncontro, '%d/%m/%Y') BETWEEN '" + dtInicio + "' AND '" + dtFim + "' AND "
+				+ "statusObjeto = 'Aguardando'";
 
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, cor);
 			stmt.setString(1, categoria);
+			rs = stmt.executeQuery();
+			while (rs.next()) {
+
+				Objeto CadObj = new Objeto();
+				CadObj.setId(rs.getInt("id"));
+				CadObj.setDocEntregador(rs.getString("docEntregador"));
+				CadObj.setCategoria(rs.getString("categoria"));
+				CadObj.setCor(rs.getString("cor"));
+				CadObj.setTamanho(rs.getDouble("tamanho"));
+				CadObj.setLocal(rs.getString("localEncontro"));
+				CadObj.setTurno(rs.getString("turnoEncontro"));
+				CadObj.setDataEncontro(rs.getString("dataEncontro"));
+				CadObj.setInfoComplementares(rs.getString("infoComplementares"));
+				CadObj.setStatus(rs.getString("statusObjeto"));
+				CadastroObjetos.add(CadObj);
+			}
+
+		} catch (SQLException ex) {
+			System.out.println("Erro" + ex);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+		return CadastroObjetos;
+	}
+	
+	
+	public List<Objeto> pesquisaObjeto(String documento) {
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		List<Objeto> CadastroObjetos = new ArrayList<>();
+		String sql = "SELECT * FROM objeto where numDocumento = ? AND statusObjeto = 'Aguardando'";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, documento);
 			rs = stmt.executeQuery();
 			while (rs.next()) {
 
