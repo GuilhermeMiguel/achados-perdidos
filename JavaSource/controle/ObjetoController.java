@@ -3,12 +3,16 @@ package controle;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
+
+import com.sun.faces.action.RequestMapping;
 
 import DAO.CategoriaDAO;
 import DAO.ObjetoDAO;
 import modelo.Objeto;
 
+@RequestScoped
 @ManagedBean
 @SessionScoped
 public class ObjetoController {
@@ -50,6 +54,9 @@ public class ObjetoController {
 		this.categoriaList = categoriaList;
 	}
 
+	//Talvez usar o request ao invés de chamar o metodo com submit, vai funcionar melhor
+	
+	//@RequestMapping("/listaContas")
 	public void cadastraObjeto() {
 		if(!objDAO.objetoExiste(objeto.getId())){
 			objDAO.create(objeto);

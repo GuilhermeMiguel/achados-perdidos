@@ -2,6 +2,9 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
+	VERFICAR SE NA INDEX QUANDO EU COLOCO PARA MANDAR EMAIL ELE ESTA COLOCANDO VALOR NO CAMPO SENHA, POIS OS CAMPOS ESTAO 
+NO MESMO FORM E EU PRECISO DE UM VALOR NELE, e se quando eu volto para o login esse valor é retirado
+
 	ADICIONAR CAMPO DOCUMENTO NA TELA DE CADASTRO DE OBJETO OU EU POSSO USAR OUTRO CAMPO PARA GRAVAR ESSE NUMERO
 	
 	O GRAFICO EU POSSO SIMULAR POR JAVASCRIPT PARA GRAVAR O VIDEO, NÃO PRECISO NECESSARIAMENTE FAZER POR JAVA
@@ -10,13 +13,13 @@
 	
 	COMO TAMBÉM AO LOGIN
 	
-   ARRUMAR TEXTO DOS SLIDES DE TERÇA, FAZER SLIDES DE SABADO
+    ARRUMAR TEXTO DOS SLIDES DE TERÇA, FAZER SLIDES DE SABADO
 	
 	FAZER OS INPUTS TAMANHO E COR MUDAREM E ENTRAR O INPUT DE NUMERO DO DOCUMENTO PARA QUANDO O COMBOBOX DE CATEGORIA 
 FOR RA, RG, DOCUMENTO, CNH, BILHETE UNICO
 
-	*Ver como cadastrar entregador e nao fechar modal, e fazer com que ele apague 
-os outros campos mas mantenha o valor do documento caso queira salvar o entregador necessário
+	*Ver como cadastrar entregador e nao fechar modal, e fazer com que ele apague os outros campos mas mantenha 
+o valor do documento caso queira salvar o entregador necessário
 	
 	*VER COMO EU POSSO FAZR PARA ARMAZENAR O ARRAY DE RETORNO DA QUANTIDADE DE PERDIDOS E QUANTIDADE
 DE DEVOLVIDOS NUM OUTRO SET DE ARRAY E VER COMO EU POSSO FAZER PARA PEGAR CADA UM DELES NO GRAFICO, SE NAO
@@ -42,6 +45,12 @@ SE FOR UM DOCUMENTO NÃO PRECISA DE CAMPO E TAMANHO
 
 	--NAO FECHAR MODAL
 	https://pt.stackoverflow.com/questions/327385/enviar-form-sem-fechar-modal
+	
+	https://www.devmedia.com.br/novidades-do-jsf-2-2/30173
+	
+	https://www.devmedia.com.br/utilizando-ajax-com-java-server-faces-jsf/24832
+	
+	Pelo menos na tela de cadastro de objetos e também na devolução
 	
 	<h:commandLink value="Logout" action="#{loginController.deslogar}"/> Pra colocar funcao em tag a
 	
