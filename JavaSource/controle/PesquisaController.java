@@ -11,7 +11,7 @@ import modelo.Objeto;
 
 @ManagedBean
 @SessionScoped
-public class pesquisaController {
+public class PesquisaController {
 
 	private List<Objeto> objetoList;
 	private Objeto objeto;
@@ -19,7 +19,7 @@ public class pesquisaController {
 	private CategoriaDAO categoriaDAO = CategoriaDAO.getInstance();
 	private List<String> categoriaList;
 	
-	public pesquisaController() {
+	public PesquisaController() {
 		objeto = new Objeto();
 		carregaCombo();
 	}

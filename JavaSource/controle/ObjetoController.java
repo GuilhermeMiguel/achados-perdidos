@@ -23,7 +23,7 @@ public class ObjetoController {
 	public ObjetoController() {
 		objeto = new Objeto();
 		exibeListaObjetos();
-		carregaCombo();
+		carregaComboCategoria();
 	}
 	
 	
@@ -102,7 +102,7 @@ public class ObjetoController {
 		objetoList = objDAO.read();
 	}
 	
-	public void carregaCombo() {
+	public void carregaComboCategoria() {
 		categoriaList = categoriaDAO.buscaCategoriaCombo();
 	}
 }
