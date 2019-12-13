@@ -49,9 +49,10 @@ public class CategoriaController {
 		if(!categoriaDAO.categoriaExiste(categoria.getId())){
 			categoriaDAO.create(categoria);
 			exibeListaCategorias();
+			limpaCampos();
 		}
 		else {
-			atualizaCategoria();
+			limpaCampos();
 		}
 	}
 		

@@ -20,7 +20,7 @@ function iniciaModal(modalID) {
     $(document).on("click", ".editar", function(){
         var id = $(this).closest('tr').find(".id").text();
         var descricao = $(this).closest('tr').find(".descricao").text();
-        alert(id);
+     //   alert(id);
         $('.inputId').val(id);
         $('.inputCategoria').val(descricao);
         iniciaModal('modal-principal');
@@ -28,7 +28,7 @@ function iniciaModal(modalID) {
     
     $(document).on("click", ".desabilitar", function(){
         var id = $(this).closest('tr').find(".id").text();
-        alert('categoria desabilitada');
+       // alert('categoria desabilitada');
         $('.inputId').val(id);
         // iniciaModal('modal-principal');
         $('.btn-desabilitar').click();

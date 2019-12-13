@@ -49,8 +49,8 @@ public class FuncionarioController {
 	public void pesquisaFuncionario() {
 		try {
 			// Estou levando em consideração que o cookie foi criado e está tudo certo
-			Cookie[] cookie = capturaCookie();
-			String email = cookie[0].getValue().replace("%40", "@");
+			String cookie = capturaCookie();
+			String email = cookie.replace("%40", "@");
 			funcionarioList = funcionarioDAO.pesquisaFuncionario(email);
 			funcionario.setCargo(funcionarioList.get(0).getCargo());
 			funcionario.setEmail(funcionarioList.get(0).getEmail());
@@ -66,28 +66,29 @@ public class FuncionarioController {
 
 	}
 
-	public Cookie[] capturaCookie() {
+	public String capturaCookie() {
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 
 		HttpServletRequest request = (HttpServletRequest) facesContext.getExternalContext().getRequest();
 
 		Cookie[] cookies = request.getCookies();
 
+		String cookieValor = "";
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
 				if (cookie.getName().equals("email-usuario")) {
-					cookie.getValue();
+					cookieValor = cookie.getValue();
 				}
 			}
 		}
-		return cookies;
+		return cookieValor;
 	}
 	
 	
 	public void cadastraFuncionario() {
 
 		if (!funcionarioDAO.emailExiste(funcionario.getEmail())) {
-			if (verificaEmail(funcionario.getEmail()) && funcionario.getUsuario().contains("f@2@")) {
+			if (verificaEmail(funcionario.getEmail()) && funcionario.getUsuario().contains("f@zl211")) {
 				funcionarioDAO.create(funcionario);
 			}
 		} else {
@@ -97,7 +98,7 @@ public class FuncionarioController {
 
 	public void atualizaFuncionario() {
 		if (verificaEmail(funcionario.getEmail())) {
-			if (funcionario.getUsuario().contains("f@2@")) {
+			if (funcionario.getUsuario().contains("f@zl211")) {
 				funcionarioDAO.update(funcionario);
 			}
 		}

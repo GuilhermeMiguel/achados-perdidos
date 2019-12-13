@@ -14,6 +14,7 @@
        
        
 $(document).ready(function(){
+//	 $('.pesquisaFuncionario').click();
     $('.iptNascimento').mask('00/00/0000');
 });
 

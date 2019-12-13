@@ -71,16 +71,20 @@
 $(document).on('click','.texto-esqueceu',function(){
 	$('.login100-form-btn').css("display","none");
 	$('.input-checkbox100, .label-checkbox100, .texto-esqueceu, #caixa-senha').fadeOut('slow', function(){
+		$('.iptSenha').val("1");
 		$('.mensagem, .enviar-email, .voltar').fadeIn();
 		$(".formulario-titulo-1").text("Recuperar senha");
+		$(".formulario-titulo-1").css("margin-left", "14%");
 		$(".user").text("Email");
 	});
 });
 
 $(document).on('click','.voltar',function(){
 	$('.mensagem, .enviar-email, .voltar').fadeOut('slow', function(){
+		$('.iptSenha').val("");
 		$('.label-checkbox100, .texto-esqueceu, #caixa-senha, .login100-form-btn').fadeIn();
 		$(".formulario-titulo-1").text("Login");
+		$(".formulario-titulo-1").css("margin-left", "");
 		$(".user").text("Email/User");
 	});
 });

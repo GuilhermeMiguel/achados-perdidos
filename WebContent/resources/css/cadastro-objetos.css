@@ -359,7 +359,7 @@ th, td {
 .area-botao-salvar-entregador{
     position: absolute;
     margin-left: 1%;
-    margin-top: 31%;
+    margin-top: 18%;
 }
 
 .docEntregador {
@@ -372,7 +372,7 @@ th, td {
 
 .caixa-funcionario {
 	position: absolute;
-    margin-top: 33%;
+    margin-top: 34%;
     margin-left: 32%;
     display:none;
 }
@@ -427,7 +427,7 @@ th, td {
 }
 
 .cadastro-entregador{
-	margin-top: 20%;
+	margin-top: 8%;
     position: absolute;
     margin-left: 7%;
 }

@@ -47,14 +47,19 @@
 	    }
 		} );
 } );
-//     
+   	
+   	$( ".pesquisar" ).click(function( event ) {
+   	  event.preventDefault();
+   	  $( ".linha" ).css("opacity", "1");
+   	}); 
+     
 //   //Condição no combobox para aparecer os inputs corretos para pesquisam, ou entao só trocar os nomes e tamanhos deles
 // 	$('.combobox-categoria').change(function (){
 // 		console.log('teste');
 // 		if($('.combobox-categoria option:selected').val()== 'Documento' ||
-// 			'.combobox-categoria option:selected').val()== 'RG' 
-// 				|| '.combobox-categoria option:selected').val()== 'CPF'
-// 					|| '.combobox-categoria option:selected').val()== 'RA'){
+// 			$('.combobox-categoria option:selected').val()== 'RG' 
+// 				|| $('.combobox-categoria option:selected').val()== 'CPF'
+// 					|| $('.combobox-categoria option:selected').val()== 'RA'){
 // 				
 // 				$('.iptCor, .lblCor').fadeOut('slow', function(){
 // 					$('.iptDocumento, .lblDocumento').fadeIn();

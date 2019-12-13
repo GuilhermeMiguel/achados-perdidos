@@ -17,8 +17,8 @@ public class EnviadorEmail {
 	            email.setSSLOnConnect(true);
 
 	            email.setFrom("gui.miguel99@gmail.com");
-	            email.setSubject("Recuperação da Senha");
-	            email.setMsg("Olá " + nome+ "a sua senha é:" +senha );
+	            email.setSubject("Recuperação da Senha - SysLF");
+	            email.setMsg("Olá " + nome+ " esta mensgem é da equipe do SysLF a sua senha é: " +senha );
 	            email.addTo(emailFuncionario);
 	            email.send();
 

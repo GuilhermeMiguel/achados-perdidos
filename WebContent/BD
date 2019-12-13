@@ -3,9 +3,8 @@ use achadosperdidos;
 
 /*drop database achadosperdidos;*/
 
-create table entregador(
-	id int auto_increment primary key,
-	documento varchar(14),
+	create table entregador(
+	documento varchar(14) primary key,
 	nome varchar(30),
 	telefone varchar(14),
 	turma varchar(15),
@@ -21,23 +20,22 @@ create table entregador(
 create table objeto(
 	id int auto_increment primary key,
     docEntregador varchar(20),
-    idCategoria int,
+    categoria varchar(30),
 	cor varchar(30),
 	tamanho varchar(30),
 	infoComplementares varchar(100),
 	statusObjeto varchar(20),
 	localEncontro varchar(100),
-	dataEncontro date,
+	dataEncontro varchar(20),
 	turnoEncontro varchar(5),
-    constraint docEntregador FOREIGN KEY (docEntregador) REFERENCES entregador (documento),
-    constraint idCategoria FOREIGN KEY (idCategoria) REFERENCES Categoria (id)
+    constraint docEntregador FOREIGN KEY (docEntregador) REFERENCES entregador (documento)
     );
 
 create table funcionario(
 	id int auto_increment primary key,
 	nome varchar(30),
-	sexo varchar(10),
-	nascimento date,
+    sexo varchar(10),
+    telefone varchar(17),
 	usuario varchar(20),
 	senha varchar(10),
     email varchar(50),
@@ -53,17 +51,43 @@ create table devolucaoObjeto(
 	telefoneDono varchar(14),
 	celularDono varchar(14),
 	turmaDono varchar(15),
-	turnoDono varchar(15),
-	dataDevolucao date,
+    turnoDono varchar(15),
+	dataDevolucao varchar(15),
     constraint idObjeto FOREIGN KEY (idObjeto) REFERENCES objeto (id)
     );
     
+    /*create table emailLogado(
+    email varchar(80)
+    );*/
+    
+   /* drop table emailLogado*/
+   
+    SELECT str_to_date (dataEncontro, '%d/%m/%Y') from objeto
+    SELECT COUNT(id)  as quantPerdidos FROM objeto where statusObjeto = 'Aguardando' and str_to_date (dataEncontro, '%d/%m/%Y') BETWEEN '2019-08-10' AND '2019-12-11';
+    
+    SELECT descricao FROM categoria
+    SELECT COUNT(id) as quantPerdidos FROM objeto where statusObjeto = 'Aguardando' and WHERE str_to_date (dataEncontro, '%d/%m/%Y') BETWEEN '2019-05-10' AND '2019-12-12'
+    SELECT localEncontro, SUM( localEncontro ) FROM objeto WHERE localEncontro = ( SELECT localEncontro FROM objeto GROUP BY localEncontro ORDER BY COUNT(*) DESC LIMIT 1 );
+    
+    SELECT localEncontro as quantLocal, FROM objeto GROUP BY localEncontro ORDER BY COUNT(*) DESC LIMIT 1;
+    
+    SELECT categoria, COUNT(categoria) as quantCategoria1 FROM objeto GROUP BY categoria ORDER BY COUNT(*) DESC LIMIT 1;
+   
+   SELECT categoria FROM objeto;
+   
+   UPDATE categoria SET descricao = 'Óculos' WHERE id = 3;
+   
+   
     select * from entregador;
     select * from objeto;
     select * from categoria;
     select * from funcionario;
 	select * from devolucaoObjeto;
      
+    --
+    
+    
+    
     
     drop table entregador;
     drop table objeto;

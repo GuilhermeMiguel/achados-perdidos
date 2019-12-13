@@ -167,6 +167,12 @@ background-color: #694077;
     transition-property: color,background;
 }
 
+.area-tabela {
+	width: 83% !important;
+    margin-left: 9% !important;
+    margin-top: -25% !important;
+}
+
 #area-botao {
   color: white;
     background-color: black;

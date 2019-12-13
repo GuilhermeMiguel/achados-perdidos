@@ -36,8 +36,7 @@
 			<div class="row" id="linha-cadastro">
 
 				<div class="col-md-6" id="imagem-cadastro"
-					style="background-image: url(images/bg-03.jpg);">
-					<h1>Cadastre-se</h1>
+					style="background-image: url(images/fundo-cadastro.png);">
 				</div>
 
 				<div class="col-md-6" id="area-cadastro">
@@ -56,7 +55,7 @@
 							<div class="col-md-8">
 								<div class="wrap-input100 validate-input m-b-26">
 									<h:inputText value="#{funcionarioController.funcionario.nome}" 
-											styleClass="input100" name="nome" pt:placeholder="Digite seu nome" />
+											styleClass="input100 iptNome" name="nome" pt:placeholder="Digite seu nome" />
 									<span class="focus-input100"></span>
 								</div>
 							</div>
@@ -69,7 +68,7 @@
 							<label class="col-md-3 control-label texto-label-sexo"
 								for="radios" style="font-weight :700 !important; margin-top: 0%;">Sexo*</label>
 							<div class="col-md-8 radio-botao">
-									<h:selectOneRadio value="#{funcionarioController.funcionario.sexo}">
+									<h:selectOneRadio value="#{funcionarioController.funcionario.sexo}" class="iptSexo">
 								   			<f:selectItem itemValue="Feminino" id="option1" itemLabel="Feminino"/>
 								   			<f:selectItem itemValue="Masculino" id="option2" itemLabel="Masculino"/>
 								   	</h:selectOneRadio>
@@ -94,7 +93,7 @@
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
 										<h:inputText value="#{funcionarioController.funcionario.email}"
-											styleClass="input100" name="email" pt:placeholder="email@email.com" />
+											styleClass="input100 iptEmail" name="email" pt:placeholder="email@email.com" />
 										<span class="focus-input100"></span>
 									</div>
 								</div>
@@ -106,7 +105,7 @@
 							<div class="col-md-6">
 								<div class="wrap-input100 validate-input m-b-26">
 									<h:inputText value="#{funcionarioController.funcionario.usuario}"  
-										styleClass="input100" name="usuario" pt:placeholder="Digite um nome de usuário" />
+										styleClass="input100 iptUsuario" name="usuario" pt:placeholder="Digite um nome de usuário" />
 									<span class="focus-input100"></span>
 								</div>
 							</div>
@@ -118,7 +117,7 @@
 								<div class="input-group">
 									<div class="wrap-input100 validate-input m-b-26">
 										<h:inputSecret value="#{funcionarioController.funcionario.senha}" 
-											styleClass="input100" name="senha" pt:placeholder="" />
+											styleClass="input100 iptSenha" name="senha" pt:placeholder="" />
 										<span class="focus-input100"></span>
 									</div>
 								</div>
@@ -161,6 +160,7 @@
 
 <script src="resources/js/jquery.mask.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="resources/js/cadastro.js"></script>
 
 </body>
 </html>

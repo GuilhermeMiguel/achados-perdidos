@@ -23,14 +23,28 @@
 
 <!--===============================================================================================-->
 
-<!-- bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+<!-- Importação css da tabela  -->
 
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- jQuery library -->
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- JavaScript Booststrap -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css" />
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+
+<!--===============================================================================================-->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+
+<!-- Latest compiled JavaScript -->
 <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!--===============================================================================================-->
 </head>
 
 <body>
@@ -58,11 +72,14 @@
 									styleClass="form-control iptCor" id="inputCor" pt:placeholder="Ex: Preto" />
 							</div>
 
-							<label for="inputCor" class="lblDococumento"
-								style="display: none;">Documento</label>
-							<h:inputText styleClass="form-control iptDocumento"
-								style="display:none;" pt:placeholder="Ex: Preto" />
-						</div>
+<!-- 			<div class="form-group col-md-3"> -->
+<!-- 							<label for="inputCor" class="lblDococumento" -->
+<!-- 								style="display: none;">Documento</label> -->
+<!-- 							<h:inputText styleClass="form-control iptDocumento" -->
+<!-- 								style="display:none;" pt:placeholder="Ex: Preto" /> -->
+<!-- 						</div> -->
+<!-- 						</div> -->
+</div>
 
 						<div class="form-group col-md-3">
 							<label for="inputDataInicio">Data Inicio</label>
@@ -83,7 +100,7 @@
 				<div id="area-botao">
 					<div class="item" id="botao1">
 						<img src="images/icone-search.png" />
-						<h:commandButton styleClass="pesquisar botoes" value="Pesquisar" />
+						<h:commandButton class="pesquisar botoes" value="Pesquisa"/>
 					</div>
 
 				</div>
@@ -96,17 +113,15 @@
 </section>
 
 	<section>
-	<div class="table">
+	<div class="area-tabela">
 		<h:form>
 			<table id="table" class="table table-striped table-bordered"
 				style="width: 100%">
 				<thead>
 					<tr>
-						<th scope="col">Editar</th>
-						<th scope="col">Desabilitar</th>
 						<th scope="col">Id</th>
-						<th scope="col">Entregador</th>
 						<th scope="col">Categoria</th>
+						<th scope="col">Entregador</th>
 						<th scope="col">Cor</th>
 						<th scope="col">Tamanho</th>
 						<th scope="col">Local</th>
@@ -117,21 +132,43 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="objeto" items="#{pesquisaController.objetoList}">
-						<tr>
-							<th scope="row" class="editar">|</th>
-							<td class="desabilitar">X</td>
-							<td class="id">#{objeto.id}</td>
-							<td class="descricao">#{objeto.categoria}</td>
-							<td class="entregador">#{objeto.docEntregador}</td>
-							<td class="cor">#{objeto.cor}</td>
-							<td class="tamanho">#{objeto.tamanho}</td>
-							<td class="local">#{objeto.local}</td>
-							<td class="turno">#{objeto.turno}</td>
-							<td class="data">#{objeto.dataEncontro}</td>
-							<td class="informacoes">#{objeto.infoComplementares}</td>
+<!-- 					<c:forEach var="objeto" items="#{pesquisaController.objetoList}"> -->
+<!-- 						<tr> -->
+<!-- 							<td class="id">5</td> -->
+<!-- 							<td class="descricao">Caderno</td> -->
+<!-- 							<td class="entregador">27.730.305-9</td> -->
+<!-- 							<td class="cor">Preto</td> -->
+<!-- 							<td class="tamanho">20.0</td> -->
+<!-- 							<td class="local">Auditorio</td> -->
+<!-- 							<td class="turno">Noite</td> -->
+<!-- 							<td class="data">10/07/2019</td> -->
+<!-- 							<td class="informacoes">Capa do Batman</td> -->
+<!-- 						</tr> -->
+<!-- 						<tr> -->
+<!-- 							<td class="id">13</td> -->
+<!-- 							<td class="descricao">Mochila</td> -->
+<!-- 							<td class="entregador">27.730.305-9</td> -->
+<!-- 							<td class="cor">Cinza</td> -->
+<!-- 							<td class="tamanho">30.0</td> -->
+<!-- 							<td class="local">Aquário</td> -->
+<!-- 							<td class="turno">Noite</td> -->
+<!-- 							<td class="data">15/02/2019</td> -->
+<!-- 							<td class="informacoes">Marca Nike</td> -->
+<!-- 						</tr> -->
+						
+						<tr class="linha" style="opacity:0;">
+							<td class="id">22</td>
+							<td class="descricao">Smartphone</td>
+							<td class="entregador">26.180.309-8</td>
+							<td class="cor">Azul</td>
+							<td class="tamanho">10.0</td>
+							<td class="local">Lab 202</td>
+							<td class="turno">Noite</td>
+							<td class="data">11/09/2019</td>
+							<td class="informacoes">Marca Samsung</td>
 						</tr>
-					</c:forEach>
+				
+<!-- 					</c:forEach> -->
 				</tbody>
 			</table>
 		</h:form>
@@ -164,13 +201,11 @@
 					<li>Telefones</li>
 				</li>
 
-				<li>Teste</li>
 			</ul>
 		</div>
 	</div>
 
 	<script src="resources/js/pesquisa-usuario.js"></script>
-
 	<script src="resources/js/jquery.mask.js"></script>
 </body>
 </html>

@@ -139,10 +139,10 @@
 					<thead>
 						<tr>
 							<th scope="col">Editar</th>
-							<th scope="col">Desabilitar</th>
+							<th scope="col">Status</th>
 							<th scope="col">Id</th>
-							<th scope="col">Entregador</th>
 							<th scope="col">Categoria</th>
+							<th scope="col">Entregador</th>
 							<th scope="col">Cor</th>
 							<th scope="col">Tamanho</th>
 							<th scope="col">Local</th>
@@ -155,9 +155,9 @@
 					<tbody>
 						<c:forEach var="objeto" items="#{objetoController.objetoList}">
 							<tr>
-								<th scope="row" class="editar">|</th>
-								<td class="desabilitar">X</td>
-								<td class="id">#{objeto.id}</td>
+							<th scope="row" class="editar" style="cursor:pointer; text-align:center;"><img src="images/icone-pequeno-editar.png" /></th>
+								<td class="devolver" style="cursor:pointer;">#{objeto.status}</td>
+								<td class="idObjeto">#{objeto.id}</td>
 								<td class="descricao">#{objeto.categoria}</td>
 								<td class="entregador">#{objeto.docEntregador}</td>
 								<td class="cor">#{objeto.cor}</td>

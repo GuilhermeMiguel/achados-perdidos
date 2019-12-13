@@ -109,6 +109,22 @@ html { height: 100%;
 
 }
 
+.sem-cor:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 3px;
+    background-color: transparent !important;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+
 .sidebar-nav li:first-child a{
 	color: white !important;
 	background-color: #1a1a1a !important;
@@ -160,6 +176,10 @@ html { height: 100%;
 	padding: 10px 15px 15px 18px !important;
 }
 
+.sidebar-nav li {
+	cursor:pointer;
+}
+
 .sidebar-nav li a:hover,
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus,
@@ -207,4 +227,10 @@ a img {
 }
 a img {
     padding-right: 10px;
+}
+
+.imagem-logo {
+	width: 106%;
+    margin-left: -7%;
+    margin-top: -12%;
 }

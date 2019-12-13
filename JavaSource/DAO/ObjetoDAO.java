@@ -142,8 +142,9 @@ public class ObjetoDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
-		String sql = "UPDATE Objeto SET identregador = ?, categoria = ?, cor = ?, tamanho = ?,"
-				+ "local = ?, turno = ?, infoComplementares = ?, status = ? WHERE id = ?";
+		String sql = "UPDATE Objeto SET docEntregador = ?, categoria = ?, cor = ?, tamanho = ?,"
+				+ "localEncontro = ?, turnoEncontro = ?, infoComplementares = ?, dataEncontro = ?, "
+				+ "statusObjeto = ? WHERE id = ?";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -154,6 +155,7 @@ public class ObjetoDAO {
 			stmt.setString(5, c.getLocal());
 			stmt.setString(6, c.getTurno());
 			stmt.setString(7, c.getInfoComplementares());
+			stmt.setString(7, c.getDataEncontro());
 			stmt.setString(8, c.getStatus());
 			stmt.setInt(9, c.getId());
 			stmt.executeUpdate();
@@ -172,7 +174,7 @@ public class ObjetoDAO {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		
-		String sql = "UPDATE cadastroObjeto SET status = ? WHERE id = ?";
+		String sql = "UPDATE objeto SET status = ? WHERE id = ?";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -194,7 +196,7 @@ public class ObjetoDAO {
 		ResultSet rs = null;
 		boolean resultado = false;
 		
-		String sql = "SELECT infoComplementares FROM cadastroObjeto WHERE id = ? ";
+		String sql = "SELECT infoComplementares FROM objeto WHERE id = ? ";
 
 		try {
 			stmt = con.prepareStatement(sql);
@@ -221,11 +223,51 @@ public class ObjetoDAO {
 
 		List<Objeto> CadastroObjetos = new ArrayList<>();
 		String sql = "SELECT * FROM objeto where cor = ? categoria = ? and \"\r\n" 
-		+	 "str_to_date (dataEncontro, '%d/%m/%Y') BETWEEN '" + dtInicio + "' AND '" + dtFim + "'";
+		+	 "str_to_date (dataEncontro, '%Y/%M/%D') BETWEEN '" + dtInicio + "' AND '" + dtFim + "' AND "
+				+ "statusObjeto = 'Aguardando'";
 
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, cor);
+			stmt.setString(2, categoria);
+			rs = stmt.executeQuery();
+			while (rs.next()) {
+
+				Objeto CadObj = new Objeto();
+				CadObj.setId(rs.getInt("id"));
+				CadObj.setDocEntregador(rs.getString("docEntregador"));
+				CadObj.setCategoria(rs.getString("categoria"));
+				CadObj.setCor(rs.getString("cor"));
+				CadObj.setTamanho(rs.getDouble("tamanho"));
+				CadObj.setLocal(rs.getString("localEncontro"));
+				CadObj.setTurno(rs.getString("turnoEncontro"));
+				CadObj.setDataEncontro(rs.getString("dataEncontro"));
+				CadObj.setInfoComplementares(rs.getString("infoComplementares"));
+				CadObj.setStatus(rs.getString("statusObjeto"));
+				CadastroObjetos.add(CadObj);
+			}
+
+		} catch (SQLException ex) {
+			System.out.println("Erro" + ex);
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+		return CadastroObjetos;
+	}
+	
+	
+	public List<Objeto> pesquisaObjeto(String categoria, String dtInicio, String dtFim) {
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		List<Objeto> CadastroObjetos = new ArrayList<>();
+		String sql = "SELECT * FROM objeto categoria = ? and \"\r\n" 
+				+	 "str_to_date (dataEncontro, '%d/%m/%Y') BETWEEN '" + dtInicio + "' AND '" + dtFim + "' AND "
+						+ "statusObjeto = 'Aguardando'";
+
+		try {
+			stmt = con.prepareStatement(sql);
 			stmt.setString(1, categoria);
 			rs = stmt.executeQuery();
 			while (rs.next()) {

@@ -135,7 +135,7 @@
 						<label for="inputId">Id</label>
 						<h:inputText value="#{categoriaController.categoria.id}"
 							styleClass="form-control inputId" id="inputId"
-							pt:placeholder="Id..." />
+							pt:placeholder="Id..." readonly="true"/>
 					</div>
 
 					<div class="form-group col-md-6">
@@ -181,10 +181,10 @@
 						<c:forEach var="categoria"
 							items="#{categoriaController.categoriaList}">
 							<tr>
-								<th scope="row" class="editar">|</th>
-								<td class="desabilitar">X</td>
-								<td class="id">#{categoria.id}</td>
-								<td class="descricao">#{categoria.descricao}</td>
+								<th scope="row" class="editar" style="cursor:pointer; text-align:center;"><img src="images/icone-pequeno-editar.png" /></th>
+								<td class="desabilitar" style="cursor:pointer; text-align:center;"><strong>X</strong></td>
+								<td class="id" style="text-align:center;">#{categoria.id}</td>
+								<td class="descricao" style="text-align:center;">#{categoria.descricao}</td>
 							</tr>
 						</c:forEach>
 					</tbody>

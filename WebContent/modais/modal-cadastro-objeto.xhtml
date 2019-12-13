@@ -68,7 +68,9 @@
             			</div>
 					</div>
 				</div>
-
+				<h:inputText value="#{objetoController.objeto.id}" 
+							styleClass="form-control iptId" style="opacity:0; height: 0;"
+									id="inputId" pt:placeholder="Ex: Aquário" />
 				<div class="form-row">
 					<div class="form-group col-md-12">
 						<label for="inputInfoComplementar">Informações Complementares</label> 
@@ -88,13 +90,13 @@
 				
 				<h:inputText value="#{objetoController.objeto.docEntregador}" 
 						styleClass="docEntregador iptDocEntregador" id="inputDocEntregador"	
-							style="opacity:0;" pt:placeholder="" />
+							style="opacity:0; height: 0;" pt:placeholder="" />
 					
 
 			<div class="form-row area-botao-salvar">
 				<div class="form-group col-md-4">
 				<h:commandButton value="Salvar"  actionListener="#{objetoController.cadastraObjeto}" 
-					styleClass="login100-form-btn"					 style=" margin-top: 58%;
+					styleClass="login100-form-btn btnSalvar" style=" margin-top: 58%;
     						position: absolute; margin-left: -24%;"/>
 				</div>
 					<div class="form-group col-md-4">
@@ -112,15 +114,14 @@
 					 <h:selectOneMenu value="#{entregadorController.entregador.campo}"
 					 			 id="inputCampo" class="form-control combobox-tamanho">
 						<f:selectItem itemValue="Escolher..."/>
-						<f:selectItem itemValue="Id"/>
-						<f:selectItem itemValue="Sobrenome"/>
 						<f:selectItem itemValue="Documento"/>
+						<f:selectItem itemValue="Sobrenome"/>
 					</h:selectOneMenu >
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputValor">Valor</label>
 					 <h:inputText value="#{entregadorController.entregador.valor}"
-					 		styleClass="form-control" id="inputValor" pt:placeholder="..." />
+					 		styleClass="form-control iptValor" id="inputValor" pt:placeholder="..." />
 				</div>
 				<div class="form-group col-md-2">
 					<h:commandButton value="Pesquisar" 
@@ -132,7 +133,7 @@
 				<div class="form-row">
 					<div class="form-group col-md-8" style="margin-left:-8%;">
 						<label for="inputNome">Nome</label> 
-							<h:inputText value="#{entregadorController.entregador.nome}" styleClass="form-control" 
+							<h:inputText value="#{entregadorController.entregador.nome}" styleClass="form-control iptNome" 
 									 id="inputNome" pt:placeholder="Ex: João..." />
 					</div>
 					<div class="form-group col-md-4">

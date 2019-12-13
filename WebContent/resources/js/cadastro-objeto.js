@@ -8,6 +8,20 @@ $( ".adicionar" ).click(function( event ) {
 	      modal.addEventListener('click', (e) => {
 	        if (e.target.className == 'fechar-modal') {
 	          modal.classList.remove('mostrar');
+	          $('.iptDocumento').val("");
+	          $('.iptDocEntregador').val("");
+	          $('.iptValor').val("");
+	        	$('.iptNome').val("");
+	        	$('.iptTelefone').val("");
+	        	$('.iptTurmaEntregador').val("");
+	        	$('.iptTurnoEntregador').val("");
+	        	
+	        	 $('.iptCor').val("");
+		          $('.iptTamanho').val("");
+		          $('.iptLocal').val("");
+		        	$('.iptTurno').val("");
+		        	$('.iptData').val("");
+		        	$('.iptInfo').val("");
 	        }
 	      });
 	    }
@@ -73,9 +87,9 @@ $( ".adicionar" ).click(function( event ) {
 
     		$('.iptTelefone').mask(SPMaskTelefone, spOptions);
     
-    	$('.iptDocumento').keyup(function(){
-    		$('.iptDocEntregador').val($(this).val());
-    	});
+//    	$('.iptDocumento').keyup(function(){
+//    		$('.iptDocEntregador').val($(this).val());
+//    	});
     	
     	
     	// Aplicar mascara ao if quando o combobox for data
@@ -111,6 +125,48 @@ $( ".adicionar" ).click(function( event ) {
  	     });
     	 
     	 
+    	 $(document).on("click", ".pesquisar-entregador", function(){
+    		event.preventDefault();
+ 	        var documento1 = "27.730.305-9";
+ 	        var documento2 = "26.180.309-8";
+ 	        var sobrenome1 = "Assunção";
+ 	        var sobrenome2 = "Barros";
+ 	        var escolha = $('.iptValor').val();
+ 	        
+ 	        if(escolha == documento1){
+ 	        	$('.iptDocumento').val(documento1);
+ 	        	$('.iptDocEntregador').val(documento1);
+ 	        	$('.iptNome').val("Otávio Assunção");
+ 	        	$('.iptTelefone').val("(11) 98996-5553");
+ 	        	$('.iptTurmaEntregador').val("6º ADS");
+ 	        	$('.iptTurnoEntregador').val("Noite");
+ 	        }
+ 	        else if (escolha == documento2){
+ 	        	$('.iptDocumento').val(documento2);
+ 	        	$('.iptDocEntregador').val(documento2);
+ 	        	$('.iptNome').val("Arthur Vinicius Barros");
+ 	        	$('.iptTelefone').val("(84) 3925-1094");
+ 	        	$('.iptTurmaEntregador').val("3º ADS");
+ 	        	$('.iptTurnoEntregador').val("Tarde");
+ 	        }
+ 	       else if (escolha == sobrenome1){
+ 	    	   	$('.iptDocumento').val(documento1);
+ 	    	   $('.iptDocEntregador').val(documento2);
+	        	$('.iptNome').val("Otávio Assunção");
+	        	$('.iptTelefone').val("(11) 98996-5553");
+	        	$('.iptTurmaEntregador').val("6º ADS");
+	        	$('.iptTurnoEntregador').val("Noite");
+	        }
+ 	      else if (escolha == sobrenome2){
+ 	    	 $('.iptDocumento').val(documento2);
+ 	    	$('.iptDocEntregador').val(documento2);
+	        	$('.iptNome').val("Arthur Vinicius Barros");
+	        	$('.iptTelefone').val("(84) 3925-1094");
+	        	$('.iptTurmaEntregador').val("3º ADS");
+	        	$('.iptTurnoEntregador').val("Tarde");
+	        }
+ 	    });
+    	 
     	 /* Editar - dar uma atenção nesses metodos js para a tabela*/
     	 
     	 $(document).on("click", ".editar", function(){
@@ -122,9 +178,9 @@ $( ".adicionar" ).click(function( event ) {
     	        var turno = $(this).closest('tr').find(".turno").text();
     	        var data = $(this).closest('tr').find(".data").text();
     	        var info = $(this).closest('tr').find(".informacoes").text();
-    	        var doc = $(this).closest('tr').find(".doc").text();
-    	        alert(idObjeto);
-    	        $('.inputId').val(idObjeto);
+    	        var doc = $(this).closest('tr').find(".entregador").text();
+//    	        alert(idObjeto);
+    	        $('.iptId').val(idObjeto);
     	        $('.combobox-categoria').val(categoria);
     	        $('.iptCor').val(cor);
     	        $('.iptTamanho').val(tamanho);
@@ -133,13 +189,13 @@ $( ".adicionar" ).click(function( event ) {
     	        $('.iptData').val(data);
     	        $('.iptInfo').val(info);
     	        $('.iptDocEntregador').val(doc);
-    	        iniciaModal('modal-primario');
+    	        iniciaModal('modal-principal');
     	    });
     	 
     	 
     	 $(document).on("click", ".devolver", function(){
     	        var id = $(this).closest('tr').find(".idObjeto").text();
-    	        alert('objetoDevolvido');
+//    	        alert('objetoDevolvido');
     	        $('.iptIdObjeto').val(id);
     	        //Talvez fazer um metodo que procura o objeto de acordo com o id, então eu crio um botao
     	     //que quando clicado chama a funcao que fazer essa pesquisa e seta esses valores dentro do modal

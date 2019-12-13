@@ -38,9 +38,9 @@ public class DashboardController {
 		dtFim = dashboard.getDataFim();
 		
 		
-		mesesPerdidos = dashDAO.retornoGraficoPerdidos(dtFim.substring(6, 10));
+		//mesesPerdidos = dashDAO.retornoGraficoPerdidos(dtFim.substring(6, 10));
 		
-		mesesDevolvidos = dashDAO.retornoGraficoDevolvidos(dtFim.substring(6, 10));
+	//	mesesDevolvidos = dashDAO.retornoGraficoDevolvidos(dtFim.substring(6, 10));
 		
 		//String[] meses = new String[12];
 		

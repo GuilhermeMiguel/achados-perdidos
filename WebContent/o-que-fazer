@@ -1,19 +1,19 @@
 	TAREFAS PELA FRENTE:	
 !!!!!!!!!!!!!!!!!!!!!!!!!	*FAZER QUERYS DE DASHBOARD NO BANCO DE DADOS -- MYSQL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+
+	VERFICAR SE NA INDEX QUANDO EU COLOCO PARA MANDAR EMAIL ELE ESTA COLOCANDO VALOR NO CAMPO SENHA, POIS OS CAMPOS ESTAO 
+NO MESMO FORM E EU PRECISO DE UM VALOR NELE, e se quando eu volto para o login esse valor é retirado
+
+	ADICIONAR CAMPO DOCUMENTO NA TELA DE CADASTRO DE OBJETO OU EU POSSO USAR OUTRO CAMPO PARA GRAVAR ESSE NUMERO
+	
 	O GRAFICO EU POSSO SIMULAR POR JAVASCRIPT PARA GRAVAR O VIDEO, NÃO PRECISO NECESSARIAMENTE FAZER POR JAVA
-	
-	DAR ATENCAO AS TABELAS E FUNÇÕES PRINCIPAIS
-	
-	COMO TAMBÉM AO LOGIN
-	
-	FAZER DIAGRAMAS E FORMATAÇÃO DO TEXTO DA MINHA PARTE DO TCC
-	
-	FAZER PLANO DE NEGÓCIOS, ARRUMAR TEXTO DOS SLIDES DE TERÇA, FAZER SLIDES DE SEXTA E SABADO
-	
-	
-	*Ver como cadastrar entregador e nao fechar modal, e fazer com que ele apague 
-os outros campos mas mantenha o valor do documento caso queira salvar o entregador necessário
+				
+	FAZER OS INPUTS TAMANHO E COR MUDAREM E ENTRAR O INPUT DE NUMERO DO DOCUMENTO PARA QUANDO O COMBOBOX DE CATEGORIA 
+FOR RA, RG, DOCUMENTO, CNH, BILHETE UNICO
+
+	*Ver como cadastrar entregador e nao fechar modal, e fazer com que ele apague os outros campos mas mantenha 
+o valor do documento caso queira salvar o entregador necessário
 	
 	*VER COMO EU POSSO FAZR PARA ARMAZENAR O ARRAY DE RETORNO DA QUANTIDADE DE PERDIDOS E QUANTIDADE
 DE DEVOLVIDOS NUM OUTRO SET DE ARRAY E VER COMO EU POSSO FAZER PARA PEGAR CADA UM DELES NO GRAFICO, SE NAO
@@ -40,26 +40,20 @@ SE FOR UM DOCUMENTO NÃO PRECISA DE CAMPO E TAMANHO
 	--NAO FECHAR MODAL
 	https://pt.stackoverflow.com/questions/327385/enviar-form-sem-fechar-modal
 	
+	https://www.devmedia.com.br/novidades-do-jsf-2-2/30173
+	
+	https://www.devmedia.com.br/utilizando-ajax-com-java-server-faces-jsf/24832
+	
+	Pelo menos na tela de cadastro de objetos e também na devolução
+	
 	<h:commandLink value="Logout" action="#{loginController.deslogar}"/> Pra colocar funcao em tag a
 	
 	*Fazer metodo de enviar senha para o email -- Testar esse metodo, está funcionando mas estava sem permissão
 	
-	
-	https://www.devmedia.com.br/forum/barra-de-rolagem-vertical-em-tabela-div/565457
-	
-	Para fazer logout ir ate o arquivo faces-config e descomentar codigo comentado
-	*na tela onde o usuario atualiza a senha dele carregar a senha antiga
+	VER O REENVIO DA SENHA, NAO ESTA MUITO BOM
+		
 	!!!!!!!!!
 	DEPOIS DE IMPLEMENTAR O BACK -- ARRUMAR AS TABELAS 
 		: Colocar um icone de x para desabilitar o usuario e um icone de v para habilitar
-
 	
-	https://datatables.net/download/
-	*Implementar o back para a pesquisa de objetos
-		|
-		 `---> Sobre a paginação, encontrei esse plugin que faz tudo, implementar ele no projeto!!!!
-		
 	*DEFINIR NOME, LOGO E FAVICON
-	
-	*ORGANIZAR A SEQUENCIA DOS METODOS NOS JAVASCRIPTS E SEPARAR O CSS, OS MODAIS, AS TELAS PRINCIPAIS, AS TABELAS, 
-IMPLEMENTAR CSS DO BOOTSTRAP

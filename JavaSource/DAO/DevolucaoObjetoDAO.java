@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import connection.ConnectionFactory;
+import controle.ObjetoController;
 import modelo.DevolucaoObjeto;
+import modelo.Objeto;
 
 public class DevolucaoObjetoDAO {
 	
@@ -48,6 +50,8 @@ public class DevolucaoObjetoDAO {
 			stmt.setString(9, d.getDataDevolucao());
 			stmt.executeUpdate();
 
+			update(d.getIdObjeto(), d.getStatus());
+			
 			System.out.println("Salvo com sucesso");
 
 		} catch (SQLException ex) {
@@ -124,5 +128,29 @@ public class DevolucaoObjetoDAO {
 			ConnectionFactory.closeConnection(con, stmt);
 		}
 
+	}
+	
+	public void update(int id, String status) {
+
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		
+		String sql = "UPDATE Objeto SET statusObjeto = ? WHERE id = ?";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, status);
+			stmt.setInt(2, id);
+			stmt.executeUpdate();
+			System.out.println("Atualizado com sucesso");
+			ObjetoController obj = new ObjetoController();
+			obj.exibeListaObjetos();
+		} catch (SQLException ex) {
+			System.out.println("Erro ao atualizar: " + ex);
+			ObjetoController obj = new ObjetoController();
+			obj.exibeListaObjetos();
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt);
+		}
 	}
 }
